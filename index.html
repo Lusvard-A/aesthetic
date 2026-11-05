@@ -3,387 +3,1445 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Lumière Aesthetic &amp; Care Center</title>
+<title>Lumière Aesthetic & Care Center</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;1,6..96,400&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#fde8f3;--bg2:#f9d0e8;--ink:#3a0a4d;--mute:#7a3f8c;--card:#ffffff;--rose:#ff5fa2;--gold:#c8962f;--pist:#f0d08a;--line:rgba(58,10,77,.18);--btn:#7a1fd1;--btnt:#ffffff;
-box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1a0630;--bg2:#2c0b4f;--ink:#fff0fa;--mute:#dcb6ee;--card:#3b1264;--line:rgba(255,240,250,.22);--btn:#ff5fa2;--btnt:#1a0630}}
-:root[data-theme="dark"]{--bg:#1a0630;--bg2:#2c0b4f;--ink:#fff0fa;--mute:#dcb6ee;--card:#3b1264;--line:rgba(255,240,250,.22);--btn:#ff5fa2;--btnt:#1a0630}
+:root{
+  --white:#ffffff;
+  --rose-50:#fff1f2;
+  --rose-100:#ffe4e6;
+  --rose-200:#fecdd3;
+  --rose-300:#fda4af;
+  --rose-400:#fb7185;
+  --rose-500:#f43f5e;
+  --rose-600:#e11d48;
+  --purple-50:#faf5ff;
+  --purple-100:#f3e8ff;
+  --purple-200:#e9d5ff;
+  --purple-300:#d8b4fe;
+  --purple-400:#c084fc;
+  --purple-500:#a855f7;
+  --purple-600:#9333ea;
+  --purple-700:#7e22ce;
+  --purple-800:#6b21a8;
+  --purple-900:#581c87;
+  --text:#1f2937;
+  --text-light:#6b7280;
+  --border:#f3f4f6;
+  --shadow:0 4px 6px -1px rgba(0,0,0,0.1),0 2px 4px -1px rgba(0,0,0,0.06);
+  --shadow-lg:0 20px 25px -5px rgba(0,0,0,0.1),0 10px 10px -5px rgba(0,0,0,0.04);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --white:#111827;
+    --rose-50:#4c0519;
+    --rose-100:#831843;
+    --purple-50:#3b0764;
+    --purple-100:#581c87;
+    --text:#f9fafb;
+    --text-light:#9ca3af;
+    --border:#374151;
+  }
+}
+:root[data-theme="dark"]{
+  --white:#111827;
+  --rose-50:#4c0519;
+  --rose-100:#831843;
+  --purple-50:#3b0764;
+  --purple-100:#581c87;
+  --text:#f9fafb;
+  --text-light:#9ca3af;
+  --border:#374151;
+}
 *{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth;scroll-padding-top:80px}
-body{background:radial-gradient(900px 600px at 92% 4%,rgba(138,92,255,.32),transparent 60%),radial-gradient(800px 600px at 0% 45%,rgba(230,184,92,.3),transparent 60%),radial-gradient(700px 500px at 100% 85%,rgba(255,255,255,.55),transparent 60%),var(--bg);background-attachment:fixed;color:var(--ink);font:400 16px/1.65 Manrope,system-ui,sans-serif;overflow-x:hidden}
-h1,h2,h3{font-family:"Bodoni Moda",Georgia,serif;font-weight:400;line-height:1.08;letter-spacing:-.01em}
-h2{font-size:clamp(2rem,5vw,3.6rem)}
-a{color:inherit}
-section{padding:96px 6vw;position:relative}
-.wrap{max-width:1180px;margin:auto}
-.lead{color:var(--mute);max-width:56ch;margin-top:14px}
-.btn{display:inline-block;border:0;cursor:pointer;font:700 .95rem Manrope;padding:15px 28px;border-radius:99px;background:var(--btn);color:var(--btnt);text-decoration:none;transition:transform .2s}
-.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
-:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
-#glow{position:fixed;inset:0;pointer-events:none;z-index:1;background:radial-gradient(380px circle at var(--x,50%) var(--y,30%),rgba(255,95,162,.32),transparent 70%);mix-blend-mode:plus-lighter}
-/* intro curtain */
-#curtain{position:fixed;inset:0;z-index:100;display:grid;place-items:center;background:var(--ink);color:var(--bg);font:italic 400 clamp(2rem,8vw,5rem) "Bodoni Moda",serif;clip-path:ellipse(150% 150% at 50% 50%);animation:lift 1.4s .9s cubic-bezier(.7,0,.2,1) forwards}
-#curtain span{animation:fade .8s ease forwards}
-@keyframes lift{to{clip-path:ellipse(0% 0% at 50% 0%);visibility:hidden}}
-@keyframes fade{from{opacity:0;letter-spacing:.3em}to{opacity:1;letter-spacing:0}}
-/* nav */
-nav{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:14px 6vw;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 70%,transparent)}
-nav b{font:italic 600 1.4rem "Bodoni Moda",serif}
-nav ul{display:flex;gap:26px;list-style:none;padding:0}
-nav ul a{text-decoration:none;font-size:.9rem;color:var(--mute)}
-nav ul a:hover{color:var(--ink)}
-.nav-r{display:flex;gap:10px;align-items:center}
-.tg{background:none;border:1px solid var(--line);color:var(--ink);width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:1rem}
-@media(max-width:860px){nav ul{display:none}}
-/* hero */
-.hero{min-height:100svh;display:grid;grid-template-columns:1.1fr .9fr;gap:4vw;align-items:center;padding-top:120px;overflow:hidden}
-.hero h1{font-size:clamp(3rem,8.4vw,7rem)}
-.hero h1 em{display:block;color:var(--gold)}
-.hero h1 .w{display:inline-block;overflow:hidden;vertical-align:top}
-.hero h1 .w i{display:inline-block;font-style:inherit;transform:translateY(105%);animation:up 1s 1.9s cubic-bezier(.2,.8,.2,1) forwards}
-.hero h1 .w:nth-child(2) i{animation-delay:2.05s}.hero h1 .w:nth-child(3) i{animation-delay:2.2s}
-@keyframes up{to{transform:none}}
-.hero .row{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
-.mirror{position:relative;aspect-ratio:3/4;max-width:430px;width:100%;margin:auto;border-radius:999px 999px 24px 24px;overflow:hidden;background:conic-gradient(from 200deg at 50% 60%,#ff8fb8,#fff6f9,#e6b85c,#ffffff,#ff8fb8);animation:spin 18s linear infinite;box-shadow:0 40px 80px -30px rgba(120,60,110,.5)}
-@keyframes spin{to{filter:hue-rotate(40deg)}}
-.mirror::before{content:"";position:absolute;inset:-30%;background:radial-gradient(circle at 30% 20%,#fff9,transparent 40%);animation:sheen 6s ease-in-out infinite alternate}
-@keyframes sheen{to{transform:translate(35%,40%)}}
-.mirror svg{position:absolute;inset:0;width:100%;height:100%}
-.orbit{position:absolute;border:1px solid var(--line);border-radius:50%;inset:6%;pointer-events:none}
-.chip{position:absolute;background:var(--card);padding:9px 16px;border-radius:99px;font-size:.82rem;font-weight:700;box-shadow:0 10px 30px -10px rgba(0,0,0,.3);animation:bob 5s ease-in-out infinite alternate}
-.chip:nth-of-type(2){animation-delay:-2s}.chip:nth-of-type(3){animation-delay:-3.5s}
-@keyframes bob{to{transform:translateY(-14px)}}
-.play{position:absolute;left:50%;bottom:8%;transform:translateX(-50%);display:flex;gap:10px;align-items:center;border:0;background:var(--card);color:var(--ink);padding:10px 20px 10px 10px;border-radius:99px;font:700 .85rem Manrope;cursor:pointer;box-shadow:0 14px 30px -10px rgba(0,0,0,.4)}
-.play span{width:38px;height:38px;border-radius:50%;background:var(--btn);color:var(--btnt);display:grid;place-items:center;position:relative}
-.play span::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--btn);animation:ping 1.8s infinite}
-@keyframes ping{to{transform:scale(1.9);opacity:0}}
-@media(max-width:860px){.hero{grid-template-columns:1fr}}
-/* marquee */
-.marq{background:var(--ink);color:var(--bg);padding:20px 0;overflow:hidden;white-space:nowrap;transform:rotate(-1.2deg);margin:-20px -2vw 30px;position:relative;z-index:2}
-.marq div{display:inline-block;font:italic 400 1.7rem "Bodoni Moda",serif;animation:mq 30s linear infinite}
-.marq span{margin:0 26px;color:var(--rose)}
-@keyframes mq{to{transform:translateX(-50%)}}
-/* stats */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
-.stats b{display:block;font:400 clamp(2.4rem,5vw,4rem) "Bodoni Moda",serif;color:var(--gold)}
-.stats p{color:var(--mute);font-size:.9rem}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{
+  background:var(--white);
+  color:var(--text);
+  font:400 16px/1.6 Inter,system-ui,sans-serif;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:"Playfair Display",serif;font-weight:400;line-height:1.2}
+h1{font-size:clamp(2.5rem,5vw,4rem)}
+h2{font-size:clamp(2rem,4vw,3rem)}
+h3{font-size:1.5rem}
+a{color:inherit;text-decoration:none}
+section{padding:100px 5%;position:relative}
+.wrap{max-width:1200px;margin:auto}
+.lead{color:var(--text-light);max-width:60ch;margin-top:16px;font-size:1.1rem;line-height:1.8}
+.btn{
+  display:inline-block;
+  cursor:pointer;
+  font:500 0.95rem Inter,sans-serif;
+  padding:16px 32px;
+  border-radius:99px;
+  background:linear-gradient(135deg,var(--rose-500),var(--purple-600));
+  color:var(--white);
+  border:none;
+  transition:all 0.3s ease;
+  box-shadow:var(--shadow);
+}
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:var(--shadow-lg);
+}
+.btn.ghost{
+  background:transparent;
+  color:var(--text);
+  border:1px solid var(--border);
+  box-shadow:none;
+}
+.btn.ghost:hover{
+  background:var(--rose-50);
+  border-color:var(--rose-300);
+}
+:focus-visible{outline:2px solid var(--purple-500);outline-offset:2px}
+
+/* Navigation */
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:50;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 5%;
+  background:rgba(255,255,255,0.9);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+nav b{
+  font:600 1.5rem "Playfair Display",serif;
+  background:linear-gradient(135deg,var(--rose-600),var(--purple-700));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+nav ul{
+  display:flex;
+  gap:32px;
+  list-style:none;
+  padding:0;
+}
+nav ul a{
+  font-size:0.9rem;
+  font-weight:500;
+  color:var(--text-light);
+  transition:color 0.3s;
+}
+nav ul a:hover{color:var(--rose-600)}
+.nav-r{display:flex;gap:12px;align-items:center}
+.tg{
+  background:none;
+  border:1px solid var(--border);
+  color:var(--text);
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  cursor:pointer;
+  font-size:1rem;
+  transition:all 0.3s;
+}
+.tg:hover{background:var(--rose-50)}
+@media(max-width:900px){nav ul{display:none}}
+
+/* Hero */
+.hero{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+  padding-top:120px;
+  background:linear-gradient(135deg,var(--rose-50) 0%,var(--purple-50) 100%);
+}
+.hero h1 em{
+  display:block;
+  color:var(--rose-600);
+  font-style:italic;
+  margin-top:10px;
+}
+.hero .row{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+  margin-top:40px;
+}
+.hero-img{
+  position:relative;
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:var(--shadow-lg);
+}
+.hero-img img{
+  width:100%;
+  height:600px;
+  object-fit:cover;
+}
+.hero-badge{
+  position:absolute;
+  bottom:30px;
+  left:30px;
+  background:var(--white);
+  padding:20px 24px;
+  border-radius:16px;
+  box-shadow:var(--shadow-lg);
+}
+.hero-badge b{
+  display:block;
+  font-size:2rem;
+  color:var(--rose-600);
+  font-family:"Playfair Display",serif;
+}
+.hero-badge span{
+  font-size:0.85rem;
+  color:var(--text-light);
+}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;padding-top:100px}
+  .hero-img{order:-1;height:400px}
+  .hero-img img{height:100%}
+}
+
+/* Stats */
+.stats{
+  background:var(--white);
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:40px;
+  text-align:center;
+  padding:60px 5%;
+}
+.stats b{
+  display:block;
+  font:600 clamp(2rem,4vw,3rem) "Playfair Display",serif;
+  background:linear-gradient(135deg,var(--rose-600),var(--purple-600));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.stats p{
+  color:var(--text-light);
+  font-size:0.9rem;
+  margin-top:8px;
+}
 @media(max-width:700px){.stats{grid-template-columns:1fr 1fr}}
-/* services */
-.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px}
-.sc{cursor:pointer;text-align:left;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:0;border-radius:200px 200px 22px 22px;overflow:hidden;transition:transform .35s,box-shadow .35s;font:inherit}
-.sc:hover{transform:translateY(-8px) rotate(-.6deg);box-shadow:0 30px 50px -28px rgba(120,60,110,.6)}
-.sc .art{height:190px;display:grid;place-items:center;font-size:3.4rem;background:var(--g);transition:filter .4s}
-.sc:hover .art{filter:saturate(1.5)}
-.sc .tx{padding:22px 26px 28px}
-.sc h3{font-size:1.5rem}.sc p{color:var(--mute);font-size:.9rem;margin:6px 0 14px}
-.sc u{font-weight:700;font-size:.85rem}
-@media(max-width:900px){.svc{grid-template-columns:1fr 1fr}}@media(max-width:560px){.svc{grid-template-columns:1fr}}
-/* modal */
-.modal{position:fixed;inset:0;z-index:90;display:none;place-items:center;padding:16px;background:rgba(27,14,32,.65);backdrop-filter:blur(8px)}
-.modal.on{display:grid;animation:fadeIn .3s}
+
+/* Services - Professional Modernized */
+#services{background:var(--white)}
+#services h2{text-align:center;margin-bottom:20px}
+#services .lead{text-align:center;margin:0 auto 60px}
+.svc{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+}
+.sc{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:20px;
+  overflow:hidden;
+  transition:all 0.4s ease;
+  cursor:pointer;
+}
+.sc:hover{
+  transform:translateY(-8px);
+  box-shadow:var(--shadow-lg);
+  border-color:var(--rose-200);
+}
+.sc .art{
+  height:240px;
+  overflow:hidden;
+  position:relative;
+}
+.sc .art img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform 0.6s ease;
+}
+.sc:hover .art img{transform:scale(1.05)}
+.sc .art::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to bottom,transparent 0%,rgba(0,0,0,0.4) 100%);
+}
+.sc .tx{
+  padding:28px;
+}
+.sc h3{
+  font-size:1.35rem;
+  margin-bottom:10px;
+  color:var(--text);
+}
+.sc p{
+  color:var(--text-light);
+  font-size:0.95rem;
+  line-height:1.6;
+  margin-bottom:16px;
+}
+.sc u{
+  font-weight:600;
+  font-size:0.9rem;
+  color:var(--rose-600);
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+.sc u::after{
+  content:"→";
+  transition:transform 0.3s;
+}
+.sc:hover u::after{transform:translateX(4px)}
+@media(max-width:900px){.svc{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.svc{grid-template-columns:1fr}}
+
+/* Why Section */
+.why{
+  background:linear-gradient(135deg,var(--purple-50),var(--rose-50));
+  border-radius:32px;
+  padding:60px;
+  margin-top:40px;
+}
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:40px;
+}
+.why-item{
+  text-align:center;
+}
+.why-icon{
+  width:64px;
+  height:64px;
+  background:linear-gradient(135deg,var(--rose-400),var(--purple-500));
+  border-radius:16px;
+  display:grid;
+  place-items:center;
+  margin:0 auto 20px;
+  color:var(--white);
+  font-size:1.5rem;
+}
+.why-item h3{
+  font-size:1.2rem;
+  margin-bottom:10px;
+}
+.why-item p{
+  color:var(--text-light);
+  font-size:0.9rem;
+  line-height:1.6;
+}
+@media(max-width:900px){.why-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.why{padding:40px 24px}}
+
+/* Before/After */
+.ba{background:var(--purple-50)}
+.cmp{
+  position:relative;
+  max-width:900px;
+  aspect-ratio:16/10;
+  margin:40px auto 0;
+  border-radius:24px;
+  overflow:hidden;
+  cursor:ew-resize;
+  box-shadow:var(--shadow-lg);
+}
+.cmp .l,.cmp .r{
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+}
+.cmp .l{
+  background:url('https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=900&q=80') center/cover;
+}
+.cmp .r{
+  background:url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=900&q=80') center/cover;
+  clip-path:inset(0 0 0 var(--p,50%));
+}
+.cmp .bar{
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:var(--p,50%);
+  width:4px;
+  background:var(--white);
+  transform:translateX(-50%);
+  box-shadow:0 0 20px rgba(0,0,0,0.3);
+}
+.cmp .bar::after{
+  content:"";
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  background:var(--white);
+  display:grid;
+  place-items:center;
+  font-size:1.2rem;
+  color:var(--purple-600);
+  box-shadow:var(--shadow);
+}
+.cmp small{
+  position:absolute;
+  bottom:20px;
+  background:rgba(255,255,255,0.95);
+  padding:8px 20px;
+  border-radius:99px;
+  font-weight:600;
+  font-size:0.85rem;
+  box-shadow:var(--shadow);
+}
+.cmp .a{left:20px}
+.cmp .b{right:20px}
+
+/* Team */
+.team{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:30px;
+  margin-top:60px;
+}
+.tm{
+  text-align:center;
+  background:var(--white);
+  border-radius:20px;
+  overflow:hidden;
+  border:1px solid var(--border);
+  transition:all 0.4s ease;
+  cursor:pointer;
+}
+.tm:hover{
+  transform:translateY(-8px);
+  box-shadow:var(--shadow-lg);
+}
+.tm .ph{
+  aspect-ratio:3/4;
+  overflow:hidden;
+}
+.tm .ph img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform 0.6s;
+}
+.tm:hover .ph img{transform:scale(1.05)}
+.tm h3{
+  font-size:1.2rem;
+  margin:20px 0 8px;
+}
+.tm p{
+  color:var(--text-light);
+  font-size:0.9rem;
+  padding:0 20px 20px;
+}
+@media(max-width:900px){.team{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.team{grid-template-columns:1fr}}
+
+/* Packages */
+.pk{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+  margin-top:60px;
+}
+.pkc{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding:40px;
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  transition:all 0.4s;
+}
+.pkc:hover{
+  transform:translateY(-8px);
+  box-shadow:var(--shadow-lg);
+}
+.pkc.hot{
+  background:linear-gradient(135deg,var(--rose-600),var(--purple-700));
+  color:var(--white);
+  transform:scale(1.05);
+  border:none;
+}
+.pkc.hot:hover{transform:scale(1.05) translateY(-8px)}
+.pkc .pr{
+  font:600 2.5rem "Playfair Display",serif;
+  margin:10px 0;
+}
+.pkc.hot .pr{color:var(--white)}
+.pkc ul{
+  padding-left:20px;
+  color:var(--text-light);
+  flex:1;
+  line-height:2;
+}
+.pkc.hot ul{color:var(--rose-100)}
+.pkc .btn{
+  width:100%;
+  text-align:center;
+  margin-top:auto;
+}
+.pkc.hot .btn{
+  background:var(--white);
+  color:var(--rose-600);
+}
+@media(max-width:900px){
+  .pk{grid-template-columns:1fr}
+  .pkc.hot{transform:none}
+  .pkc.hot:hover{transform:translateY(-8px)}
+}
+
+/* Reviews */
+.rv{
+  max-width:800px;
+  margin:60px auto 0;
+  text-align:center;
+  background:var(--rose-50);
+  padding:60px;
+  border-radius:32px;
+}
+.rv blockquote{
+  font:italic 400 clamp(1.5rem,3vw,2rem) "Playfair Display",serif;
+  line-height:1.6;
+  color:var(--text);
+  margin-bottom:20px;
+}
+.rv cite{
+  font-style:normal;
+  color:var(--text-light);
+  font-weight:600;
+}
+.dots{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  margin-top:30px;
+}
+.dots button{
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  border:2px solid var(--rose-300);
+  background:transparent;
+  cursor:pointer;
+  padding:0;
+  transition:all 0.3s;
+}
+.dots .on{
+  background:var(--rose-500);
+  border-color:var(--rose-500);
+  width:32px;
+  border-radius:6px;
+}
+
+/* Gallery */
+.gal{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  grid-auto-rows:220px;
+  gap:16px;
+  margin-top:40px;
+}
+.gal button{
+  border:none;
+  padding:0;
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
+  border-radius:16px;
+}
+.gal button img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform 0.6s;
+}
+.gal button:hover img{transform:scale(1.1)}
+.gal .w2{grid-column:span 2}
+.gal .t2{grid-row:span 2}
+@media(max-width:900px){.gal{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.gal{grid-template-columns:1fr}}
+
+/* Booking */
+.book{
+  background:linear-gradient(135deg,var(--purple-900),var(--rose-700));
+  color:var(--white);
+  border-radius:32px;
+  padding:80px;
+  margin:0 3vw;
+}
+.book .grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+}
+.book h2{color:var(--white);margin-bottom:20px}
+.book .lead{color:var(--rose-100)}
+.book form{
+  display:grid;
+  gap:20px;
+}
+.book input,.book select,.book textarea{
+  font:inherit;
+  padding:16px 20px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.2);
+  background:rgba(255,255,255,0.1);
+  color:var(--white);
+  width:100%;
+  transition:all 0.3s;
+}
+.book input:focus,.book select:focus,.book textarea:focus{
+  outline:none;
+  border-color:var(--rose-300);
+  background:rgba(255,255,255,0.15);
+}
+.book input::placeholder{color:var(--rose-200)}
+.book option{color:var(--text)}
+.book label{
+  font-size:0.85rem;
+  color:var(--rose-200);
+  display:block;
+  margin-bottom:6px;
+}
+.book .btn{
+  background:var(--white);
+  color:var(--purple-900);
+  font-weight:600;
+  border:none;
+}
+.book .btn:hover{
+  background:var(--rose-100);
+}
+.ok{
+  display:none;
+  font:italic 1.5rem "Playfair Display",serif;
+  color:var(--rose-200);
+  text-align:center;
+  padding:20px;
+}
+@media(max-width:900px){.book .grid{grid-template-columns:1fr}.book{padding:40px 24px}}
+
+/* Footer */
+footer{
+  background:var(--purple-900);
+  color:var(--purple-200);
+  padding:60px 5% 40px;
+  text-align:center;
+}
+footer b{
+  display:block;
+  font:600 2.5rem "Playfair Display",serif;
+  color:var(--white);
+  margin-bottom:10px;
+}
+footer span{
+  display:block;
+  margin-bottom:20px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  font-size:0.75rem;
+  color:var(--rose-300);
+}
+.fl{
+  display:flex;
+  gap:24px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin:20px 0;
+}
+footer a{
+  color:var(--white);
+  font-weight:500;
+  transition:color 0.3s;
+}
+footer a:hover{color:var(--rose-300)}
+footer small{
+  display:block;
+  margin-top:30px;
+  opacity:0.6;
+  font-size:0.85rem;
+}
+
+/* Modal */
+.modal{
+  position:fixed;
+  inset:0;
+  z-index:100;
+  display:none;
+  place-items:center;
+  padding:20px;
+  background:rgba(0,0,0,0.8);
+  backdrop-filter:blur(8px);
+}
+.modal.on{display:grid;animation:fadeIn 0.3s}
 @keyframes fadeIn{from{opacity:0}}
-.pane{background:var(--bg);color:var(--ink);width:min(920px,100%);max-height:90vh;overflow:auto;border-radius:30px;display:grid;grid-template-columns:.8fr 1.2fr;animation:pop .55s cubic-bezier(.2,1.2,.3,1)}
-@keyframes pop{from{transform:scale(.7) translateY(60px);opacity:0}}
-.pane .side{background:var(--g);padding:36px;display:flex;flex-direction:column;justify-content:flex-end;min-height:260px;color:#2a1630}
-.pane .side .big{font-size:5rem}
-.pane .body{padding:36px}
-.x{position:sticky;float:right;top:0;border:1px solid var(--line);background:var(--card);color:var(--ink);width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:1.1rem}
-.item{display:flex;justify-content:space-between;gap:14px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line);opacity:0;animation:slide .5s forwards}
-@keyframes slide{from{transform:translateX(30px)}to{opacity:1}}
-.item b{display:block}.item small{color:var(--mute)}
-.item .pr{font:400 1.2rem "Bodoni Moda",serif;white-space:nowrap}
-@media(max-width:700px){.pane{grid-template-columns:1fr}.pane .side{min-height:140px}}
-.vid{width:min(900px,100%);aspect-ratio:16/9;border-radius:26px;overflow:hidden;position:relative;background:#1b0e20;animation:pop .55s cubic-bezier(.2,1.2,.3,1)}
-.vid canvas{width:100%;height:100%;display:block}
-.vid p{position:absolute;left:0;right:0;bottom:9%;text-align:center;color:#fff;font:italic 400 clamp(1.2rem,3.5vw,2.4rem) "Bodoni Moda",serif;transition:opacity .6s}
-.vid .x{position:absolute;right:14px;top:14px}
-/* why */
-.why{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:40px;border-top:1px solid var(--line)}
-.why div{padding:28px 22px 10px 0}
-.why h3{font-size:1.35rem;margin-bottom:6px}.why p{color:var(--mute);font-size:.92rem}
-@media(max-width:800px){.why{grid-template-columns:1fr 1fr}}
-/* ba */
-.ba{background:var(--bg2)}
-.cmp{position:relative;max-width:760px;aspect-ratio:16/10;margin:40px auto 0;border-radius:26px;overflow:hidden;user-select:none;touch-action:none;cursor:ew-resize}
-.cmp .l,.cmp .r{position:absolute;inset:0;display:grid;place-items:center;font:italic 1.6rem "Bodoni Moda",serif}
-.cmp .l{background:radial-gradient(circle at 30% 40%,#a98a7c 0 8%,transparent 9%),radial-gradient(circle at 70% 60%,#9c7d70 0 10%,transparent 11%),radial-gradient(circle at 50% 25%,#b39688 0 6%,transparent 7%),#c9b0a2;color:#4a3a34}
-.cmp .r{background:radial-gradient(circle at 40% 30%,#fff6 0,transparent 50%),linear-gradient(135deg,#ffffff,#ffc3d9);color:#6b3b46;clip-path:inset(0 0 0 var(--p,50%))}
-.cmp .bar{position:absolute;top:0;bottom:0;left:var(--p,50%);width:3px;background:#fff;transform:translateX(-50%)}
-.cmp .bar::after{content:"↔";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:#fff;color:#2a1630;display:grid;place-items:center;font-size:1.2rem;box-shadow:0 8px 20px #0004}
-.cmp small{position:absolute;bottom:14px;background:#0006;color:#fff;padding:4px 12px;border-radius:99px}
-.cmp .a{left:14px}.cmp .b{right:14px}
-.note{text-align:center;color:var(--mute);font-size:.8rem;margin-top:12px}
-/* quiz */
-.quiz{max-width:720px;margin:36px auto 0;background:var(--card);border-radius:30px;padding:36px;border:1px solid var(--line);text-align:center}
-.opts{display:grid;gap:10px;margin-top:20px}
-.opts button{font:500 1rem Manrope;padding:14px;border-radius:16px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer;transition:.2s}
-.opts button:hover{background:var(--rose);color:#2a1630;transform:scale(1.02)}
-.prog{height:4px;background:var(--line);border-radius:4px;margin-bottom:22px}.prog i{display:block;height:100%;width:0;background:var(--gold);border-radius:4px;transition:width .4s}
-/* team */
-.team{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:40px}
-.tm{text-align:center}
-.tm .ph{aspect-ratio:3/4;border-radius:999px 999px 18px 18px;background:var(--g);display:grid;place-items:center;font:italic 3rem "Bodoni Moda",serif;color:#2a1630;transition:.5s}
-.tm:hover .ph{border-radius:18px 18px 999px 999px}
-.tm h3{font-size:1.2rem;margin-top:14px}.tm p{color:var(--mute);font-size:.85rem}
-@media(max-width:800px){.team{grid-template-columns:1fr 1fr}}
-/* packages */
-.pk{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px;align-items:stretch}
-.pkc{border:1px solid var(--line);border-radius:26px;padding:34px;background:var(--card);display:flex;flex-direction:column;gap:12px}
-.pkc.hot{background:var(--ink);color:var(--bg);transform:scale(1.04)}
-.pkc .pr{font:400 2.6rem "Bodoni Moda",serif}
-.pkc ul{padding-left:18px;color:inherit;opacity:.85;flex:1}
-.pkc.hot .btn{background:var(--bg);color:var(--ink)}
-@media(max-width:860px){.pk{grid-template-columns:1fr}.pkc.hot{transform:none}}
-/* reviews */
-.rv{max-width:760px;margin:40px auto 0;text-align:center;min-height:200px}
-.rv blockquote{font:italic 400 clamp(1.3rem,3vw,2rem) "Bodoni Moda",serif;line-height:1.4;transition:opacity .5s}
-.dots{display:flex;gap:8px;justify-content:center;margin-top:24px}
-.dots button{width:10px;height:10px;border-radius:50%;border:0;background:var(--line);cursor:pointer;padding:0}
-.dots .on{background:var(--gold);width:28px;border-radius:10px}
-/* faq + journal */
-details{border-bottom:1px solid var(--line);padding:18px 0}
-summary{cursor:pointer;font:400 1.3rem "Bodoni Moda",serif;list-style:none;display:flex;justify-content:space-between}
-summary::after{content:"+";transition:transform .3s}details[open] summary::after{transform:rotate(45deg)}
-details p{color:var(--mute);margin-top:10px;max-width:70ch}
-.jr{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:36px}
-.jr a{text-decoration:none;background:var(--card);border-radius:22px;padding:26px;border:1px solid var(--line);display:block;transition:.3s}
-.jr a:hover{transform:translateY(-6px)}
-.jr small{color:var(--gold);font-weight:700}.jr h3{font-size:1.3rem;margin-top:8px}
-@media(max-width:800px){.jr{grid-template-columns:1fr}}
-/* book */
-.book{background:#3a0a4d;color:#fdeaf5;border-radius:40px;margin:0 3vw;overflow:hidden}
-.book .grid{display:grid;grid-template-columns:1fr 1fr;gap:5vw}
-.book .lead{color:#cdbbd3}
-.book form{display:grid;gap:12px}
-.book input,.book select,.book textarea{font:inherit;padding:14px 16px;border-radius:14px;border:1px solid #fff3;background:#ffffff12;color:#fff;width:100%}
-.book option{color:#222}
-.book label{font-size:.85rem;color:#cdbbd3}
-.book .btn{background:var(--rose);color:#2a1630}
-.ok{display:none;font:italic 1.6rem "Bodoni Moda",serif;color:var(--pist)}
-@media(max-width:800px){.book .grid{grid-template-columns:1fr}}
-.info{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:36px}
-.map{height:210px;border-radius:22px;background:repeating-linear-gradient(45deg,var(--bg2) 0 14px,var(--bg) 14px 28px);display:grid;place-items:center;color:var(--mute);font-size:.85rem}
-@media(max-width:800px){.info{grid-template-columns:1fr}}
-footer{background:#3a0a4d;color:#d9bde6;padding:28px 6vw 84px;text-align:center;font-size:.85rem;line-height:1.5}
-footer b{display:block;font:italic 400 2rem/1 "Bodoni Moda",serif;color:#fff}footer span{display:block;margin-bottom:12px;letter-spacing:.14em;text-transform:uppercase;font-size:.72rem}.fl{display:flex;gap:6px 22px;justify-content:center;flex-wrap:wrap;margin:6px 0}footer a{color:#fff;text-decoration:none}footer a:hover{color:var(--rose)}footer small{display:block;margin-top:10px;opacity:.7}
-.wa{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:60;width:58px;height:58px;border-radius:50%;background:#25a35a;color:#fff;display:grid;place-items:center;font-size:1.6rem;text-decoration:none;box-shadow:0 10px 25px #0005}
-.rv-el{opacity:0;transform:translateY(24px);transition:.8s}.rv-el.in{opacity:1;transform:none}
-*,*::before,*::after{border-radius:0!important}
-.sc,.pkc,.quiz,.jr button,.tm .ph,.cmp,.pane,.vid{border:1px solid var(--ink)}
-.sc,.pkc,.quiz,.jr button{outline:1px solid var(--line);outline-offset:5px}
-.dk{background:#3a0a4d;color:#fdeaf5}.dk .stats p{color:#e0c6ec}.dk .lead{color:#e0c6ec}
-.mb{position:relative;overflow:hidden}.mb img,.mb video{width:100%;height:100%;object-fit:cover;display:block}
-.ph2{position:absolute;inset:0;display:grid;place-content:center;text-align:center;gap:2px;color:#3a0a4d;transition:transform .6s;overflow:hidden}
-.ph2::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.55) 50%,transparent 70%);transform:translateX(-100%);animation:shim 3.5s infinite}
-@keyframes shim{to{transform:translateX(100%)}}
-.ph2 i{font-style:normal;font-size:2.2rem}.ph2 span{font:italic 1.2rem "Bodoni Moda",serif}.ph2 small{opacity:.7;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase}
-.sc .art{position:relative;display:block}.pane .side.mb{padding:0;background:none;min-height:300px}.side .cap{position:absolute;left:0;right:0;bottom:0;padding:24px;background:linear-gradient(transparent,rgba(58,10,77,.88));color:#fff;z-index:2}
-.body p{margin:12px 0}
-button.tm{background:none;border:0;font:inherit;color:inherit;cursor:pointer;text-align:center}
-.jr button{text-align:left;font:inherit;color:var(--ink);background:var(--card);padding:26px;cursor:pointer;display:block;transition:.3s}.jr button:hover{transform:translateY(-6px)}.jr .th{height:150px;margin:-26px -26px 16px}
-.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:190px;gap:12px;margin-top:26px}.gal button{border:0;padding:0;cursor:pointer;position:relative;overflow:hidden}.gal .w2{grid-column:span 2}.gal .t2{grid-row:span 2}.gal button:hover .ph2{transform:scale(1.08)}
-.gf{display:flex;gap:10px;margin-top:20px}.gf button{font:700 .85rem Manrope;padding:10px 20px;border:1px solid #fdeaf5;background:none;color:#fdeaf5;cursor:pointer}.gf .on{background:#fdeaf5;color:#3a0a4d}
-@media(max-width:700px){.gal{grid-template-columns:1fr 1fr}}
-.ab{display:grid;grid-template-columns:1fr 1fr;gap:5vw;align-items:center}.abm{display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:170px;gap:12px}.abm .big{grid-row:span 2}.abm button{border:0;padding:0;cursor:pointer}
-.vals{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:26px 0}.vals b{display:block;font:400 1.2rem "Bodoni Moda",serif;color:var(--gold)}.vals span{font-size:.85rem;color:var(--mute)}
-@media(max-width:800px){.ab{grid-template-columns:1fr}.vals{grid-template-columns:1fr}}
-.dd{position:relative}.dd>button{width:100%;text-align:left;font:inherit;padding:14px 16px;border:1px solid #fff3;background:#ffffff12;color:#fff;cursor:pointer}.dd ul{position:absolute;left:0;right:0;top:100%;z-index:5;list-style:none;padding:0;background:#efe2fd;color:#3a0a4d;max-height:240px;overflow:auto;border:1px solid #c9a7f5}.dd li{padding:12px 16px;cursor:pointer}.dd li:hover,.dd li.on{background:#d3b8f6}
-@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition:none!important}.rv-el{opacity:1;transform:none}#curtain{display:none}}
+.pane{
+  background:var(--white);
+  color:var(--text);
+  width:min(900px,100%);
+  max-height:90vh;
+  overflow:auto;
+  border-radius:24px;
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+  animation:pop 0.5s cubic-bezier(0.2,1.2,0.3,1);
+}
+@keyframes pop{from{transform:scale(0.9) translateY(20px);opacity:0}}
+.pane .side{
+  background:linear-gradient(135deg,var(--rose-100),var(--purple-100));
+  padding:40px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  min-height:300px;
+  position:relative;
+  overflow:hidden;
+}
+.pane .side img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0.3;
+}
+.pane .side .cap{
+  position:relative;
+  z-index:1;
+}
+.pane .body{padding:40px}
+.x{
+  position:absolute;
+  top:20px;
+  right:20px;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  border:1px solid var(--border);
+  background:var(--white);
+  cursor:pointer;
+  font-size:1.2rem;
+  display:grid;
+  place-items:center;
+  transition:all 0.3s;
+  z-index:10;
+}
+.x:hover{background:var(--rose-50)}
+.item{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  align-items:center;
+  padding:20px 0;
+  border-bottom:1px solid var(--border);
+  animation:slide 0.5s forwards;
+  opacity:0;
+}
+@keyframes slide{from{transform:translateX(20px);opacity:0}to{transform:translateX(0);opacity:1}}
+.item b{display:block;font-weight:600}
+.item small{color:var(--text-light);font-size:0.9rem}
+.item .pr{
+  font:600 1.3rem "Playfair Display",serif;
+  color:var(--rose-600);
+  white-space:nowrap;
+}
+@media(max-width:700px){.pane{grid-template-columns:1fr}}
+
+/* WhatsApp Float */
+.wa{
+  position:fixed;
+  right:24px;
+  bottom:24px;
+  z-index:60;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  background:#25d366;
+  color:var(--white);
+  display:grid;
+  place-items:center;
+  font-size:1.8rem;
+  box-shadow:var(--shadow-lg);
+  transition:transform 0.3s;
+}
+.wa:hover{transform:scale(1.1)}
+
+/* Reveal Animation */
+.reveal{
+  opacity:0;
+  transform:translateY(30px);
+  transition:all 0.8s ease;
+}
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
 </style>
 </head>
 <body>
-<div id="curtain"><span>Lumière</span></div>
-<div id="glow"></div>
 
 <nav>
   <b>Lumière</b>
-  <ul><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#team">Team</a></li><li><a href="#packages">Packages</a></li><li><a href="#journal">Journal</a></li><li><a href="#contact">Contact</a></li></ul>
-  <div class="nav-r"><button class="tg" id="theme" aria-label="Switch light or dark theme">◐</button><a class="btn" href="#book">Book now</a></div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#packages">Packages</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-r">
+    <button class="tg" id="theme" aria-label="Toggle theme"></button>
+    <a class="btn" href="#book">Book Now</a>
+  </div>
 </nav>
 
 <section class="hero">
   <div>
-    <h1><span class="w"><i>Skin</i></span> <span class="w"><i>that</i></span> <span class="w"><i>glows</i></span><em class="w"><i style="animation-delay:2.4s">from care.</i></em></h1>
-    <p class="lead">Medical-grade aesthetics, hair, body and wellness treatments, planned around you by certified specialists in a calm, spotless space.</p>
-    <div class="row"><a class="btn" href="#book">Book a consultation</a><a class="btn ghost" href="#services">Explore services</a></div>
+    <h1>Skin that glows from care<em>Medical aesthetics & wellness</em></h1>
+    <p class="lead">Experience personalized aesthetic care in a serene environment. Our certified specialists combine medical expertise with artistic vision to enhance your natural beauty.</p>
+    <div class="row">
+      <a class="btn" href="#book">Book Consultation</a>
+      <a class="btn ghost" href="#services">Explore Services</a>
+    </div>
   </div>
-  <div class="mirror" id="mirror" aria-label="Animated pearl mirror">
-    <svg viewBox="0 0 300 400" aria-hidden="true"><path d="M60 330Q150 250 240 330" fill="none" stroke="#fff" stroke-width="1.5" opacity=".7"/><circle cx="150" cy="170" r="70" fill="none" stroke="#fff" stroke-width="1.2" opacity=".6"/></svg>
-    <div class="chip" style="top:14%;left:6%">Hydrated ✦</div>
-    <div class="chip" style="top:42%;right:4%">Even tone ✦</div>
-    <div class="chip" style="top:64%;left:8%">Radiant ✦</div>
-    <button class="play" data-video><span>▶</span>Watch our story</button>
+  <div class="hero-img">
+    <img src="https://images.unsplash.com/photo-1560750588-432d11f8e59e?w=800&q=80" alt="Luxury spa treatment">
+    <div class="hero-badge">
+      <b>4.9★</b>
+      <span>Based on 8,400+ reviews</span>
+    </div>
   </div>
 </section>
 
-<div class="marq" aria-hidden="true"><div id="mq"></div></div>
+<div class="stats">
+  <div><b data-n="12">0</b><p>Years Experience</p></div>
+  <div><b data-n="8400">0</b><p>Happy Clients</p></div>
+  <div><b data-n="18">0</b><p>Specialists</p></div>
+  <div><b data-n="49">0</b><p>5-Star Rating</p></div>
+</div>
 
-<section class="dk"><div class="wrap stats rv-el">
-  <div><b data-n="12">0</b><p>years of experience</p></div>
-  <div><b data-n="8400">0</b><p>happy clients</p></div>
-  <div><b data-n="18">0</b><p>certified specialists</p></div>
-  <div><b data-n="49">0</b><p>rating out of 5 (×10)</p></div>
-</div></section>
-
-<section id="about"><div class="wrap ab"><div><h2>A quiet place to feel like yourself</h2><p class="lead">Lumière was founded on one idea: aesthetic care should feel calm, honest and personal. Our doctors and therapists plan every treatment around your skin, your health and your goals.</p><p class="lead">From our first consultation to your follow-up visit, you get clear advice, safe technology and a team that never rushes you.</p><div class="vals"><div><b>Care first</b><span>Advice before treatment, always.</span></div><div><b>Safety</b><span>Licensed staff, sterile rooms.</span></div><div><b>Natural</b><span>Results that look like you.</span></div></div><button class="btn" data-video>Watch our story</button></div><div class="abm"><div class="mb big" data-m="about1" data-l="Our reception" data-g="linear-gradient(135deg,#fff1f6,#ff8fb8)" data-v="0"></div><button class="mb" data-video data-m="about2" data-l="Our story" data-g="linear-gradient(135deg,#ffffff,#e6b85c)" data-v="1"></button><div class="mb" data-m="about3" data-l="Treatment room" data-g="linear-gradient(135deg,#ffe3ee,#d4a84b)" data-v="0"></div></div></div></section>
-
-<section class="dk" id="gallery"><div class="wrap"><h2>Gallery</h2><p class="lead">A look inside the center, our treatments and our team.</p><div class="gf" id="gf"><button class="on" data-f="all">All</button><button data-f="0">Photos</button><button data-f="1">Videos</button></div><div class="gal" id="gal"></div></div></section>
-
-<section id="services"><div class="wrap">
-  <h2 class="rv-el">Six ways we care for you</h2>
-  <p class="lead">Choose a category to open its full treatment menu with durations and starting prices.</p>
-  <div class="svc" id="svc"></div>
-</div></section>
-
-<section><div class="wrap rv-el">
-  <h2>Why people stay with us</h2>
-  <div class="why">
-    <div><h3>A plan, not a menu</h3><p>Every visit starts with a skin and health consultation.</p></div>
-    <div><h3>Certified technology</h3><p>Approved devices and products, maintained and tested.</p></div>
-    <div><h3>Hospital-level hygiene</h3><p>Single-use tools and sterilised rooms between clients.</p></div>
-    <div><h3>Natural results</h3><p>We enhance your features. We don’t change them.</p></div>
+<section id="about">
+  <div class="wrap">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
+      <div>
+        <h2>A sanctuary for your skin</h2>
+        <p class="lead">Lumière was founded on a simple principle: aesthetic care should be both scientifically advanced and deeply personal. We combine medical expertise with a holistic approach to help you look and feel your best.</p>
+        <p class="lead">Every treatment begins with a comprehensive consultation, ensuring we understand your unique concerns and goals before creating your personalized care plan.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px">
+          <div style="padding:24px;background:var(--rose-50);border-radius:16px">
+            <div style="width:48px;height:48px;background:var(--rose-500);border-radius:12px;display:grid;place-items:center;color:white;margin-bottom:16px;font-size:1.5rem">✦</div>
+            <h4 style="margin-bottom:8px">Expert Care</h4>
+            <p style="font-size:0.9rem;color:var(--text-light)">Board-certified specialists with years of advanced training</p>
+          </div>
+          <div style="padding:24px;background:var(--purple-50);border-radius:16px">
+            <div style="width:48px;height:48px;background:var(--purple-600);border-radius:12px;display:grid;place-items:center;color:white;margin-bottom:16px;font-size:1.5rem">✦</div>
+            <h4 style="margin-bottom:8px">Premium Technology</h4>
+            <p style="font-size:0.9rem;color:var(--text-light)">FDA-approved devices and medical-grade products</p>
+          </div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400&q=80" style="border-radius:20px;height:280px;object-fit:cover" alt="Treatment room">
+        <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=400&q=80" style="border-radius:20px;height:280px;object-fit:cover;margin-top:40px" alt="Skincare products">
+      </div>
+    </div>
   </div>
-</div></section>
+</section>
 
-<section class="ba" id="results"><div class="wrap">
-  <h2 class="rv-el">Drag to see the difference</h2>
-  <div class="cmp" id="cmp"><div class="l">Before</div><div class="r">After</div><div class="bar"></div><small class="a">Before</small><small class="b">After</small></div>
-  <p class="note">Sample illustration. Replace with real client photos, used only with written consent. Results vary.</p>
-</div></section>
-
-<section id="quiz"><div class="wrap">
-  <h2 class="rv-el" style="text-align:center">Find your treatment in 30 seconds</h2>
-  <div class="quiz" id="qz"></div>
-</div></section>
-
-<section id="team"><div class="wrap">
-  <h2 class="rv-el">Your specialists</h2>
-  <div class="team" id="tm"></div>
-</div></section>
-
-<section id="packages" class="ba"><div class="wrap">
-  <h2 class="rv-el">Packages and memberships</h2>
-  <div class="pk">
-    <div class="pkc"><h3>Glow</h3><div class="pr">$180</div><ul><li>Deep cleanse facial</li><li>Hydration mask</li><li>Skin analysis</li></ul><a class="btn ghost" href="#book">Choose Glow</a></div>
-    <div class="pkc hot"><h3>Bridal</h3><div class="pr">$720</div><ul><li>3-month skin prep</li><li>Laser and facial series</li><li>Hair and scalp care</li><li>Wedding-day touch-up</li></ul><a class="btn" href="#book">Choose Bridal</a></div>
-    <div class="pkc"><h3>Monthly care</h3><div class="pr">$95<small style="font-size:1rem">/mo</small></div><ul><li>One facial each month</li><li>15% off all treatments</li><li>Priority booking</li></ul><a class="btn ghost" href="#book">Join</a></div>
+<section id="services">
+  <div class="wrap">
+    <h2>Our Services</h2>
+    <p class="lead">Comprehensive aesthetic treatments tailored to your individual needs</p>
+    <div class="svc" id="svc"></div>
   </div>
-</div></section>
+</section>
 
-<section><div class="wrap">
-  <h2 class="rv-el" style="text-align:center">Kind words</h2>
-  <div class="rv"><blockquote id="q"></blockquote><p id="qa" class="lead" style="margin:16px auto 0"></p><div class="dots" id="dots"></div></div>
-</div></section>
-
-<section id="faq"><div class="wrap">
-  <h2>Questions, answered</h2>
-  <div style="margin-top:30px">
-    <details><summary>Do treatments hurt?</summary><p>Most feel mild. We use numbing cream and cooling where needed, and you can stop at any time.</p></details>
-    <details><summary>How long until I see results?</summary><p>Facials show an instant glow. Laser, injectables and body treatments build over two to eight weeks.</p></details>
-    <details><summary>Is there downtime?</summary><p>Each treatment lists its downtime in the menu. Most clients return to work the same day.</p></details>
-    <details><summary>Can I cancel or reschedule?</summary><p>Yes, free of charge up to 24 hours before your visit.</p></details>
+<section>
+  <div class="wrap">
+    <div class="why reveal">
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="why-icon"></div>
+          <h3>Personalized Plans</h3>
+          <p>Every treatment begins with a thorough consultation to understand your unique goals</p>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">🔬</div>
+          <h3>Medical Grade</h3>
+          <p>FDA-approved technology and pharmaceutical-grade products only</p>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">🛡️</div>
+          <h3>Safety First</h3>
+          <p>Sterile environment with single-use tools and strict hygiene protocols</p>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">✨</div>
+          <h3>Natural Results</h3>
+          <p>Enhance your features while maintaining your authentic appearance</p>
+        </div>
+      </div>
+    </div>
   </div>
-  <h2 id="journal" style="margin-top:80px;font-size:2.2rem">The skin journal</h2>
-  <div class="jr" id="jr"></div>
-</div></section>
+</section>
 
-<section class="book" id="book"><div class="wrap grid">
-  <div><h2>Start your journey</h2><p class="lead">Tell us what you’d like and we’ll confirm your visit within a few hours.</p></div>
-  <form id="bf">
-    <input required placeholder="Full name" aria-label="Full name"><input required type="tel" placeholder="Phone or WhatsApp" aria-label="Phone">
-    <div class="dd" id="bs"><button type="button" id="ddb">Choose a service</button><ul id="ddl" hidden></ul></div><input type="date" aria-label="Preferred date"><textarea rows="3" placeholder="Anything we should know?" aria-label="Notes"></textarea>
-    <button class="btn" type="submit">Request appointment</button><div class="ok" id="ok">Thank you. We’ll be in touch shortly.</div>
-  </form>
-</div></section>
-
-<section id="contact"><div class="wrap">
-  <h2>Visit us</h2>
-  <div class="info">
-    <div><h3>Address</h3><p class="lead">12 Rose Garden Street<br>Armavir</p></div>
-    <div><h3>Hours</h3><p class="lead">Mon–Sat 9:00–20:00<br>Sunday 11:00–17:00</p></div>
-    <div class="map">Map goes here</div>
+<section class="ba" id="results">
+  <div class="wrap">
+    <h2 style="text-align:center">Transformative Results</h2>
+    <p class="lead" style="text-align:center">See the difference professional care can make</p>
+    <div class="cmp" id="cmp">
+      <div class="l"></div>
+      <div class="r"></div>
+      <div class="bar"></div>
+      <small class="a">Before</small>
+      <small class="b">After</small>
+    </div>
+    <p style="text-align:center;color:var(--text-light);font-size:0.85rem;margin-top:16px">Individual results may vary. Photos used with client consent.</p>
   </div>
-</div></section>
+</section>
 
-<footer><b>Lumière</b><span>Aesthetic &amp; Care Center</span><div class="fl"><a href="#" target="_blank" rel="noopener">Instagram</a><a href="#" target="_blank" rel="noopener">Facebook</a><a href="#" target="_blank" rel="noopener">TikTok</a><a href="#" target="_blank" rel="noopener">YouTube</a><a href="#" target="_blank" rel="noopener">WhatsApp</a></div><div class="fl"><a href="#" data-pol="Privacy policy">Privacy policy</a><a href="#" data-pol="Terms of service">Terms</a><a href="#" data-pol="Cookie policy">Cookies</a><a href="#" data-pol="Consent and medical notice">Consent and medical notice</a><a href="#" data-pol="Cancellation policy">Cancellation</a></div><small>Results vary. Treatments are performed by licensed professionals after consultation.</small></footer>
-<a class="wa" href="#book" aria-label="Chat on WhatsApp">✆</a>
+<section id="team">
+  <div class="wrap">
+    <h2 style="text-align:center">Meet Our Specialists</h2>
+    <p class="lead" style="text-align:center">Expert care from certified medical professionals</p>
+    <div class="team" id="tm"></div>
+  </div>
+</section>
 
-<div class="modal" id="m1" role="dialog" aria-modal="true" aria-label="Service menu"><div class="pane" id="pane"></div></div>
-<div class="modal" id="m2" role="dialog" aria-modal="true" aria-label="Story video"><div class="vid"><button class="x" data-close>✕</button><canvas id="cv" width="960" height="540"></canvas><p id="cap"></p></div></div>
+<section id="packages" style="background:var(--purple-50)">
+  <div class="wrap">
+    <h2 style="text-align:center">Treatment Packages</h2>
+    <p class="lead" style="text-align:center">Curated programs for comprehensive care</p>
+    <div class="pk">
+      <div class="pkc">
+        <h3>Radiance</h3>
+        <div class="pr">$180</div>
+        <ul>
+          <li>Deep cleansing facial</li>
+          <li>Hydration therapy</li>
+          <li>Skin analysis</li>
+          <li>Home care recommendations</li>
+        </ul>
+        <a class="btn ghost" href="#book">Select Package</a>
+      </div>
+      <div class="pkc hot">
+        <h3>Bridal Glow</h3>
+        <div class="pr">$720</div>
+        <ul>
+          <li>3-month skin preparation</li>
+          <li>Laser treatments series</li>
+          <li>Hydrating facials (4 sessions)</li>
+          <li>Wedding day touch-up</li>
+          <li>Priority booking</li>
+        </ul>
+        <a class="btn" href="#book">Select Package</a>
+      </div>
+      <div class="pkc">
+        <h3>Monthly Care</h3>
+        <div class="pr">$95<span style="font-size:1rem;font-weight:400">/mo</span></div>
+        <ul>
+          <li>One facial per month</li>
+          <li>15% off all treatments</li>
+          <li>Priority scheduling</li>
+          <li>Complimentary consultations</li>
+        </ul>
+        <a class="btn ghost" href="#book">Join Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 style="text-align:center">Client Stories</h2>
+    <div class="rv reveal">
+      <blockquote id="q">"I came for one facial and now my skin has never looked calmer. The team truly listens and customizes everything."</blockquote>
+      <cite id="qa">— Nare, Monthly Member</cite>
+      <div class="dots" id="dots"></div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <h2 style="text-align:center">Gallery</h2>
+    <p class="lead" style="text-align:center">A glimpse into our center</p>
+    <div class="gal" id="gal"></div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap" style="max-width:800px">
+    <h2 style="text-align:center;margin-bottom:40px">Common Questions</h2>
+    <div style="background:var(--white);border-radius:20px;padding:40px;border:1px solid var(--border)">
+      <details style="padding:20px 0;border-bottom:1px solid var(--border)">
+        <summary style="cursor:pointer;font-weight:600;font-size:1.1rem;display:flex;justify-content:space-between;align-items:center">
+          Do treatments hurt?
+          <span style="color:var(--rose-500)">+</span>
+        </summary>
+        <p style="margin-top:12px;color:var(--text-light);line-height:1.8">Most treatments are comfortable. We use topical numbing cream and cooling technology where needed. You can request to stop at any time.</p>
+      </details>
+      <details style="padding:20px 0;border-bottom:1px solid var(--border)">
+        <summary style="cursor:pointer;font-weight:600;font-size:1.1rem;display:flex;justify-content:space-between;align-items:center">
+          How long until I see results?
+          <span style="color:var(--rose-500)">+</span>
+        </summary>
+        <p style="margin-top:12px;color:var(--text-light);line-height:1.8">Facials show immediate glow. Laser treatments, injectables, and body contouring build results over 2-8 weeks as your body responds.</p>
+      </details>
+      <details style="padding:20px 0">
+        <summary style="cursor:pointer;font-weight:600;font-size:1.1rem;display:flex;justify-content:space-between;align-items:center">
+          Is there downtime?
+          <span style="color:var(--rose-500)">+</span>
+        </summary>
+        <p style="margin-top:12px;color:var(--text-light);line-height:1.8">Most clients return to work the same day. Each treatment menu lists specific downtime. We'll discuss this during your consultation.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="book" id="book">
+  <div class="wrap grid">
+    <div>
+      <h2>Begin Your Journey</h2>
+      <p class="lead">Schedule your consultation and discover what's possible for your skin. We'll confirm your appointment within 24 hours.</p>
+    </div>
+    <form id="bf">
+      <div>
+        <label>Full Name</label>
+        <input required placeholder="Your name" aria-label="Full name">
+      </div>
+      <div>
+        <label>Phone or WhatsApp</label>
+        <input required type="tel" placeholder="Your contact number" aria-label="Phone">
+      </div>
+      <div>
+        <label>Select Service</label>
+        <select required aria-label="Service">
+          <option value="">Choose a service...</option>
+          <option>Facial & Skin Treatments</option>
+          <option>Laser Hair Removal</option>
+          <option>Injectables & Anti-Aging</option>
+          <option>Body Contouring</option>
+          <option>Consultation</option>
+        </select>
+      </div>
+      <div>
+        <label>Preferred Date</label>
+        <input type="date" aria-label="Preferred date">
+      </div>
+      <div>
+        <label>Additional Notes</label>
+        <textarea rows="3" placeholder="Tell us about your concerns or goals..." aria-label="Notes"></textarea>
+      </div>
+      <button class="btn" type="submit">Request Appointment</button>
+      <div class="ok" id="ok">Thank you. We'll contact you shortly to confirm.</div>
+    </form>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2 style="text-align:center;margin-bottom:40px">Visit Us</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px;text-align:center">
+      <div style="padding:40px;background:var(--rose-50);border-radius:20px">
+        <div style="font-size:2.5rem;margin-bottom:16px">📍</div>
+        <h3 style="margin-bottom:12px">Address</h3>
+        <p style="color:var(--text-light)">12 Rose Garden Street<br>Armavir, Armenia</p>
+      </div>
+      <div style="padding:40px;background:var(--purple-50);border-radius:20px">
+        <div style="font-size:2.5rem;margin-bottom:16px">🕐</div>
+        <h3 style="margin-bottom:12px">Hours</h3>
+        <p style="color:var(--text-light)">Mon–Sat: 9:00–20:00<br>Sunday: 11:00–17:00</p>
+      </div>
+      <div style="padding:40px;background:linear-gradient(135deg,var(--rose-100),var(--purple-100));border-radius:20px">
+        <div style="font-size:2.5rem;margin-bottom:16px">📞</div>
+        <h3 style="margin-bottom:12px">Contact</h3>
+        <p style="color:var(--text-light)">+374 10 123456<br>hello@lumiere.am</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <b>Lumière</b>
+  <span>Aesthetic & Care Center</span>
+  <div class="fl">
+    <a href="#" target="_blank" rel="noopener">Instagram</a>
+    <a href="#" target="_blank" rel="noopener">Facebook</a>
+    <a href="#" target="_blank" rel="noopener">TikTok</a>
+    <a href="#" target="_blank" rel="noopener">YouTube</a>
+  </div>
+  <div class="fl">
+    <a href="#" data-pol="Privacy">Privacy Policy</a>
+    <a href="#" data-pol="Terms">Terms of Service</a>
+    <a href="#" data-pol="Consent">Medical Consent</a>
+  </div>
+  <small>Results vary. All treatments performed by licensed medical professionals after consultation.</small>
+</footer>
+
+<a class="wa" href="https://wa.me/1234567890" aria-label="Chat on WhatsApp" target="_blank">💬</a>
+
+<div class="modal" id="m1" role="dialog" aria-modal="true">
+  <div class="pane" id="pane"></div>
+</div>
 
 <script>
-const S=[
-{n:"Face and skin",e:"✿",g:"linear-gradient(135deg,#fff1f6,#ff8fb8)",d:"Facials that clean, repair and glow",t:[["Signature hydrating facial","60 min",70],["Deep cleanse and extraction","75 min",85],["Chemical peel","45 min",110],["Microneedling","60 min",190],["HydraFacial-style treatment","50 min",130],["Acne and scar programme","60 min",120]]},
-{n:"Laser and hair removal",e:"✧",g:"linear-gradient(135deg,#a77bff,#4fa3ff)",d:"Smooth skin, long-term",t:[["Full legs","60 min",140],["Underarms","15 min",35],["Bikini line","25 min",60],["Face and neck","20 min",50],["Pigmentation laser","40 min",160],["Tattoo and spot removal","30 min",90]]},
-{n:"Injectables and anti-aging",e:"❋",g:"linear-gradient(135deg,#ff7a9c,#c05cff)",d:"Subtle, balanced refinement",t:[["Anti-wrinkle injections","30 min",220],["Lip filler","40 min",300],["Cheek and jawline filler","50 min",420],["Skin boosters","45 min",250],["PRP therapy","60 min",230],["Thread lift","75 min",600]]},
-{n:"Body contouring",e:"◌",g:"linear-gradient(135deg,#ffffff,#e6b85c)",d:"Shape, tone and tighten",t:[["Cavitation and RF","50 min",110],["Lymphatic drainage","60 min",90],["Cellulite therapy","45 min",100],["Skin tightening","50 min",150],["Wood therapy massage","60 min",85]]},
-{n:"Hair and scalp",e:"❀",g:"linear-gradient(135deg,#f3d27a,#ff9ec0)",d:"Healthy roots, shinier lengths",t:[["Scalp analysis","20 min",30],["Hair PRP","60 min",210],["Mesotherapy for hair loss","45 min",180],["Keratin repair treatment","90 min",120],["Detox scalp facial","45 min",65]]},
-{n:"Wellness and relaxation",e:"☾",g:"linear-gradient(135deg,#ffe3ee,#d4a84b)",d:"Slow down and recover",t:[["Aromatherapy massage","60 min",80],["Hot stone ritual","75 min",105],["Body scrub and wrap","60 min",95],["Vitamin drip","40 min",140],["Hands and feet spa","60 min",60]]}];
-const $=s=>document.querySelector(s);
-const MEDIA={};/* add real files: MEDIA.svc0={type:"image",src:"data:image/jpeg;base64,..."} (keys: svc0-5, tm0-3, about1-3, gal0-7, post0-2) */
-function M(k,l,g,v){const m=MEDIA[k];if(m&&m.src)return m.type==="video"?`<video src="${m.src}" autoplay muted loop playsinline></video>`:`<img src="${m.src}" alt="${l}">`;return `<div class="ph2" style="background:${g}"><i>${v?"▶":"◐"}</i><span>${l}</span><small>${v?"Video":"Photo"} goes here</small></div>`}
-document.querySelectorAll("[data-m]").forEach(e=>e.innerHTML=M(e.dataset.m,e.dataset.l,e.dataset.g,+e.dataset.v));
-$("#svc").innerHTML=S.map((s,i)=>`<button class="sc" data-i="${i}"><div class="art mb">${M("svc"+i,s.n,s.g,i%2)}</div><div class="tx"><h3>${s.n}</h3><p>${s.d}</p><u>View ${s.t.length} treatments</u></div></button>`).join("");
-$("#ddl").innerHTML=S.map(s=>`<li>${s.n}</li>`).join("");$("#ddb").onclick=()=>{$("#ddl").hidden=!$("#ddl").hidden};$("#ddl").onclick=e=>{if(e.target.tagName==="LI")setSvc(e.target.textContent)};function setSvc(n){$("#ddb").textContent=n;$("#ddl").hidden=true;document.querySelectorAll("#ddl li").forEach(l=>l.classList.toggle("on",l.textContent===n))}
-$("#mq").innerHTML=Array(2).fill(["Facials","Laser","Injectables","Body","Hair","Wellness"].map(w=>`${w}<span>✦</span>`).join("")).join("");
-// service popup
-let last;
-function openM(m){last=document.activeElement;m.classList.add("on");document.body.style.overflow="hidden";const b=m.querySelector(".x");b&&b.focus()}
-function closeM(){document.querySelectorAll(".modal.on").forEach(m=>m.classList.remove("on"));document.body.style.overflow="";stopV();last&&last.focus()}
-$("#svc").addEventListener("click",e=>{const c=e.target.closest(".sc");if(!c)return;const s=S[c.dataset.i];
-$("#pane").innerHTML=`<div class="side mb">${M("svc"+c.dataset.i,s.n,s.g,+c.dataset.i%2)}<div class="cap"><h2 style="font-size:2rem">${s.n}</h2><p>${s.d}</p></div></div><div class="body"><button class="x" data-close aria-label="Close">✕</button>${s.t.map((t,k)=>`<div class="item" style="animation-delay:${k*70}ms"><div><b>${t[0]}</b><small>${t[1]}</small></div><div class="pr">from $${t[2]}</div></div>`).join("")}<p style="margin:22px 0 14px;color:var(--mute);font-size:.85rem">Final price confirmed after consultation.</p><a class="btn" href="#book" data-close data-pick="${s.n}">Book this category</a></div>`;openM($("#m1"))});
-document.addEventListener("click",e=>{const p=e.target.closest("[data-pick]");if(p)setSvc(p.dataset.pick);if(e.target.closest("[data-close]")||e.target.classList.contains("modal"))closeM()});
-document.addEventListener("keydown",e=>{if(e.key==="Escape")closeM()});
-// video (animated canvas; swap for a real <video> file or embed)
-let raf,cap;const caps=["Welcome to Lumière","Care that starts with listening","Skin, hair, body, calm","See you soon"];
-function playV(){const c=$("#cv"),x=c.getContext("2d");let t=0;const B=[...Array(7)].map((_,i)=>({a:i*.9,r:90+i*25,h:300+i*14}));
-(function f(){t+=.01;x.fillStyle="#1b0e20";x.fillRect(0,0,960,540);x.globalCompositeOperation="lighter";
-B.forEach(b=>{const px=480+Math.cos(t+b.a)*300,py=270+Math.sin(t*1.3+b.a)*150,g=x.createRadialGradient(px,py,0,px,py,b.r*2);g.addColorStop(0,`hsla(${b.h},70%,70%,.55)`);g.addColorStop(1,"transparent");x.fillStyle=g;x.beginPath();x.arc(px,py,b.r*2,0,7);x.fill()});
-x.globalCompositeOperation="source-over";raf=requestAnimationFrame(f)})();
-let i=0;const p=$("#cap");const n=()=>{p.style.opacity=0;setTimeout(()=>{p.textContent=caps[i++%caps.length];p.style.opacity=1},400)};n();cap=setInterval(n,2600)}
-function stopV(){cancelAnimationFrame(raf);clearInterval(cap)}
-document.querySelectorAll("[data-video]").forEach(b=>b.onclick=()=>{openM($("#m2"));playV()});
-// glow + parallax mirror
-addEventListener("pointermove",e=>{document.documentElement.style.setProperty("--x",e.clientX+"px");document.documentElement.style.setProperty("--y",e.clientY+"px");const m=$("#mirror");if(m&&innerWidth>860)m.style.transform=`perspective(900px) rotateY(${(e.clientX/innerWidth-.5)*12}deg) rotateX(${-(e.clientY/innerHeight-.5)*8}deg)`});
-// magnetic buttons
-document.querySelectorAll(".btn").forEach(b=>{b.addEventListener("pointermove",e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.2}px,${(e.clientY-r.top-r.height/2)*.3}px)`});b.addEventListener("pointerleave",()=>b.style.transform="")});
-// reveal + counters
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add("in");e.target.querySelectorAll("[data-n]").forEach(el=>{const T=+el.dataset.n,t0=performance.now();(function f(t){const k=Math.min((t-t0)/1500,1);el.textContent=Math.round(T*(1-Math.pow(1-k,3))).toLocaleString();k<1&&requestAnimationFrame(f)})(t0)});io.unobserve(e.target)}),{threshold:.2});
-document.querySelectorAll(".rv-el").forEach(el=>io.observe(el));
-// before/after
-const cm=$("#cmp");let dr=false;const mv=e=>{if(!dr)return;const r=cm.getBoundingClientRect();cm.style.setProperty("--p",Math.max(0,Math.min(100,(e.clientX-r.left)/r.width*100))+"%")};
-cm.addEventListener("pointerdown",e=>{dr=true;mv(e)});addEventListener("pointerup",()=>dr=false);addEventListener("pointermove",mv);
-// quiz
-const Q=[["How does your skin feel by midday?",["Shiny","Tight and dry","Uneven or dull","Sensitive and red"]],["What’s your main goal?",["Clear breakouts","Look younger","Remove hair","Relax and recover"]],["How much time do you have?",["30 minutes","About an hour","Ongoing programme"]]];
-const R={0:"Deep cleanse facial or chemical peel",1:"Hydrating facial with skin boosters",2:"Pigmentation laser or microneedling",3:"Calming facial and wellness ritual"};
-let qi=0,first;function rq(){const z=$("#qz");if(qi>=Q.length){z.innerHTML=`<h3 style="font-size:2rem">We suggest</h3><p class="lead" style="margin:10px auto 24px;font-size:1.2rem">${R[first]}</p><a class="btn" href="#book">Book it</a> <button class="btn ghost" id="rs">Retake</button>`;$("#rs").onclick=()=>{qi=0;rq()};return}
-z.innerHTML=`<div class="prog"><i style="width:${qi/Q.length*100}%"></i></div><h3 style="font-size:1.7rem">${Q[qi][0]}</h3><div class="opts">${Q[qi][1].map((o,i)=>`<button data-o="${i}">${o}</button>`).join("")}</div>`;
-z.querySelectorAll("button").forEach(b=>b.onclick=()=>{if(qi===0)first=+b.dataset.o;qi++;rq()});requestAnimationFrame(()=>z.querySelector(".prog i").style.width=((qi+1)/Q.length*100)+"%")}rq();
-// team
-function pop(side,body){$("#pane").innerHTML=`<div class="side mb">${side}</div><div class="body"><button class="x" data-close aria-label="Close">✕</button>${body}</div>`;openM($("#m1"))}
-const row=(a,b,k)=>`<div class="item" style="animation-delay:${k*80}ms"><div><b>${a}</b><small>${b}</small></div></div>`;
-const TM=[["Dr. Anna Petrosyan","Dermatologist","linear-gradient(135deg,#fff1f6,#ff8fb8)","14 years","MD, state medical university. Dermatology residency. Laser and injector certifications.","Acne and scars, peels, medical facials","Armenian, Russian, English","Diagnoses skin concerns, builds your treatment plan and supervises every medical procedure."],["Mariam Sargsyan","Laser specialist","linear-gradient(135deg,#a77bff,#4fa3ff)","9 years","Diploma in cosmetology. Advanced laser safety certification.","Hair removal, pigmentation, spot removal","Armenian, Russian","Performs laser sessions, tests your skin type and sets safe settings for each visit."],["Dr. Levon Hakobyan","Aesthetic physician","linear-gradient(135deg,#ffffff,#e6b85c)","11 years","MD, general medicine. Aesthetic medicine fellowship.","Injectables, skin boosters, PRP, thread lifts","Armenian, English","Plans subtle, natural-looking injectable treatments and follows up on your results."],["Elen Grigoryan","Senior therapist","linear-gradient(135deg,#ff7a9c,#c05cff)","8 years","Certified body and spa therapist.","Body contouring, lymphatic drainage, relaxation","Armenian, Russian, English","Leads body and wellness treatments and teaches home-care routines."]];
-$("#tm").innerHTML=TM.map((t,i)=>`<button class="tm" data-i="${i}"><div class="ph mb">${M("tm"+i,t[0],t[2],0)}</div><h3>${t[0]}</h3><p>${t[1]} · view profile</p></button>`).join("");
-$("#tm").onclick=e=>{const b=e.target.closest(".tm");if(!b)return;const i=b.dataset.i,t=TM[i];pop(M("tm"+i,t[0],t[2],0),`<h2 style="font-size:2rem">${t[0]}</h2><p class="lead" style="margin:4px 0 14px">${t[1]} · ${t[3]} of experience</p>${row("What they do",t[7],1)}${row("Education",t[4],2)}${row("Focus areas",t[5],3)}${row("Languages",t[6],4)}<p style="color:var(--mute);font-size:.8rem">Sample profile. Replace with real details.</p><a class="btn" href="#book" data-close>Book a consultation</a>`)};
-const POSTS=[["Skincare","Your morning routine in four steps","linear-gradient(135deg,#fff1f6,#ff8fb8)",["Cleanse gently, apply a hydrating or vitamin C serum, moisturise, and finish with SPF 30 or higher. That is all most skin needs each morning.","Add active ingredients one at a time and give each two weeks. If your skin stings or flakes, step back and ask a specialist."],0],["Guides","Laser hair removal: what to expect","linear-gradient(135deg,#ffffff,#e6b85c)",["Most people need six to eight sessions spaced four to six weeks apart. Shave the area the day before and avoid sun and tanning beforehand.","Mild redness for a few hours is normal. Use SPF and skip hot baths and saunas for two days."],1],["Wellness","Sleep, stress and the skin barrier","linear-gradient(135deg,#ff7a9c,#c05cff)",["Poor sleep and high stress raise cortisol, which can trigger breakouts, dullness and sensitivity.","A regular bedtime, short walks and a monthly relaxation treatment help your skin recover."],0]];
-$("#jr").innerHTML=POSTS.map((p,i)=>`<button data-i="${i}"><div class="th mb">${M("post"+i,p[1],p[2],p[4])}</div><small>${p[0]}</small><h3>${p[1]}</h3></button>`).join("");
-$("#jr").onclick=e=>{const b=e.target.closest("button");if(!b)return;const i=b.dataset.i,p=POSTS[i];pop(M("post"+i,p[1],p[2],p[4]),`<small style="color:var(--gold);font-weight:700">${p[0]}</small><h2 style="font-size:2rem">${p[1]}</h2><p>${p[3][0]}</p><div class="mb" style="height:150px">${M("post"+i+"b","Photo for this article",p[2],0)}</div><p>${p[3][1]}</p><a class="btn" href="#book" data-close>Book a consultation</a>`)};
-const GAL=[["Reception",0,"linear-gradient(135deg,#fff1f6,#ff8fb8)","t2"],["Facial in progress",1,"linear-gradient(135deg,#ffffff,#e6b85c)","w2"],["Treatment room",0,"linear-gradient(135deg,#a77bff,#4fa3ff)",""],["Laser suite",0,"linear-gradient(135deg,#f3d27a,#ff9ec0)",""],["Our products",0,"linear-gradient(135deg,#ffe3ee,#d4a84b)",""],["Relaxation lounge",1,"linear-gradient(135deg,#ff7a9c,#c05cff)","w2"],["Team at work",0,"linear-gradient(135deg,#ffffff,#ff8fb8)",""],["Client results",1,"linear-gradient(135deg,#fff1f6,#e6b85c)",""]];
-function rg(f){$("#gal").innerHTML=GAL.map((g,i)=>f==="all"||+f===g[1]?`<button class="${g[3]}" data-i="${i}" aria-label="${g[0]}">${M("gal"+i,g[0],g[2],g[1])}</button>`:"").join("")}rg("all");
-$("#gf").onclick=e=>{const b=e.target.closest("button");if(!b)return;document.querySelectorAll("#gf button").forEach(x=>x.classList.toggle("on",x===b));rg(b.dataset.f)};
-$("#gal").onclick=e=>{const b=e.target.closest("button");if(!b)return;const g=GAL[b.dataset.i];pop(M("gal"+b.dataset.i,g[0],g[2],g[1]),`<h2 style="font-size:2rem">${g[0]}</h2><p class="lead">${g[1]?"Video":"Photo"} from Lumière.</p>`)};
-const POL={"Privacy policy":"We collect only the details needed to book and treat you. Your data and photos are never sold, and photos are used publicly only with your written consent.","Terms of service":"Treatments are provided after consultation. Prices shown are starting prices and are confirmed at your consultation.","Cookie policy":"We use essential cookies to run the site and optional analytics cookies only with your agreement.","Consent and medical notice":"Every treatment requires a health review and signed consent. Results vary and no outcome is guaranteed.","Cancellation policy":"Cancel or reschedule free of charge up to 24 hours before your visit. Later changes may incur a fee."};
-document.addEventListener("click",e=>{const a=e.target.closest("[data-pol]");if(!a)return;e.preventDefault();const n=a.dataset.pol;pop(`<div class="ph2" style="background:linear-gradient(135deg,#fff1f6,#e6b85c)"><i>§</i></div>`,`<h2 style="font-size:2rem">${n}</h2><p>${POL[n]}</p><p style="color:var(--mute);font-size:.8rem">Sample text. Replace with your full policy.</p>`)});
-// reviews
-const V=[["I came for one facial and now my skin has never looked calmer.","Nare, monthly member"],["They explained every step and never pushed extras. I felt safe.","Tigran, laser client"],["My bridal plan took all the stress away. I glowed on the day.","Lilit, bride"]];
-let vi=0;const sv=i=>{vi=i;const q=$("#q");q.style.opacity=0;setTimeout(()=>{q.textContent="“"+V[i][0]+"”";$("#qa").textContent=V[i][1];q.style.opacity=1},300);document.querySelectorAll("#dots button").forEach((d,k)=>d.classList.toggle("on",k===i))};
-$("#dots").innerHTML=V.map((_,i)=>`<button aria-label="Review ${i+1}"></button>`).join("");document.querySelectorAll("#dots button").forEach((d,i)=>d.onclick=()=>sv(i));sv(0);setInterval(()=>sv((vi+1)%V.length),6000);
-// form + theme
-$("#bf").onsubmit=e=>{e.preventDefault();$("#ok").style.display="block";e.target.querySelector("button[type=submit]").style.display="none"};
-$("#theme").onclick=()=>{const d=document.documentElement,dark=d.dataset.theme?d.dataset.theme==="dark":matchMedia("(prefers-color-scheme:dark)").matches;d.dataset.theme=dark?"light":"dark"};
+const SERVICES = [
+  {
+    name: "Facial & Skin Treatments",
+    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80",
+    description: "Rejuvenating facials, chemical peels, and advanced skin therapies",
+    treatments: [
+      ["Signature Hydrating Facial", "60 min", "$70"],
+      ["Deep Cleanse & Extraction", "75 min", "$85"],
+      ["Chemical Peel Treatment", "45 min", "$110"],
+      ["Microneedling Therapy", "60 min", "$190"],
+      ["HydraFacial", "50 min", "$130"],
+      ["Acne & Scar Program", "60 min", "$120"]
+    ]
+  },
+  {
+    name: "Laser & Hair Removal",
+    image: "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&q=80",
+    description: "Advanced laser technology for smooth, hair-free skin",
+    treatments: [
+      ["Full Legs", "60 min", "$140"],
+      ["Underarms", "15 min", "$35"],
+      ["Bikini Line", "25 min", "$60"],
+      ["Face & Neck", "20 min", "$50"],
+      ["Pigmentation Correction", "40 min", "$160"]
+    ]
+  },
+  {
+    name: "Injectables & Anti-Aging",
+    image: "https://images.unsplash.com/photo-1616391182219-e080b4d1043a?w=600&q=80",
+    description: "Subtle, natural-looking enhancements and rejuvenation",
+    treatments: [
+      ["Anti-Wrinkle Injections", "30 min", "$220"],
+      ["Lip Filler", "40 min", "$300"],
+      ["Cheek & Jawline Filler", "50 min", "$420"],
+      ["Skin Boosters", "45 min", "$250"],
+      ["PRP Therapy", "60 min", "$230"]
+    ]
+  },
+  {
+    name: "Body Contouring",
+    image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80",
+    description: "Non-invasive body sculpting and skin tightening",
+    treatments: [
+      ["Cavitation & RF", "50 min", "$110"],
+      ["Lymphatic Drainage", "60 min", "$90"],
+      ["Cellulite Therapy", "45 min", "$100"],
+      ["Skin Tightening", "50 min", "$150"]
+    ]
+  },
+  {
+    name: "Hair & Scalp Care",
+    image: "https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=600&q=80",
+    description: "Restore hair health and promote growth",
+    treatments: [
+      ["Scalp Analysis", "20 min", "$30"],
+      ["Hair PRP", "60 min", "$210"],
+      ["Mesotherapy", "45 min", "$180"],
+      ["Keratin Treatment", "90 min", "$120"]
+    ]
+  },
+  {
+    name: "Wellness & Relaxation",
+    image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80",
+    description: "Holistic treatments for mind and body wellness",
+    treatments: [
+      ["Aromatherapy Massage", "60 min", "$80"],
+      ["Hot Stone Ritual", "75 min", "$105"],
+      ["Body Scrub & Wrap", "60 min", "$95"],
+      ["Vitamin Drip Therapy", "40 min", "$140"]
+    ]
+  }
+];
+
+const TEAM = [
+  {
+    name: "Dr. Anna Petrosyan",
+    role: "Lead Dermatologist",
+    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80",
+    experience: "14 years",
+    specialty: "Medical dermatology, laser treatments, injectables"
+  },
+  {
+    name: "Mariam Sargsyan",
+    role: "Laser Specialist",
+    image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&q=80",
+    experience: "9 years",
+    specialty: "Hair removal, pigmentation, skin resurfacing"
+  },
+  {
+    name: "Dr. Levon Hakobyan",
+    role: "Aesthetic Physician",
+    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&q=80",
+    experience: "11 years",
+    specialty: "Injectables, facial rejuvenation, PRP therapy"
+  },
+  {
+    name: "Elen Grigoryan",
+    role: "Senior Therapist",
+    image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&q=80",
+    experience: "8 years",
+    specialty: "Body treatments, lymphatic drainage, wellness"
+  }
+];
+
+const GALLERY = [
+  {src: "https://images.unsplash.com/photo-1560750588-432d11f8e59e?w=600&q=80", span: "t2"},
+  {src: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&q=80", span: "w2"},
+  {src: "https://images.unsplash.com/photo-1600334089648-b0d9d620498b?w=600&q=80", span: ""},
+  {src: "https://images.unsplash.com/photo-1519824145371-296894a0daa9?w=600&q=80", span: ""},
+  {src: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80", span: "w2"},
+  {src: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80", span: ""}
+];
+
+// Render Services
+document.getElementById("svc").innerHTML = SERVICES.map((s, i) => `
+  <button class="sc reveal" data-i="${i}" style="animation-delay:${i*100}ms">
+    <div class="art">
+      <img src="${s.image}" alt="${s.name}">
+    </div>
+    <div class="tx">
+      <h3>${s.name}</h3>
+      <p>${s.description}</p>
+      <u>View ${s.treatments.length} treatments</u>
+    </div>
+  </button>
+`).join("");
+
+// Render Team
+document.getElementById("tm").innerHTML = TEAM.map((t, i) => `
+  <button class="tm reveal" data-i="${i}" style="animation-delay:${i*100}ms">
+    <div class="ph">
+      <img src="${t.image}" alt="${t.name}">
+    </div>
+    <h3>${t.name}</h3>
+    <p>${t.role}<br>${t.experience} experience</p>
+  </button>
+`).join("");
+
+// Render Gallery
+document.getElementById("gal").innerHTML = GALLERY.map((g, i) => `
+  <button class="${g.span} reveal" style="animation-delay:${i*100}ms">
+    <img src="${g.src}" alt="Gallery image ${i+1}">
+  </button>
+`).join("");
+
+// Service Modal
+document.getElementById("svc").addEventListener("click", e => {
+  const btn = e.target.closest(".sc");
+  if (!btn) return;
+  const s = SERVICES[btn.dataset.i];
+  document.getElementById("pane").innerHTML = `
+    <div class="side">
+      <img src="${s.image}" alt="">
+      <button class="x" data-close>✕</button>
+      <div class="cap">
+        <h2 style="font-size:2rem;margin-bottom:10px">${s.name}</h2>
+        <p style="color:var(--text-light)">${s.description}</p>
+      </div>
+    </div>
+    <div class="body">
+      <h3 style="margin-bottom:20px">Treatment Menu</h3>
+      ${s.treatments.map((t, k) => `
+        <div class="item" style="animation-delay:${k*70}ms">
+          <div>
+            <b>${t[0]}</b>
+            <small>${t[1]}</small>
+          </div>
+          <div class="pr">${t[2]}</div>
+        </div>
+      `).join("")}
+      <p style="margin:24px 0;color:var(--text-light);font-size:0.9rem">
+        Final pricing confirmed after consultation.
+      </p>
+      <a class="btn" href="#book" data-close style="width:100%;text-align:center">Book This Category</a>
+    </div>
+  `;
+  openModal();
+});
+
+// Team Modal
+document.getElementById("tm").addEventListener("click", e => {
+  const btn = e.target.closest(".tm");
+  if (!btn) return;
+  const t = TEAM[btn.dataset.i];
+  document.getElementById("pane").innerHTML = `
+    <div class="side">
+      <img src="${t.image}" alt="">
+      <button class="x" data-close>✕</button>
+      <div class="cap">
+        <h2 style="font-size:2rem;margin-bottom:8px">${t.name}</h2>
+        <p style="color:var(--text-light)">${t.role}</p>
+      </div>
+    </div>
+    <div class="body">
+      <div style="margin-bottom:24px">
+        <h3 style="margin-bottom:8px">Experience</h3>
+        <p style="color:var(--text-light)">${t.experience} of specialized practice</p>
+      </div>
+      <div style="margin-bottom:24px">
+        <h3 style="margin-bottom:8px">Specialties</h3>
+        <p style="color:var(--text-light)">${t.specialty}</p>
+      </div>
+      <a class="btn" href="#book" data-close style="width:100%;text-align:center">Book Consultation</a>
+    </div>
+  `;
+  openModal();
+});
+
+// Modal Functions
+function openModal() {
+  document.getElementById("m1").classList.add("on");
+  document.body.style.overflow = "hidden";
+}
+
+function closeModal() {
+  document.getElementById("m1").classList.remove("on");
+  document.body.style.overflow = "";
+}
+
+document.addEventListener("click", e => {
+  if (e.target.closest("[data-close]") || e.target.classList.contains("modal")) {
+    closeModal();
+  }
+});
+
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") closeModal();
+});
+
+// Before/After Slider
+const cmp = document.getElementById("cmp");
+let dragging = false;
+
+function updateSlider(e) {
+  if (!dragging) return;
+  const rect = cmp.getBoundingClientRect();
+  const x = Math.max(0, Math.min(100, ((e.clientX || e.touches[0].clientX) - rect.left) / rect.width * 100));
+  cmp.style.setProperty("--p", x + "%");
+}
+
+cmp.addEventListener("pointerdown", () => dragging = true);
+window.addEventListener("pointerup", () => dragging = false);
+window.addEventListener("pointermove", updateSlider);
+cmp.addEventListener("touchstart", () => dragging = true);
+window.addEventListener("touchend", () => dragging = false);
+window.addEventListener("touchmove", updateSlider);
+
+// Reviews
+const reviews = [
+  {text: "I came for one facial and now my skin has never looked calmer. The team truly listens and customizes everything.", author: "Nare, Monthly Member"},
+  {text: "They explained every step and never pushed unnecessary treatments. I felt safe and cared for throughout.", author: "Tigran, Laser Client"},
+  {text: "My bridal plan took all the stress away. I glowed on my wedding day and received so many compliments.", author: "Lilit, Bride"}
+];
+
+let currentReview = 0;
+const dotsContainer = document.getElementById("dots");
+dotsContainer.innerHTML = reviews.map((_, i) => `<button aria-label="Review ${i+1}" ${i===0?'class="on"':''}></button>`).join("");
+
+function showReview(i) {
+  currentReview = i;
+  const q = document.getElementById("q");
+  const qa = document.getElementById("qa");
+  q.style.opacity = 0;
+  setTimeout(() => {
+    q.textContent = `"${reviews[i].text}"`;
+    qa.textContent = `— ${reviews[i].author}`;
+    q.style.opacity = 1;
+  }, 300);
+  document.querySelectorAll("#dots button").forEach((d, k) => {
+    d.classList.toggle("on", k === i);
+  });
+}
+
+document.querySelectorAll("#dots button").forEach((btn, i) => {
+  btn.onclick = () => showReview(i);
+});
+
+setInterval(() => {
+  showReview((currentReview + 1) % reviews.length);
+}, 6000);
+
+// Counter Animation
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const target = parseInt(el.dataset.n);
+      let current = 0;
+      const increment = target / 50;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          el.textContent = target.toLocaleString();
+          clearInterval(timer);
+        } else {
+          el.textContent = Math.floor(current).toLocaleString();
+        }
+      }, 30);
+      observer.unobserve(el);
+    }
+  });
+}, {threshold: 0.5});
+
+document.querySelectorAll(".stats b[data-n]").forEach(el => observer.observe(el));
+
+// Reveal Animation
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("active");
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, {threshold: 0.1});
+
+document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
+
+// Form Submission
+document.getElementById("bf").onsubmit = e => {
+  e.preventDefault();
+  document.getElementById("ok").style.display = "block";
+  e.target.querySelector("button[type=submit]").style.display = "none";
+  setTimeout(() => {
+    document.getElementById("ok").style.display = "none";
+    e.target.querySelector("button[type=submit]").style.display = "inline-block";
+    e.target.reset();
+  }, 5000);
+};
+
+// Theme Toggle
+document.getElementById("theme").onclick = () => {
+  const html = document.documentElement;
+  const isDark = html.dataset.theme === "dark";
+  html.dataset.theme = isDark ? "light" : "dark";
+};
+
+// Smooth scroll for nav links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      target.scrollIntoView({behavior: "smooth", block: "start"});
+    }
+  });
+});
 </script>
 </body>
 </html>
