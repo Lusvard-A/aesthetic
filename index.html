@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Lumière — Էսթետիկայի և խնամքի կենտրոն | Aesthetic &amp; Care Center</title>
+<title>Lumière — Պրեմիում Էսթետիկ Խնամքի Կենտրոն</title>
+<meta name="description" content="Lumière Aesthetic & Care Center - Բացահայտեք Ձեր բնական գեղեցկությունը պրեմիում դասի էսթետիկ խնամքի և նորարարական տեխնոլոգիաների միջոցով:">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -76,7 +77,7 @@ section{padding:100px 4%;position:relative}
 .wrap{max-width:1440px;margin:auto}
 .lead{color:var(--text-light);max-width:60ch;margin-top:16px;font-size:1.1rem;line-height:1.8}
 
-/* ===== LANGUAGE SWITCHING (Shopify-safe, CSS only) ===== */
+/* ===== LANGUAGE SWITCHING ===== */
 .text-en,.text-ru{display:none}
 .text-hy{display:contents}
 html[lang^="en"] .text-hy{display:none}
@@ -132,7 +133,6 @@ nav ul a:hover{color:var(--rose-600)}
 }
 .tg:hover{background:var(--rose-50)}
 
-/* Language switcher — header corner */
 .lang{display:flex;border:1px solid var(--border);flex-shrink:0}
 .lang button{
   background:none;border:none;border-right:1px solid var(--border);
@@ -144,7 +144,6 @@ nav ul a:hover{color:var(--rose-600)}
 .lang button.on{background:var(--purple-800);color:var(--rose-300)}
 .lang button.on:hover{color:var(--rose-300)}
 
-/* Mobile menu */
 .burger{
   display:none;width:40px;height:40px;border:1px solid var(--border);
   background:none;cursor:pointer;padding:0;flex-shrink:0;
@@ -184,7 +183,7 @@ nav ul a:hover{color:var(--rose-600)}
   .mnav .mbook{display:block}
 }
 
-/* ===== HERO SLIDESHOW — full width ===== */
+/* ===== HERO SLIDESHOW ===== */
 .hero{padding:0;min-height:100vh;position:relative;background:var(--purple-900)}
 .slides{position:relative;height:100vh;height:100svh;min-height:640px;overflow:hidden;touch-action:pan-y;user-select:none;-webkit-user-select:none}
 .slide{position:absolute;inset:0;opacity:0;transition:opacity 0.9s ease;display:flex;align-items:center;pointer-events:none}
@@ -336,7 +335,7 @@ nav ul a:hover{color:var(--rose-600)}
 @media(max-width:900px){.why-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.why{padding:32px 20px;margin-top:0}.why-grid{grid-template-columns:1fr;gap:28px}}
 
-/* Journey — replaces Before/After */
+/* Journey */
 .journey{background:var(--purple-50)}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:60px}
 .step{
@@ -400,7 +399,6 @@ nav ul a:hover{color:var(--rose-600)}
 .plink::after{content:"→"}
 .plink:hover{gap:10px}
 .pkc.hot .plink{color:#fff}
-/* Highlighted full price list CTA */
 .pl-cta{
   margin-top:48px;background:var(--white);border:1px solid var(--rose-300);
   padding:36px 32px;text-align:center;display:flex;flex-direction:column;
@@ -430,7 +428,7 @@ nav ul a:hover{color:var(--rose-600)}
 .dots .on{background:var(--rose-600);border-color:var(--rose-600);width:32px}
 @media(max-width:600px){.rv{padding:32px 22px;margin-top:36px}.rv blockquote{font-size:1.25rem}}
 
-/* Gallery */
+/* Gallery - Masonry Style */
 .gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:16px;margin-top:40px}
 .gal button{border:none;padding:0;cursor:pointer;position:relative;overflow:hidden;border-radius:0;background:none}
 .gal button img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s}
@@ -443,7 +441,7 @@ nav ul a:hover{color:var(--rose-600)}
   .gal .t2{grid-row:auto}
 }
 
-/* BOOKING — compact */
+/* BOOKING */
 #book{padding:60px 4%}
 .book{
   background:linear-gradient(135deg,var(--purple-900),var(--rose-800));
@@ -472,7 +470,6 @@ nav ul a:hover{color:var(--rose-600)}
   color:var(--rose-200);text-align:center;margin-top:10px;
 }
 
-/* Dropdown styling for booking */
 .dd{position:relative}
 .dd>button{
   width:100%;text-align:left;font:inherit;font-size:16px;padding:12px 14px;
@@ -492,7 +489,7 @@ nav ul a:hover{color:var(--rose-600)}
 @media(max-width:800px){.book .grid{grid-template-columns:1fr;padding:32px 24px;gap:28px}}
 @media(max-width:480px){#book{padding:40px 4%}.book .grid{padding:28px 18px}}
 
-/* Contact — map + info */
+/* Contact */
 .visit{display:grid;grid-template-columns:1.25fr 1fr;gap:36px;align-items:stretch}
 .map{position:relative;min-height:440px;border:1px solid var(--border);background:var(--purple-50)}
 .map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
@@ -556,8 +553,6 @@ footer small{display:block;margin-top:30px;opacity:0.6;font-size:0.85rem}
   display:grid;grid-template-columns:1fr 1.2fr;
   animation:pop 0.5s cubic-bezier(0.2,1.2,0.3,1);
 }
-.pane.photo-pane{grid-template-columns:1fr;width:min(820px,100%);position:relative;background:var(--purple-900)}
-.pane.photo-pane img{width:100%;max-height:80vh;object-fit:contain;display:block;margin:auto}
 @keyframes pop{from{transform:scale(0.9) translateY(20px);opacity:0}}
 .pane .side{
   background:var(--purple-800);
@@ -622,8 +617,6 @@ footer small{display:block;margin-top:30px;opacity:0.6;font-size:0.85rem}
 @media(max-width:600px){
   section{padding:56px 5%}
   .lead{font-size:1rem}
-  .faq-box{padding:24px 20px!important}
-  .faq-box summary{font-size:1rem!important}
 }
 </style>
 </head>
@@ -633,332 +626,520 @@ footer small{display:block;margin-top:30px;opacity:0.6;font-size:0.85rem}
 <nav>
   <b>Lumière</b>
   <ul>
-    <li><a href="#about"><span class="text-hy">Մեր մասին</span><span class="text-en">About</span><span class="text-ru">О нас</span></a></li>
+    <li><a href="#about"><span class="text-hy">Մեր Մասին</span><span class="text-en">About</span><span class="text-ru">О нас</span></a></li>
     <li><a href="#services"><span class="text-hy">Ծառայություններ</span><span class="text-en">Services</span><span class="text-ru">Услуги</span></a></li>
-    <li><a href="#offers"><span class="text-hy">Առաջարկներ</span><span class="text-en">Offers</span><span class="text-ru">Акции</span></a></li>
+    <li><a href="#offers"><span class="text-hy">Հատուկ Առաջարկներ</span><span class="text-en">Offers</span><span class="text-ru">Акции</span></a></li>
     <li><a href="#gallery"><span class="text-hy">Պատկերասրահ</span><span class="text-en">Gallery</span><span class="text-ru">Галерея</span></a></li>
-    <li><a href="#team"><span class="text-hy">Թիմը</span><span class="text-en">Team</span><span class="text-ru">Команда</span></a></li>
-    <li><a href="#packages"><span class="text-hy">Փաթեթներ</span><span class="text-en">Packages</span><span class="text-ru">Пакеты</span></a></li>
-    <li><a href="#contact"><span class="text-hy">Կապ</span><span class="text-en">Contact</span><span class="text-ru">Контакты</span></a></li>
+    <li><a href="#team"><span class="text-hy">Մեր Մասնագետները</span><span class="text-en">Team</span><span class="text-ru">Команда</span></a></li>
+    <li><a href="#packages"><span class="text-hy">Խնամքի Փաթեթներ</span><span class="text-en">Packages</span><span class="text-ru">Пакеты</span></a></li>
+    <li><a href="#contact"><span class="text-hy">Կապ Մեզ Հետ</span><span class="text-en">Contact</span><span class="text-ru">Контакты</span></a></li>
   </ul>
   <div class="nav-r">
     <div class="lang" id="lang" role="group" aria-label="Language">
-      <button type="button" data-lang="hy">HY</button>
+      <button type="button" data-lang="hy" class="on">HY</button>
       <button type="button" data-lang="en">EN</button>
       <button type="button" data-lang="ru">RU</button>
     </div>
     <button class="tg" id="theme" aria-label="Toggle theme">◐</button>
-    <a class="btn" href="#book"><span class="text-hy">Ամրագրել</span><span class="text-en">Book Now</span><span class="text-ru">Записаться</span></a>
+    <a class="btn" href="#book"><span class="text-hy">Ամրագրել Այց</span><span class="text-en">Book Now</span><span class="text-ru">Записаться</span></a>
     <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
   <div class="mnav" id="mnav">
-    <a class="mlink" href="#about"><span class="text-hy">Մեր մասին</span><span class="text-en">About</span><span class="text-ru">О нас</span></a>
+    <a class="mlink" href="#about"><span class="text-hy">Մեր Մասին</span><span class="text-en">About</span><span class="text-ru">О нас</span></a>
     <a class="mlink" href="#services"><span class="text-hy">Ծառայություններ</span><span class="text-en">Services</span><span class="text-ru">Услуги</span></a>
-    <a class="mlink" href="#offers"><span class="text-hy">Առաջարկներ</span><span class="text-en">Offers</span><span class="text-ru">Акции</span></a>
+    <a class="mlink" href="#offers"><span class="text-hy">Հատուկ Առաջարկներ</span><span class="text-en">Offers</span><span class="text-ru">Акции</span></a>
     <a class="mlink" href="#gallery"><span class="text-hy">Պատկերասրահ</span><span class="text-en">Gallery</span><span class="text-ru">Галерея</span></a>
-    <a class="mlink" href="#team"><span class="text-hy">Թիմը</span><span class="text-en">Team</span><span class="text-ru">Команда</span></a>
-    <a class="mlink" href="#packages"><span class="text-hy">Փաթեթներ</span><span class="text-en">Packages</span><span class="text-ru">Пакеты</span></a>
-    <a class="mlink" href="#contact"><span class="text-hy">Կապ</span><span class="text-en">Contact</span><span class="text-ru">Контакты</span></a>
-    <a class="btn mbook" href="#book"><span class="text-hy">Ամրագրել</span><span class="text-en">Book Now</span><span class="text-ru">Записаться</span></a>
+    <a class="mlink" href="#team"><span class="text-hy">Մեր Մասնագետները</span><span class="text-en">Team</span><span class="text-ru">Команда</span></a>
+    <a class="mlink" href="#packages"><span class="text-hy">Խնամքի Փաթեթներ</span><span class="text-en">Packages</span><span class="text-ru">Пакеты</span></a>
+    <a class="mlink" href="#contact"><span class="text-hy">Կապ Մեզ Հետ</span><span class="text-en">Contact</span><span class="text-ru">Контакты</span></a>
+    <a class="btn mbook" href="#book"><span class="text-hy">Ամրագրել Այց</span><span class="text-en">Book Now</span><span class="text-ru">Записаться</span></a>
   </div>
 </nav>
 
-<!-- HERO SLIDESHOW (offers slide + one per service) -->
+<!-- HERO SLIDESHOW -->
 <section class="hero" id="hero">
-  <div class="slides" id="hs"></div>
+  <div class="slides" id="hs">
+    <!-- Slide 1: Requested Image -->
+    <div class="slide on">
+      <img src="christianebrand-hairdressing-salon-2693077_1920.png" alt="Lumière Aesthetic Center" class="bgimg">
+      <div class="slide-in">
+        <span class="eyebrow">Պրեմիում Դասի Խնամք</span>
+        <h1>Բացահայտեք Ձեր <em>Իրական Գեղեցկությունը</em></h1>
+        <p class="lead">Էսթետիկ խնամքի և երիտասարդության պահպանման նորարարական մոտեցումներ՝ միջազգային չափանիշներին համապատասխան:</p>
+        <div class="row">
+          <a href="#book" class="btn btn-lg"><span class="text-hy">Գրանցվել Այցելության</span><span class="text-en">Book Appointment</span><span class="text-ru">Записаться</span></a>
+          <a href="#services" class="btn ghost on-dark btn-lg"><span class="text-hy">Մեր Ծառայությունները</span><span class="text-en">Our Services</span><span class="text-ru">Наши услуги</span></a>
+        </div>
+      </div>
+    </div>
+    <!-- Slide 2: Requested Image -->
+    <div class="slide">
+      <img src="u_k06i0jyo0w-ai-generated-8270432_1920.jpg" alt="Professional Aesthetic Care" class="bgimg">
+      <div class="slide-in">
+        <span class="eyebrow">Անհատական Մոտեցում</span>
+        <h1>Գեղեցկություն՝ Ստեղծված <em>Մասնագիտական Ձեռքերով</em></h1>
+        <p class="lead">Յուրաքանչյուր հաճախորդի եզակի գեղեցկությունը ընդգծող անհատականացված ծրագրեր և բարձրագույն որակի սպասարկում:</p>
+        <div class="row">
+          <a href="#packages" class="btn btn-lg"><span class="text-hy">Դիտել Փաթեթները</span><span class="text-en">View Packages</span><span class="text-ru">Смотреть пакеты</span></a>
+        </div>
+      </div>
+    </div>
+    <!-- Slide 3: Kept as high-quality aesthetic placeholder -->
+    <div class="slide">
+      <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1920&q=80" alt="Innovative Technologies" class="bgimg">
+      <div class="slide-in">
+        <span class="eyebrow">Նորարարական Տեխնոլոգիաներ</span>
+        <h1>Աշխարհի Առաջատար <em>Սարքավորումներ</em></h1>
+        <p class="lead">FDA-ի կողմից հաստատված տեխնոլոգիաներ և փորձառու մասնագետներ Ձեր անվտանգության և առավելագույն արդյունքի համար:</p>
+        <div class="row">
+          <a href="#contact" class="btn btn-lg"><span class="text-hy">Կապ Մեզ Հետ</span><span class="text-en">Contact Us</span><span class="text-ru">Связаться с нами</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
   <button class="hs-arrow hs-prev" id="hsp" aria-label="Previous slide">‹</button>
   <button class="hs-arrow hs-next" id="hsn" aria-label="Next slide">›</button>
   <div class="hs-dots" id="hsd"></div>
   <div class="hs-count" id="hsc"></div>
   <div class="hs-badge">
     <b>4.9★</b>
-    <span><span class="text-hy">8,400+ կարծիքների հիման վրա</span><span class="text-en">Based on 8,400+ reviews</span><span class="text-ru">На основе 8 400+ отзывов</span></span>
+    <span><span class="text-hy">8,400+ դրական արձագանք</span><span class="text-en">Based on 8,400+ reviews</span><span class="text-ru">На основе 8 400+ отзывов</span></span>
   </div>
 </section>
 
-<div class="stats">
-  <div><b data-n="12">0</b><p><span class="text-hy">Տարվա մասնագիտական փորձ</span><span class="text-en">Years Experience</span><span class="text-ru">Лет опыта</span></p></div>
-  <div><b data-n="8400">0</b><p><span class="text-hy">Վստահած հաճախորդներ</span><span class="text-en">Happy Clients</span><span class="text-ru">Довольных клиентов</span></p></div>
-  <div><b data-n="18">0</b><p><span class="text-hy">Հավաստագրված մասնագետներ</span><span class="text-en">Specialists</span><span class="text-ru">Специалистов</span></p></div>
-  <div><b data-n="49">0</b><p><span class="text-hy">Բարձր վարկանիշ (4.9/5)</span><span class="text-en">5-Star Rating</span><span class="text-ru">Рейтинг 5 звёзд</span></p></div>
+<div class="stats reveal">
+  <div><b data-n="12">0</b><p><span class="text-hy">Տարիների Փորձ</span><span class="text-en">Years Experience</span><span class="text-ru">Лет опыта</span></p></div>
+  <div><b data-n="8400">0</b><p><span class="text-hy">Վստահող Հաճախորդներ</span><span class="text-en">Trusting Clients</span><span class="text-ru">Довольных клиентов</span></p></div>
+  <div><b data-n="15">0</b><p><span class="text-hy">Միջազգային Սերտիֆիկատներ</span><span class="text-en">Global Certifications</span><span class="text-ru">Международных сертификатов</span></p></div>
+  <div><b data-n="98">0</b><p><span class="text-hy">% Բարձր Արդյունավետություն</span><span class="text-en">% High Efficiency</span><span class="text-ru">% Высокая эффективность</span></p></div>
 </div>
 
-<!-- CURRENT OFFERS -->
-<section id="offers">
-  <div class="wrap">
-    <h2><span class="text-hy">Ընթացիկ առաջարկներ</span><span class="text-en">Current Offers</span><span class="text-ru">Текущие акции</span></h2>
-    <p class="lead"><span class="text-hy">Հատուկ պայմաններ մեր ամենապահանջված էսթետիկ ծրագրերի համար</span><span class="text-en">Limited-time savings on our most-loved treatments</span><span class="text-ru">Ограниченные по времени скидки на самые популярные процедуры</span></p>
-    <div class="offers-grid">
-      <div class="offer reveal">
-        <div class="off-badge">−20%</div>
-        <h3><span class="text-hy">HydraFacial՝ 20% զեղչ</span><span class="text-en">HydraFacial — 20% Off</span><span class="text-ru">HydraFacial — скидка 20%</span></h3>
-        <p><span class="text-hy">Խորը մաքրում, ինտենսիվ խոնավեցում և մաշկի ակնթարթային փայլ՝ հատուկ ամսական գնով։</span><span class="text-en">Our most-loved hydrating facial at a special price this month.</span><span class="text-ru">Наш самый популярный увлажняющий уход по специальной цене в этом месяце.</span></p>
-        <div class="off-prices"><span class="old">$130</span><span class="new">$104</span></div>
-        <div class="off-note"><span class="text-hy">Ակտիվ է այս ամիս</span><span class="text-en">This month only</span><span class="text-ru">Только в этом месяце</span></div>
-        <a class="btn" href="#book"><span class="text-hy">Ամրագրել առաջարկը</span><span class="text-en">Book This Offer</span><span class="text-ru">Записаться по акции</span></a>
-      </div>
-      <div class="offer reveal">
-        <div class="off-badge">−25%</div>
-        <h3><span class="text-hy">Լազեր՝ ոտքեր ամբողջությամբ ×3</span><span class="text-en">Full Legs Laser ×3</span><span class="text-ru">Лазер: ноги полностью ×3</span></h3>
-        <p><span class="text-hy">Երեք պրոցեդուրայից բաղկացած փաթեթ՝ հարթ, խնամված մաշկի կայուն արդյունքի համար։</span><span class="text-en">Three-session package for lasting smoothness.</span><span class="text-ru">Пакет из трёх сеансов для стойкой гладкости.</span></p>
-        <div class="off-prices"><span class="old">$420</span><span class="new">$315</span></div>
-        <div class="off-note"><span class="text-hy">Փաթեթային առավելություն</span><span class="text-en">Package deal</span><span class="text-ru">Пакетное предложение</span></div>
-        <a class="btn" href="#book"><span class="text-hy">Ամրագրել առաջարկը</span><span class="text-en">Book This Offer</span><span class="text-ru">Записаться по акции</span></a>
-      </div>
-      <div class="offer reveal">
-        <div class="off-badge">−10%</div>
-        <h3><span class="text-hy">Հարսնացուի փայլ՝ վաղ ամրագրում</span><span class="text-en">Bridal Glow — Early Booking</span><span class="text-ru">Сияние невесты — раннее бронирование</span></h3>
-        <p><span class="text-hy">Ամրագրեք նախապես՝ 3 և ավելի ամիս շուտ, և ստացեք 10% զեղչ ամբողջական նախահարսանեկյան ծրագրից։</span><span class="text-en">Book 3+ months ahead and save 10% on the full program.</span><span class="text-ru">Бронируйте за 3+ месяца и сэкономьте 10% на всей программе.</span></p>
-        <div class="off-prices"><span class="old">$720</span><span class="new">$648</span></div>
-        <div class="off-note"><span class="text-hy">Նախնական ամրագրմամբ</span><span class="text-en">Book in advance</span><span class="text-ru">Бронируйте заранее</span></div>
-        <a class="btn" href="#book"><span class="text-hy">Ամրագրել առաջարկը</span><span class="text-en">Book This Offer</span><span class="text-ru">Записаться по акции</span></a>
-      </div>
+<section id="about" class="reveal">
+  <div class="wrap about-grid">
+    <div class="about-imgs">
+      <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80" alt="Clinic Interior">
+      <img class="ai2" src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=600&q=80" alt="Professional Specialist">
+    </div>
+    <div>
+      <span class="eyebrow" style="color:var(--rose-600);border-color:var(--rose-300)"><span class="text-hy">Մեր Պատմությունը</span><span class="text-en">Our Story</span><span class="text-ru">Наша история</span></span>
+      <h2><span class="text-hy">Գեղեցկություն՝ Միավորված Բժշկական Ճշգրտության Հետ</span><span class="text-en">Beauty Meets Medical Precision</span><span class="text-ru">Красота встречается с медицинской точностью</span></h2>
+      <p class="lead"><span class="text-hy">Lumière-ի առաքելությունն է բացահայտել Ձեր բնական գեղեցկությունը՝ միավորելով բժշկական անվտանգությունը արվեստի նրբագեղության հետ: Մենք առաջարկում ենք անհատականացված լուծումներ՝ հիմնված վերջին գիտական նվաճումների վրա:</span><span class="text-en">At Lumière, our mission is to reveal your natural beauty by combining medical safety with artistic elegance. We offer personalized solutions based on the latest scientific advancements.</span><span class="text-ru">Наша миссия в Lumière — раскрыть вашу естественную красоту, объединяя медицинскую безопасность с художественной элегантностью. Мы предлагаем персонализированные решения на основе новейших научных достижений.</span></p>
+      <a href="#team" class="btn" style="margin-top:24px"><span class="text-hy">Ծանոթանալ Թիմին</span><span class="text-en">Meet the Team</span><span class="text-ru">Познакомиться с командой</span></a>
     </div>
   </div>
 </section>
 
-<section id="about" style="background:var(--white)">
+<section id="services" class="reveal">
   <div class="wrap">
-    <div class="about-grid">
-      <div>
-        <h2><span class="text-hy">Հանգրվան՝ ձեր մաշկի առողջության ու գեղեցկության համար</span><span class="text-en">A sanctuary for your skin</span><span class="text-ru">Оазис для вашей кожи</span></h2>
-        <p class="lead"><span class="text-hy">Lumière-ը ստեղծվել է հստակ գաղափարով՝ էսթետիկ բժշկությունն ու խնամքը պետք է միավորեն ապացուցված գիտական մեթոդները և անհատական հոգատարությունը։ Մենք համադրում ենք մասնագիտական փորձն ու նուրբ մոտեցումը՝ ընդգծելու ձեր բնական գեղեցկությունն ու ինքնավստահությունը։</span><span class="text-en">Lumière was founded on a simple principle: aesthetic care should be both scientifically advanced and deeply personal. We combine medical expertise with a holistic approach to help you look and feel your best.</span><span class="text-ru">Lumière основан на простом принципе: эстетический уход должен быть научно передовым и глубоко личным. Мы сочетаем медицинскую экспертизу с целостным подходом, чтобы вы выглядели и чувствовали себя лучше всего.</span></p>
-        <p class="lead"><span class="text-hy">Յուրաքանչյուր այց սկսվում է մանրակրկիտ խորհրդատվությունից և մաշկի գնահատումից՝ ճշգրիտ հասկանալու ձեր կարիքներն ու նպատակները՝ նախքան անհատական խնամքի ծրագիր կազմելը։</span><span class="text-en">Every treatment begins with a comprehensive consultation, ensuring we understand your unique concerns and goals before creating your personalized care plan.</span><span class="text-ru">Каждая программа начинается с подробной консультации: мы понимаем ваши задачи и цели, прежде чем составить индивидуальный план ухода.</span></p>
-      </div>
-      <div class="about-imgs">
-        <img class="ai1" src="christianebrand-hairdressing-salon-2693077_1920.jpg" alt="Lumière salon interior">
-        <img class="ai2" src="billyjocatbagan-interior-5413351_1920.jpg" alt="Lumière treatment interior">
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="services">
-  <div class="wrap">
-    <h2><span class="text-hy">Մեր ծառայությունները</span><span class="text-en">Our Services</span><span class="text-ru">Наши услуги</span></h2>
-    <p class="lead"><span class="text-hy">Ժամանակակից էսթետիկ և վերականգնող պրոցեդուրաներ՝ կազմված ըստ ձեր մաշկի առանձնահատկությունների</span><span class="text-en">Comprehensive aesthetic treatments tailored to your individual needs</span><span class="text-ru">Комплексные эстетические процедуры под ваши потребности</span></p>
-    <div class="svc" id="svc"></div>
-  </div>
-</section>
-
-<section style="background:var(--white)">
-  <div class="wrap">
-    <div class="why reveal">
-      <div class="why-grid">
-        <div class="why-item">
-          <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div>
-          <h3><span class="text-hy">Անհատական ծրագրեր</span><span class="text-en">Personalized Plans</span><span class="text-ru">Индивидуальные программы</span></h3>
-          <p><span class="text-hy">Ամեն ծրագիր կազմվում է խորհրդատվության արդյունքում՝ ըստ ձեր մաշկի վիճակի և նպատակների</span><span class="text-en">Every treatment begins with a thorough consultation to understand your unique goals</span><span class="text-ru">Каждая процедура начинается с подробной консультации, чтобы понять ваши цели</span></p>
+    <h2><span class="text-hy">Մեր Ծառայությունները</span><span class="text-en">Our Services</span><span class="text-ru">Наши услуги</span></h2>
+    <p class="lead"><span class="text-hy">Համապարփակ խնամք Ձեր դեմքի և մարմնի համար՝ օգտագործելով առաջադեմ տեխնոլոգիաներ:</span><span class="text-en">Comprehensive care for your face and body using advanced technologies.</span><span class="text-ru">Комплексный уход за лицом и телом с использованием передовых технологий.</span></p>
+    <div class="svc">
+      <button class="sc" onclick="openModal('modal1')">
+        <div class="art"><img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=600&q=80" alt="Facial Aesthetics"></div>
+        <div class="tx">
+          <h3><span class="text-hy">Դեմքի Էսթետիկա</span><span class="text-en">Facial Aesthetics</span><span class="text-ru">Эстетика лица</span></h3>
+          <p><span class="text-hy">Բոտոքս, հիալուրոնաթթվի ներարկումներ և մաշկի որակի բարելավում:</span><span class="text-en">Botox, hyaluronic acid fillers, and skin quality enhancement.</span><span class="text-ru">Ботокс, филлеры гиалуроновой кислоты и улучшение качества кожи.</span></p>
+          <u><span class="text-hy">Իմանալ ավելին</span><span class="text-en">Learn more</span><span class="text-ru">Узнать больше</span></u>
         </div>
-        <div class="why-item">
-          <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3h6M10 3v5l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/><path d="M8 15h8"/></svg></div>
-          <h3><span class="text-hy">Բժշկական մակարդակ</span><span class="text-en">Medical Grade</span><span class="text-ru">Медицинский уровень</span></h3>
-          <p><span class="text-hy">Հավաստագրված սարքավորումներ և պրոֆեսիոնալ դեղագործական պրեպարատներ</span><span class="text-en">FDA-approved technology and pharmaceutical-grade products only</span><span class="text-ru">Только FDA-одобренные технологии и препараты фармацевтического класса</span></p>
+      </button>
+      <button class="sc" onclick="openModal('modal2')">
+        <div class="art"><img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=600&q=80" alt="Body Contouring"></div>
+        <div class="tx">
+          <h3><span class="text-hy">Մարմնի Ձևավորում</span><span class="text-en">Body Contouring</span><span class="text-ru">Коррекция фигуры</span></h3>
+          <p><span class="text-hy">Ոչ վիրահատական մեթոդներ մարմնի համամասնությունները կատարելագործելու համար:</span><span class="text-en">Non-surgical methods to perfect your body proportions.</span><span class="text-ru">Нехирургические методы для совершенствования пропорций тела.</span></p>
+          <u><span class="text-hy">Իմանալ ավելին</span><span class="text-en">Learn more</span><span class="text-ru">Узнать больше</span></u>
         </div>
-        <div class="why-item">
-          <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v5c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
-          <h3><span class="text-hy">Անվտանգությունը՝ առաջնային</span><span class="text-en">Safety First</span><span class="text-ru">Безопасность прежде всего</span></h3>
-          <p><span class="text-hy">Անթերի ստերիլություն, միանգամյա նյութեր և սանիտարահիգիենիկ խիստ վերահսկողություն</span><span class="text-en">Sterile environment with single-use tools and strict hygiene protocols</span><span class="text-ru">Стерильная среда, одноразовые инструменты и строгие протоколы гигиены</span></p>
+      </button>
+      <button class="sc" onclick="openModal('modal3')">
+        <div class="art"><img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=600&q=80" alt="Skin Rejuvenation"></div>
+        <div class="tx">
+          <h3><span class="text-hy">Մաշկի Երիտասարդացում</span><span class="text-en">Skin Rejuvenation</span><span class="text-ru">Омоложение кожи</span></h3>
+          <p><span class="text-hy">Լազերային թերապիա, պիլինգներ և կոլագենի խթանման ծրագրեր:</span><span class="text-en">Laser therapy, peels, and collagen stimulation programs.</span><span class="text-ru">Лазерная терапия, пилинги и программы стимуляции коллагена.</span></p>
+          <u><span class="text-hy">Իմանալ ավելին</span><span class="text-en">Learn more</span><span class="text-ru">Узнать больше</span></u>
         </div>
-        <div class="why-item">
-          <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 21c8 0 14-6 14-14V5h-2C9 5 3 11 3 19v2h2z"/><path d="M3 21C7 15 11 11 17 7"/></svg></div>
-          <h3><span class="text-hy">Բնական արդյունքներ</span><span class="text-en">Natural Results</span><span class="text-ru">Естественные результаты</span></h3>
-          <p><span class="text-hy">Նրբանկատ ու ներդաշնակ էֆեկտ՝ պահպանելով ձեր անհատական դիմագծերը</span><span class="text-en">Enhance your features while maintaining your authentic appearance</span><span class="text-ru">Подчеркните черты, сохраняя естественный вид</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- YOUR JOURNEY — replaces Before/After -->
-<section class="journey" id="journey">
-  <div class="wrap">
-    <h2 style="text-align:center"><span class="text-hy">Ձեր ճանապարհը մեզ հետ</span><span class="text-en">Your Journey With Us</span><span class="text-ru">Ваш путь к нам</span></h2>
-    <p class="lead" style="text-align:center;margin-left:auto;margin-right:auto"><span class="text-hy">Հստակ ու հանգիստ ընթացք՝ առաջին խորհրդատվությունից մինչև կայուն արդյունք</span><span class="text-en">A simple, transparent process — from your first call to glowing results</span><span class="text-ru">Простой и прозрачный процесс — от первого звонка до сияющего результата</span></p>
-    <div class="steps">
-      <div class="step reveal" style="transition-delay:0.05s">
-        <span class="num">01</span>
-        <h3><span class="text-hy">Խորհրդատվություն և մաշկի ախտորոշում</span><span class="text-en">Consultation & Skin Analysis</span><span class="text-ru">Консультация и анализ кожи</span></h3>
-        <p><span class="text-hy">Մանրակրկիտ զրույց և զննում՝ հասկանալու ձեր մաշկի վիճակը, ակնկալիքներն ու նպատակները։</span><span class="text-en">A complimentary conversation to understand your skin, goals and expectations.</span><span class="text-ru">Бесплатная беседа, чтобы понять вашу кожу, цели и ожидания.</span></p>
-      </div>
-      <div class="step reveal" style="transition-delay:0.15s">
-        <span class="num">02</span>
-        <h3><span class="text-hy">Անհատական բուժման ծրագիր</span><span class="text-en">Personalized Plan</span><span class="text-ru">Индивидуальный план</span></h3>
-        <p><span class="text-hy">Պրոցեդուրաների հաջորդական ծրագիր՝ հարմարեցված ձեր մաշկին և բյուջեին՝ թափանցիկ գնագոյացմամբ։</span><span class="text-en">A clear treatment plan matched to your skin type and budget, with transparent pricing.</span><span class="text-ru">Чёткий план процедур под ваш тип кожи и бюджет с прозрачными ценами.</span></p>
-      </div>
-      <div class="step reveal" style="transition-delay:0.25s">
-        <span class="num">03</span>
-        <h3><span class="text-hy">Պրոցեդուրայի իրականացում</span><span class="text-en">Your Treatment</span><span class="text-ru">Процедура</span></h3>
-        <p><span class="text-hy">Կատարում են փորձառու մասնագետները՝ հարմարավետ, ստերիլ միջավայրում և ժամանակակից տեխնոլոգիաներով։</span><span class="text-en">Performed by certified specialists in sterile conditions with modern equipment.</span><span class="text-ru">Выполняют сертифицированные специалисты в стерильных условиях на современном оборудовании.</span></p>
-      </div>
-      <div class="step reveal" style="transition-delay:0.35s">
-        <span class="num">04</span>
-        <h3><span class="text-hy">Հետպրոցեդուրային ուղեկցում</span><span class="text-en">Aftercare & Follow-up</span><span class="text-ru">Уход после процедуры</span></h3>
-        <p><span class="text-hy">Անհատական տնային խնամքի խորհուրդներ և հսկողական այցեր՝ արդյունքի երկարակեցության համար։</span><span class="text-en">Home-care guidance and follow-up visits to protect and maintain your results.</span><span class="text-ru">Рекомендации по домашнему уходу и контрольные визиты для сохранения результата.</span></p>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:44px">
-      <a class="btn" href="#book"><span class="text-hy">Ամրագրել խորհրդատվություն</span><span class="text-en">Book Consultation</span><span class="text-ru">Записаться на консультацию</span></a>
-    </div>
-  </div>
-</section>
-
-<section id="team" style="background:var(--white)">
-  <div class="wrap">
-    <h2 style="text-align:center"><span class="text-hy">Մեր մասնագետները</span><span class="text-en">Meet Our Specialists</span><span class="text-ru">Наши специалисты</span></h2>
-    <p class="lead" style="text-align:center;margin-left:auto;margin-right:auto"><span class="text-hy">Բարձր որակավորմամբ բժիշկներ և էսթետիկ մասնագետներ՝ նվիրված ձեր խնամքին</span><span class="text-en">Expert care from certified medical professionals</span><span class="text-ru">Экспертный уход от сертифицированных медиков</span></p>
-    <div class="team" id="tm"></div>
-  </div>
-</section>
-
-<section id="packages" style="background:var(--purple-50)">
-  <div class="wrap">
-    <h2 style="text-align:center"><span class="text-hy">Բուժման փաթեթներ</span><span class="text-en">Treatment Packages</span><span class="text-ru">Пакеты процедур</span></h2>
-    <p class="lead" style="text-align:center;margin-left:auto;margin-right:auto"><span class="text-hy">Համալիր ծրագրեր՝ առավել հարմարավետ պայմաններով և շարունակական խնամքի համար</span><span class="text-en">Curated programs for comprehensive care</span><span class="text-ru">Продуманные программы комплексного ухода</span></p>
-    <div class="pk">
-      <div class="pkc">
-        <h3><span class="text-hy">Փայլ</span><span class="text-en">Radiance</span><span class="text-ru">Сияние</span></h3>
-        <div class="pr">$180</div>
-        <ul>
-          <li><span class="text-hy">Խորը մաքրող դեմքի խնամք</span><span class="text-en">Deep cleansing facial</span><span class="text-ru">Глубоко очищающий уход</span></li>
-          <li><span class="text-hy">Խորը խոնավեցնող թերապիա</span><span class="text-en">Hydration therapy</span><span class="text-ru">Увлажняющая терапия</span></li>
-          <li><span class="text-hy">Մաշկի մասնագիտական վերլուծություն</span><span class="text-en">Skin analysis</span><span class="text-ru">Анализ кожи</span></li>
-          <li><span class="text-hy">Տնային խնամքի անհատական ուղեցույց</span><span class="text-en">Home care recommendations</span><span class="text-ru">Рекомендации по домашнему уходу</span></li>
-        </ul>
-        <a class="btn ghost" href="#book"><span class="text-hy">Ընտրել փաթեթը</span><span class="text-en">Select Package</span><span class="text-ru">Выбрать пакет</span></a>
-        <button class="plink" data-pl><span class="text-hy">Դիտել ամբողջ գնացուցակը</span><span class="text-en">View full price list</span><span class="text-ru">Смотреть полный прайс-лист</span></button>
-      </div>
-      <div class="pkc hot">
-        <h3><span class="text-hy">Հարսնացուի փայլ</span><span class="text-en">Bridal Glow</span><span class="text-ru">Сияние невесты</span></h3>
-        <div class="pr">$720</div>
-        <ul>
-          <li><span class="text-hy">Մաշկի 3-ամսյա փուլային նախապատրաստում</span><span class="text-en">3-month skin preparation</span><span class="text-ru">3 месяца подготовки кожи</span></li>
-          <li><span class="text-hy">Լազերային պրոցեդուրաների ծրագիր</span><span class="text-en">Laser treatments series</span><span class="text-ru">Курс лазерных процедур</span></li>
-          <li><span class="text-hy">Խոնավեցնող խնամք դեմքի համար (4 սեանս)</span><span class="text-en">Hydrating facials (4 sessions)</span><span class="text-ru">Увлажняющие уходы (4 сеанса)</span></li>
-          <li><span class="text-hy">Արարողության օրվա թարմացնող խնամք</span><span class="text-en">Wedding day touch-up</span><span class="text-ru">Коррекция в день свадьбы</span></li>
-          <li><span class="text-hy">Առաջնահերթ գրանցում և ուղեկցում</span><span class="text-en">Priority booking</span><span class="text-ru">Приоритетная запись</span></li>
-        </ul>
-        <a class="btn" href="#book"><span class="text-hy">Ընտրել փաթեթը</span><span class="text-en">Select Package</span><span class="text-ru">Выбрать пакет</span></a>
-        <button class="plink" data-pl><span class="text-hy">Դիտել ամբողջ գնացուցակը</span><span class="text-en">View full price list</span><span class="text-ru">Смотреть полный прайс-лист</span></button>
-      </div>
-      <div class="pkc">
-        <h3><span class="text-hy">Ամսական խնամք</span><span class="text-en">Monthly Care</span><span class="text-ru">Ежемесячный уход</span></h3>
-        <div class="pr">$95<span style="font-size:1rem;font-weight:400">/<span class="text-hy">ամիս</span><span class="text-en">mo</span><span class="text-ru">мес</span></span></div>
-        <ul>
-          <li><span class="text-hy">Ամսական 1 պրոֆեսիոնալ դեմքի խնամք</span><span class="text-en">One facial per month</span><span class="text-ru">Один уход в месяц</span></li>
-          <li><span class="text-hy">15% զեղչ բոլոր պրոցեդուրաներից</span><span class="text-en">15% off all treatments</span><span class="text-ru">Скидка 15% на все процедуры</span></li>
-          <li><span class="text-hy">Առաջնահերթ ժամերի ընտրություն</span><span class="text-en">Priority scheduling</span><span class="text-ru">Приоритетное расписание</span></li>
-          <li><span class="text-hy">Անվճար մասնագիտական խորհրդատվություն</span><span class="text-en">Complimentary consultations</span><span class="text-ru">Бесплатные консультации</span></li>
-        </ul>
-        <a class="btn ghost" href="#book"><span class="text-hy">Միանալ</span><span class="text-en">Join Now</span><span class="text-ru">Присоединиться</span></a>
-        <button class="plink" data-pl><span class="text-hy">Դիտել ամբողջ գնացուցակը</span><span class="text-en">View full price list</span><span class="text-ru">Смотреть полный прайс-лист</span></button>
-      </div>
-    </div>
-    <!-- Highlighted, highly visible full price list CTA -->
-    <div class="pl-cta reveal">
-      <p><span class="text-hy">Ցանկանո՞ւմ եք տեսնել բոլոր պրոցեդուրաներն ու արժեքները մեկ միասնական ցանկում</span><span class="text-en">Want to see every treatment and price in one list?</span><span class="text-ru">Хотите увидеть все процедуры и цены одним списком?</span></p>
-      <button class="btn btn-lg" data-pl>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
-        <span class="text-hy">Բոլոր ծառայությունները և գները</span><span class="text-en">All Services &amp; Price List</span><span class="text-ru">Все услуги и прайс-лист</span>
       </button>
     </div>
   </div>
 </section>
 
-<section style="background:var(--white)">
+<section class="why reveal">
   <div class="wrap">
-    <h2 style="text-align:center"><span class="text-hy">Հաճախորդների տպավորություններ</span><span class="text-en">Client Stories</span><span class="text-ru">Истории клиентов</span></h2>
-    <div class="rv reveal">
-      <blockquote id="q"></blockquote>
-      <cite id="qa"></cite>
-      <div class="dots" id="dots"></div>
+    <h2 style="text-align:center;margin-bottom:50px"><span class="text-hy">Ինչու Ընտրել Lumière-ը</span><span class="text-en">Why Choose Lumière</span><span class="text-ru">Почему выбирают Lumière</span></h2>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <h3><span class="text-hy">Փորձառու Մասնագետներ</span><span class="text-en">Expert Specialists</span><span class="text-ru">Опытные специалисты</span></h3>
+        <p><span class="text-hy">Բարձրակարգ բժիշկներ միջազգային սերտիֆիկատներով:</span><span class="text-en">Highly qualified doctors with international certifications.</span><span class="text-ru">Высококвалифицированные врачи с международными сертификатами.</span></p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3><span class="text-hy">Նորարարական Տեխնոլոգիաներ</span><span class="text-en">Innovative Tech</span><span class="text-ru">Инновационные технологии</span></h3>
+        <p><span class="text-hy">Վերջին սերնդի սարքավորումներ անվտանգ և արդյունավետ բուժման համար:</span><span class="text-en">Latest generation equipment for safe and effective treatment.</span><span class="text-ru">Оборудование последнего поколения для безопасного и эффективного лечения.</span></p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3><span class="text-hy">Անվտանգության Երաշխիք</span><span class="text-en">Safety Guarantee</span><span class="text-ru">Гарантия безопасности</span></h3>
+        <p><span class="text-hy">Ստերիլ միջավայր և բժշկական պրոտոկոլների խիստ պահպանում:</span><span class="text-en">Sterile environment and strict adherence to medical protocols.</span><span class="text-ru">Стерильная среда и строгое соблюдение медицинских протоколов.</span></p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <h3><span class="text-hy">Անհատական Մոտեցում</span><span class="text-en">Personalized Care</span><span class="text-ru">Индивидуальный подход</span></h3>
+        <p><span class="text-hy">Յուրաքանչյուր հաճախորդի համար մշակված եզակի ծրագիր:</span><span class="text-en">Unique programs developed for each client.</span><span class="text-ru">Уникальные программы, разработанные для каждого клиента.</span></p>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="gallery">
+<section id="gallery" class="reveal">
   <div class="wrap">
-    <h2 style="text-align:center"><span class="text-hy">Պատկերասրահ</span><span class="text-en">Gallery</span><span class="text-ru">Галерея</span></h2>
-    <p class="lead" style="text-align:center;margin-left:auto;margin-right:auto"><span class="text-hy">Մեր սրահի միջավայրը, խնամքի սենյակներն ու աշխատանքային ոճը</span><span class="text-en">A glimpse into our center</span><span class="text-ru">Взгляд на наш центр</span></p>
-    <div class="gal" id="gal"></div>
+    <h2 style="text-align:center"><span class="text-hy">Աշխատանքների Պատկերասրահ</span><span class="text-en">Portfolio Gallery</span><span class="text-ru">Галерея работ</span></h2>
+    <p class="lead" style="text-align:center"><span class="text-hy">Մեր կատարած աշխատանքների արդյունքները խոսում են ինքնին:</span><span class="text-en">The results of our work speak for themselves.</span><span class="text-ru">Результаты нашей работы говорят сами за себя.</span></p>
+    
+    <!-- Gallery Grid: Photo 3 removed, expanded with other high-quality placeholders -->
+    <div class="gal">
+      <button class="w2 t2"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80" alt="Gallery 1"></button>
+      <button><img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=600&q=80" alt="Gallery 2"></button>
+      <!-- Photo 3 intentionally removed as requested -->
+      <button><img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=600&q=80" alt="Gallery 4"></button>
+      <button class="t2"><img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=600&q=80" alt="Gallery 5"></button>
+      <button><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=600&q=80" alt="Gallery 6"></button>
+      <button class="w2"><img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=800&q=80" alt="Gallery 7"></button>
+      <button><img src="https://images.unsplash.com/photo-1552693673-1bf958298935?auto=format&fit=crop&w=600&q=80" alt="Gallery 8"></button>
+    </div>
+    <!-- NOTE: Replace the Unsplash URLs above with your actual local filenames (e.g., gallery-1.jpg, gallery-2.jpg, gallery-4.jpg, etc.) -->
   </div>
 </section>
 
-<section id="faq" style="background:var(--white)">
-  <div class="wrap" style="max-width:800px">
-    <h2 style="text-align:center;margin-bottom:40px"><span class="text-hy">Հաճախ տրվող հարցեր</span><span class="text-en">Common Questions</span><span class="text-ru">Частые вопросы</span></h2>
-    <div class="faq-box" style="background:var(--white);border-radius:0;padding:40px;border:1px solid var(--border)">
-      <details style="padding:20px 0;border-bottom:1px solid var(--border)">
-        <summary style="cursor:pointer;font-weight:600;font-size:1.1rem;display:flex;justify-content:space-between;align-items:center;gap:12px">
-          <span><span class="text-hy">Ցավո՞տ են պրոցեդուրաները</span><span class="text-en">Do treatments hurt?</span><span class="text-ru">Болезненны ли процедуры?</span></span>
-          <span style="color:var(--rose-600)">+</span>
-        </summary>
-        <p style="margin-top:12px;color:var(--text-light);line-height:1.8"><span class="text-hy">Պրոցեդուրաների մեծ մասն անցնում է հարմարավետ և առանց սուր անհանգստության։ Ըստ անհրաժեշտության կիրառում ենք տեղային անզգայացնող միջոցներ կամ սառեցման համակարգեր, իսկ ցանկացած պահի կարող եք դադար խնդրել։</span><span class="text-en">Most treatments are comfortable. We use topical numbing cream and cooling technology where needed. You can request to stop at any time.</span><span class="text-ru">Большинство процедур комфортны. При необходимости мы используем обезболивающий крем и охлаждающие технологии. Вы можете попросить остановиться в любой момент.</span></p>
-      </details>
-      <details style="padding:20px 0;border-bottom:1px solid var(--border)">
-        <summary style="cursor:pointer;font-weight:600;font-size:1.1rem;display:flex;justify-content:space-between;align-items:center;gap:12px">
-          <span><span class="text-hy">Ե՞րբ են նկատելի դառնում արդյունքները</span><span class="text-en">How long until I see results?</span><span class="text-ru">Когда будут видны результаты?</span></span>
-          <span style="color:var(--rose-600)">+</span>
-        </summary>
-        <p style="margin-top:12px;color:var(--text-light);line-height:1.8"><span class="text-hy">Դեմքի խնամքի պրոցեդուրաներից հետո թարմությունն ու փայլը նկատելի են անմիջապես։ Լազերային կուրսերը, ներարկային մեթոդներն ու մարմնի մոդելավորումը կայուն արդյունք են ձևավորում 2–8 շաբաթվա ընթացքում։</span><span class="text-en">Facials show immediate glow. Laser treatments, injectables, and body contouring build results over 2-8 weeks as your body responds.</span><span class="text-ru">Уходы дают мгновенное сияние. Лазер, инъекции и контурирование тела дают результат в течение 2–8 недель.</span></p>
-      </details>
-      <details style="padding:20px 0">
-        <summary style="cursor:pointer;font-weight:600;font-size:1.1rem;display:flex;justify-content:space-between;align-items:center;gap:12px">
-          <span><span class="text-hy">Վերականգնման շրջան պահանջվո՞ւմ է</span><span class="text-en">Is there downtime?</span><span class="text-ru">Есть ли период восстановления?</span></span>
-          <span style="color:var(--rose-600)">+</span>
-        </summary>
-        <p style="margin-top:12px;color:var(--text-light);line-height:1.8"><span class="text-hy">Պրոցեդուրաների մեծ մասից հետո հաճախորդները կարող են վերադառնալ առօրյա գործերին նույն օրը։ Հնարավոր վերականգնման ժամկետների մասին նախապես մանրամասն տեղեկացնում ենք խորհրդատվության ընթացքում։</span><span class="text-en">Most clients return to work the same day. Each treatment menu lists specific downtime. We'll discuss this during your consultation.</span><span class="text-ru">Большинство клиентов возвращаются к работе в тот же день. Для каждой процедуры указан период восстановления — обсудим это на консультации.</span></p>
-      </details>
+<section id="team" class="reveal">
+  <div class="wrap">
+    <h2 style="text-align:center"><span class="text-hy">Մեր Մասնագետները</span><span class="text-en">Our Specialists</span><span class="text-ru">Наши специалисты</span></h2>
+    <p class="lead" style="text-align:center"><span class="text-hy">Հանդիպեք մեր փորձառու բժիշկների և էսթետիկայի մասնագետների հետ:</span><span class="text-en">Meet our experienced doctors and aesthetics experts.</span><span class="text-ru">Познакомьтесь с нашими опытными врачами и экспертами по эстетике.</span></p>
+    <div class="team">
+      <div class="tm">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=400&q=80" alt="Doctor"></div>
+        <h3>Դոկտ. Աննա Սարգսյան</h3>
+        <p><span class="text-hy">Գլխավոր Բժիշկ, Էսթետիկ Բժշկություն</span><span class="text-en">Chief Physician, Aesthetic Medicine</span><span class="text-ru">Главный врач, эстетическая медицина</span></p>
+      </div>
+      <div class="tm">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=400&q=80" alt="Doctor"></div>
+        <h3>Դոկտ. Դավիթ Հովհաննիսյան</h3>
+        <p><span class="text-hy">Մաշկաբան, Կոսմետոլոգ</span><span class="text-en">Dermatologist, Cosmetologist</span><span class="text-ru">Дерматолог, косметолог</span></p>
+      </div>
+      <div class="tm">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=400&q=80" alt="Doctor"></div>
+        <h3>Մարիամ Գրիգորյան</h3>
+        <p><span class="text-hy">Ավագ Կոսմետոլոգ</span><span class="text-en">Senior Cosmetologist</span><span class="text-ru">Старший косметолог</span></p>
+      </div>
+      <div class="tm">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&q=80" alt="Doctor"></div>
+        <h3>Լևոն Պետրոսյան</h3>
+        <p><span class="text-hy">Մարմնի Ձևավորման Մասնագետ</span><span class="text-en">Body Contouring Specialist</span><span class="text-ru">Специалист по коррекции фигуры</span></p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- BOOKING — compact -->
-<section id="book">
-  <div class="book">
-    <div class="wrap grid">
+<section id="packages" class="reveal">
+  <div class="wrap">
+    <h2 style="text-align:center"><span class="text-hy">Խնամքի Փաթեթներ</span><span class="text-en">Care Packages</span><span class="text-ru">Пакеты ухода</span></h2>
+    <p class="lead" style="text-align:center"><span class="text-hy">Ընտրեք Ձեզ համար հարմարավետ համալիր խնամքի ծրագիր:</span><span class="text-en">Choose a comprehensive care program that suits you.</span><span class="text-ru">Выберите комплексную программу ухода, которая вам подходит.</span></p>
+    <div class="pk">
+      <div class="pkc">
+        <h3><span class="text-hy">Բազային Խնամք</span><span class="text-en">Basic Care</span><span class="text-ru">Базовый уход</span></h3>
+        <div class="pr">35,000 <span style="font-size:1rem">AMD</span></div>
+        <ul>
+          <li><span class="text-hy">Մաշկի խորը մաքրում</span><span class="text-en">Deep skin cleansing</span><span class="text-ru">Глубокая очистка кожи</span></li>
+          <li><span class="text-hy">Հիդրատացնող մասկա</span><span class="text-en">Hydrating mask</span><span class="text-ru">Увлажняющая маска</span></li>
+          <li><span class="text-hy">Խորհրդատվություն</span><span class="text-en">Consultation</span><span class="text-ru">Консультация</span></li>
+        </ul>
+        <button class="btn ghost" style="width:100%;text-align:center"><span class="text-hy">Մանրամասն</span><span class="text-en">Details</span><span class="text-ru">Подробности</span></button>
+      </div>
+      <div class="pkc hot">
+        <h3><span class="text-hy">Պրեմիում Երիտասարդություն</span><span class="text-en">Premium Youth</span><span class="text-ru">Премиум молодость</span></h3>
+        <div class="pr">85,000 <span style="font-size:1rem">AMD</span></div>
+        <ul>
+          <li><span class="text-hy">Բոլոր բազային ծառայությունները</span><span class="text-en">All basic services</span><span class="text-ru">Все базовые услуги</span></li>
+          <li><span class="text-hy">Բոտոքս (1 գոտի)</span><span class="text-en">Botox (1 area)</span><span class="text-ru">Ботокс (1 зона)</span></li>
+          <li><span class="text-hy">PRP թերապիա</span><span class="text-en">PRP therapy</span><span class="text-ru">PRP-терапия</span></li>
+          <li><span class="text-hy">Անհատական խնամքի պլան</span><span class="text-en">Personalized care plan</span><span class="text-ru">Индивидуальный план ухода</span></li>
+        </ul>
+        <button class="btn" style="width:100%;text-align:center"><span class="text-hy">Ամրագրել Հիմա</span><span class="text-en">Book Now</span><span class="text-ru">Записаться сейчас</span></button>
+      </div>
+      <div class="pkc">
+        <h3><span class="text-hy">Էքսկլյուզիվ Փաթեթ</span><span class="text-en">Exclusive Package</span><span class="text-ru">Эксклюзивный пакет</span></h3>
+        <div class="pr">150,000 <span style="font-size:1rem">AMD</span></div>
+        <ul>
+          <li><span class="text-hy">Լրիվ դեմքի ռեվիտալիզացիա</span><span class="text-en">Full face revitalization</span><span class="text-ru">Полная ревитализация лица</span></li>
+          <li><span class="text-hy">Լազերային թերապիա</span><span class="text-en">Laser therapy</span><span class="text-ru">Лазерная терапия</span></li>
+          <li><span class="text-hy">VIP սպասարկում</span><span class="text-en">VIP service</span><span class="text-ru">VIP-обслуживание</span></li>
+        </ul>
+        <button class="btn ghost" style="width:100%;text-align:center"><span class="text-hy">Մանրամասն</span><span class="text-en">Details</span><span class="text-ru">Подробности</span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="offers" class="reveal">
+  <div class="wrap">
+    <h2><span class="text-hy">Հատուկ Առաջարկներ</span><span class="text-en">Special Offers</span><span class="text-ru">Специальные предложения</span></h2>
+    <p class="lead"><span class="text-hy">Օգտվեք մեր սեզոնային զեղչերից և հատուկ ծրագրերից:</span><span class="text-en">Take advantage of our seasonal discounts and special programs.</span><span class="text-ru">Воспользуйтесь нашими сезонными скидками и специальными программами.</span></p>
+    <div class="offers-grid">
+      <div class="offer">
+        <div class="off-badge">-20%</div>
+        <h3><span class="text-hy">Գարնանային Թարմացում</span><span class="text-en">Spring Refresh</span><span class="text-ru">Весеннее обновление</span></h3>
+        <p><span class="text-hy">Մաշկի խորը մաքրում և հիդրատացիա հատուկ գնով:</span><span class="text-en">Deep skin cleansing and hydration at a special price.</span><span class="text-ru">Глубокая очистка и увлажнение кожи по специальной цене.</span></p>
+        <div class="off-prices">
+          <span class="old">40,000 AMD</span>
+          <span class="new">32,000 AMD</span>
+        </div>
+        <span class="off-note"><span class="text-hy">Սահմանափակ առաջարկ</span><span class="text-en">Limited offer</span><span class="text-ru">Ограниченное предложение</span></span>
+        <a href="#book" class="btn"><span class="text-hy">Օգտվել Առաջարկից</span><span class="text-en">Claim Offer</span><span class="text-ru">Воспользоваться</span></a>
+      </div>
+      <div class="offer">
+        <div class="off-badge">-15%</div>
+        <h3><span class="text-hy">Հակատարիքային Խնամք</span><span class="text-en">Anti-Aging Care</span><span class="text-ru">Антивозрастной уход</span></h3>
+        <p><span class="text-hy">Համալիր ծրագիր մաշկի առաձգականությունը վերականգնելու համար:</span><span class="text-en">Comprehensive program to restore skin elasticity.</span><span class="text-ru">Комплексная программа для восстановления упругости кожи.</span></p>
+        <div class="off-prices">
+          <span class="old">60,000 AMD</span>
+          <span class="new">51,000 AMD</span>
+        </div>
+        <span class="off-note"><span class="text-hy">Սահմանափակ առաջարկ</span><span class="text-en">Limited offer</span><span class="text-ru">Ограниченное предложение</span></span>
+        <a href="#book" class="btn"><span class="text-hy">Օգտվել Առաջարկից</span><span class="text-en">Claim Offer</span><span class="text-ru">Воспользоваться</span></a>
+      </div>
+      <div class="offer">
+        <div class="off-badge">NEW</div>
+        <h3><span class="text-hy">VIP Հյուրի Փաթեթ</span><span class="text-en">VIP Guest Package</span><span class="text-ru">Пакет VIP-гостя</span></h3>
+        <p><span class="text-hy">Առաջին այցելության համար՝ անվճար խորհրդատվություն և մաշկի անալիզ:</span><span class="text-en">First visit includes free consultation and skin analysis.</span><span class="text-ru">Первый визит включает бесплатную консультацию и анализ кожи.</span></p>
+        <div class="off-prices">
+          <span class="new" style="color:var(--rose-600)">Անվճար / Free</span>
+        </div>
+        <span class="off-note"><span class="text-hy">Միայն նոր հաճախորդների համար</span><span class="text-en">For new clients only</span><span class="text-ru">Только для новых клиентов</span></span>
+        <a href="#book" class="btn"><span class="text-hy">Օգտվել Առաջարկից</span><span class="text-en">Claim Offer</span><span class="text-ru">Воспользоваться</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="journey reveal">
+  <div class="wrap">
+    <h2 style="text-align:center"><span class="text-hy">Ձեր Գեղեցկության Ճանապարհորդությունը</span><span class="text-en">Your Beauty Journey</span><span class="text-ru">Ваше путешествие к красоте</span></h2>
+    <div class="steps">
+      <div class="step">
+        <span class="num">01</span>
+        <h3><span class="text-hy">Խորհրդատվություն</span><span class="text-en">Consultation</span><span class="text-ru">Консультация</span></h3>
+        <p><span class="text-hy">Մանրամասն քննարկում և մաշկի պրոֆեսիոնալ անալիզ:</span><span class="text-en">Detailed discussion and professional skin analysis.</span><span class="text-ru">Подробное обсуждение и профессиональный анализ кожи.</span></p>
+      </div>
+      <div class="step">
+        <span class="num">02</span>
+        <h3><span class="text-hy">Անհատական Պլան</span><span class="text-en">Personalized Plan</span><span class="text-ru">Индивидуальный план</span></h3>
+        <p><span class="text-hy">Ձեր նպատակներին համապատասխան մշակված բուժման ծրագիր:</span><span class="text-en">Treatment program developed according to your goals.</span><span class="text-ru">Программа лечения, разработанная в соответствии с вашими целями.</span></p>
+      </div>
+      <div class="step">
+        <span class="num">03</span>
+        <h3><span class="text-hy">Մասնագիտական Խնամք</span><span class="text-en">Professional Care</span><span class="text-ru">Профессиональный уход</span></h3>
+        <p><span class="text-hy">Ընթացակարգերի իրականացում առաջադեմ տեխնոլոգիաներով:</span><span class="text-en">Procedures performed with advanced technologies.</span><span class="text-ru">Процедуры, выполняемые с использованием передовых технологий.</span></p>
+      </div>
+      <div class="step">
+        <span class="num">04</span>
+        <h3><span class="text-hy">Երկարատև Արդյունք</span><span class="text-en">Long-lasting Result</span><span class="text-ru">Долговременный результат</span></h3>
+        <p><span class="text-hy">Հետբուժական աջակցություն և տնային խնամքի հանձնարարականներ:</span><span class="text-en">Post-treatment support and home care recommendations.</span><span class="text-ru">Постпроцедурная поддержка и рекомендации по домашнему уходу.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="wrap rv">
+    <blockquote><span class="text-hy">"Այս կլինիկան ամբողջությամբ փոխեց իմ պատկերացումը գեղեցկության մասին: Արդյունքները գերազանցեցին բոլոր սպասելիքներս, իսկ սպասարկումը՝ անթերի:"</span><span class="text-en">"This clinic completely changed my perception of beauty. The results exceeded all my expectations, and the service was impeccable."</span><span class="text-ru">"Эта клиника полностью изменила мое представление о красоте. Результаты превзошли все ожидания, а обслуживание было безупречным."</span></blockquote>
+    <cite>— <span class="text-hy">Նարեկ Մ., մշտական հաճախորդ</span><span class="text-en">Narek M., regular client</span><span class="text-ru">Нарек М., постоянный клиент</span></cite>
+    <div class="dots">
+      <button class="on" aria-label="Review 1"></button>
+      <button aria-label="Review 2"></button>
+      <button aria-label="Review 3"></button>
+    </div>
+  </div>
+</section>
+
+<section id="book" class="reveal">
+  <div class="book wrap">
+    <div class="grid">
       <div>
-        <h2><span class="text-hy">Սկսեք ձեր ճանապարհը</span><span class="text-en">Start your journey</span><span class="text-ru">Начните свой путь</span></h2>
-        <p class="lead"><span class="text-hy">Լրացրեք հայտը, և մեր ադմինիստրատորը կկապնվի ձեզ հետ՝ հարմար ժամ հաստատելու համար։</span><span class="text-en">Tell us what you’d like and we’ll confirm your visit within a few hours.</span><span class="text-ru">Расскажите, что вы хотите, и мы подтвердим визит в течение нескольких часов.</span></p>
+        <h2><span class="text-hy">Ամրագրել Այցելություն</span><span class="text-en">Book an Appointment</span><span class="text-ru">Записаться на прием</span></h2>
+        <p class="lead"><span class="text-hy">Լրացրեք ձևը, և մեր համակարգողը կկապնվի Ձեզ հետ՝ հարմար ժամանակը համաձայնեցնելու համար:</span><span class="text-en">Fill out the form, and our coordinator will contact you to arrange a convenient time.</span><span class="text-ru">Заполните форму, и наш координатор свяжется с вами для согласования удобного времени.</span></p>
       </div>
-      <form id="bf">
-        <input required id="fname" placeholder="Անուն Ազգանուն" aria-label="Full name">
-        <input required type="tel" id="fphone" placeholder="Հեռախոս կամ WhatsApp" aria-label="Phone">
-        <div class="dd" id="bs">
-          <button type="button" id="ddb"></button>
-          <ul id="ddl" hidden></ul>
-        </div>
-        <input type="date" aria-label="Preferred date">
-        <textarea rows="2" id="fnotes" placeholder="Ի՞նչ պետք է իմանանք" aria-label="Notes"></textarea>
-        <button class="btn" type="submit"><span class="text-hy">Ուղարկել հայտը</span><span class="text-en">Request appointment</span><span class="text-ru">Отправить заявку</span></button>
-        <div class="ok" id="ok"><span class="text-hy">Շնորհակալություն։ Շուտով կկապնվենք ձեզ հետ։</span><span class="text-en">Thank you. We’ll be in touch shortly.</span><span class="text-ru">Спасибо! Мы свяжемся с вами в ближайшее время.</span></div>
+      <form id="bookForm" onsubmit="event.preventDefault();document.getElementById('bookOk').style.display='block';this.style.display='none';">
+        <input type="text" placeholder="Անուն Ազգանուն / Full Name" required>
+        <input type="tel" placeholder="+374 __ ______" required>
+        <select required>
+          <option value="" disabled selected><span class="text-hy">Ընտրել Ծառայություն</span><span class="text-en">Select Service</span><span class="text-ru">Выберите услугу</span></option>
+          <option><span class="text-hy">Դեմքի Էսթետիկա</span><span class="text-en">Facial Aesthetics</span><span class="text-ru">Эстетика лица</span></option>
+          <option><span class="text-hy">Մարմնի Ձևավորում</span><span class="text-en">Body Contouring</span><span class="text-ru">Коррекция фигуры</span></option>
+          <option><span class="text-hy">Մաշկի Երիտասարդացում</span><span class="text-en">Skin Rejuvenation</span><span class="text-ru">Омоложение кожи</span></option>
+        </select>
+        <input type="date" required>
+        <textarea rows="3" placeholder="Հաղորդագրություն (ըստ ցանկության) / Message (optional)"></textarea>
+        <button type="submit" class="btn"><span class="text-hy">Հաստատել Ամրագրումը</span><span class="text-en">Confirm Booking</span><span class="text-ru">Подтвердить запись</span></button>
       </form>
+      <div class="ok" id="bookOk"><span class="text-hy">Շնորհակալություն: Ձեր հայտը ընդունված է:</span><span class="text-en">Thank you. Your request has been received.</span><span class="text-ru">Спасибо. Ваша заявка принята.</span></div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT — Google Map + info -->
-<section id="contact" style="background:var(--white)">
-  <div class="wrap">
-    <h2 style="text-align:center;margin-bottom:40px"><span class="text-hy">Այցելեք մեզ</span><span class="text-en">Visit Us</span><span class="text-ru">Приходите к нам</span></h2>
-    <div class="visit">
-      <div class="map">
-        <iframe src="https://maps.google.com/maps?q=Armavir%2C%20Armenia&z=14&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="Lumière — Armavir, Armenia"></iframe>
-        <a class="maplink" href="https://maps.google.com/?q=Armavir,+Armenia" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-          <span class="text-hy">Բացել Google Maps-ում</span><span class="text-en">Open in Google Maps</span><span class="text-ru">Открыть в Google Maps</span>
-        </a>
-      </div>
-      <div class="vinfo">
-        <div class="vcard">
-          <div class="vicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
-          <div>
-            <h3><span class="text-hy">Հասցե</span><span class="text-en">Address</span><span class="text-ru">Адрес</span></h3>
-            <p><span class="text-hy">Վարդերի այգու փողոց 12<br>Արմավիր, Հայաստան</span><span class="text-en">12 Rose Garden Street<br>Armavir, Armenia</span><span class="text-ru">ул. Розовый сад, 12<br>Армавир, Армения</span></p>
-          </div>
+<section id="contact" class="reveal">
+  <div class="wrap visit">
+    <div class="map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3048.0!2d44.5!3d40.18!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDEwJzQ4LjAiTiA0NMKwMzAnMDAuMCJF!5e0!3m2!1sen!2s!4v1600000000000" allowfullscreen="" loading="lazy"></iframe>
+      <a href="https://maps.google.com" target="_blank" class="maplink">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span class="text-hy">Բացել Քարտեզը</span><span class="text-en">Open Map</span><span class="text-ru">Открыть карту</span>
+      </a>
+    </div>
+    <div class="vinfo">
+      <div class="vcard">
+        <div class="vicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div>
+          <h3><span class="text-hy">Հասցե</span><span class="text-en">Address</span><span class="text-ru">Адрес</span></h3>
+          <p>Երևան, Հյուսիսային պողոտա 15<br>Yerevan, Northern Avenue 15</p>
         </div>
-        <div class="vcard">
-          <div class="vicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
-          <div>
-            <h3><span class="text-hy">Աշխատանքային ժամեր</span><span class="text-en">Hours</span><span class="text-ru">Часы работы</span></h3>
-            <p><span class="text-hy">Երկ–Շաբ՝ 9:00–20:00<br>Կիրակի՝ 11:00–17:00</span><span class="text-en">Mon–Sat: 9:00–20:00<br>Sunday: 11:00–17:00</span><span class="text-ru">Пн–Сб:
+      </div>
+      <div class="vcard">
+        <div class="vicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <div>
+          <h3><span class="text-hy">Հեռախոս</span><span class="text-en">Phone</span><span class="text-ru">Телефон</span></h3>
+          <p><a href="tel:+37410123456">+374 10 12 34 56</a><br><a href="tel:+37498123456">+374 98 12 34 56</a></p>
+        </div>
+      </div>
+      <div class="vcard">
+        <div class="vicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <div>
+          <h3><span class="text-hy">Աշխատանքային Ժամեր</span><span class="text-en">Working Hours</span><span class="text-ru">Часы работы</span></h3>
+          <p><span class="text-hy">Երկ - Շաբ</span><span class="text-en">Mon - Sat</span><span class="text-ru">Пн - Сб</span>: 10:00 - 20:00<br><span class="text-hy">Կիրակի</span><span class="text-en">Sunday</span><span class="text-ru">Воскресенье</span>: <span class="text-hy">Փակ է</span><span class="text-en">Closed</span><span class="text-ru">Закрыто</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <b>Lumière</b>
+  <span><span class="text-hy">Էսթետիկ և Խնամքի Կենտրոն</span><span class="text-en">Aesthetic & Care Center</span><span class="text-ru">Эстетический центр</span></span>
+  <div class="soc">
+    <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg> Instagram</a>
+    <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Facebook</a>
+    <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg> WhatsApp</a>
+  </div>
+  <div class="fl">
+    <a href="#about"><span class="text-hy">Մեր Մասին</span><span class="text-en">About</span><span class="text-ru">О нас</span></a>
+    <a href="#services"><span class="text-hy">Ծառայություններ</span><span class="text-en">Services</span><span class="text-ru">Услуги</span></a>
+    <a href="#contact"><span class="text-hy">Կապ</span><span class="text-en">Contact</span><span class="text-ru">Контакты</span></a>
+  </div>
+  <small>© 2026 Lumière Aesthetic & Care Center. <span class="text-hy">Բոլոր իրավունքները պաշտպանված են:</span><span class="text-en">All rights reserved.</span><span class="text-ru">Все права защищены.</span></small>
+</footer>
+
+<a href="https://wa.me/37498123456" class="wa" aria-label="WhatsApp" target="_blank">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+</div>
+
+<script>
+// Language Switcher
+document.querySelectorAll('.lang button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.lang button').forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+    document.documentElement.lang = btn.dataset.lang;
+  });
+});
+
+// Theme Toggle
+const themeBtn = document.getElementById('theme');
+themeBtn.addEventListener('click', () => {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+});
+
+// Mobile Menu
+const burger = document.getElementById('burger');
+const mnav = document.getElementById('mnav');
+burger.addEventListener('click', () => {
+  burger.classList.toggle('open');
+  mnav.classList.toggle('open');
+  burger.setAttribute('aria-expanded', mnav.classList.contains('open'));
+});
+mnav.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    burger.classList.remove('open');
+    mnav.classList.remove('open');
+  });
+});
+
+// Hero Slideshow
+const slides = document.querySelectorAll('.slide');
+const dots = document.getElementById('hsd');
+const count = document.getElementById('hsc');
+let current = 0;
+
+slides.forEach((_, i) => {
+  const dot = document.createElement('button');
+  dot.setAttribute('aria-label', `Slide ${i + 1}`);
+  if (i === 0) dot.classList.add('on');
+  dot.addEventListener('click', () => goTo(i));
+  dots.appendChild(dot);
+});
+
+function goTo(n) {
+  slides[current].classList.remove('on');
+  dots.children[current].classList.remove('on');
+  current = (n + slides.length) % slides.length;
+  slides[current].classList.add('on');
+  dots.children[current].classList.add('on');
+  count.textContent = `${current + 1} / ${slides.length}`;
+}
+
+document.getElementById('hsp').addEventListener('click', () => goTo(current - 1));
+document.getElementById('hsn').addEventListener('click', () => goTo(current + 1));
+setInterval(() => goTo(current + 1), 6000);
+goTo(0);
+
+// Stats Counter
+const stats = document.querySelectorAll('.stats b');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const target = +entry.target.dataset.n;
+      let count = 0;
+      const inc = target / 50;
+      const timer = setInterval(() => {
+        count += inc;
+        if (count >= target) {
+          entry.target.textContent = target.toLocaleString() + (target === 98 ? '%' : '+');
+          clearInterval(timer);
+        } else {
+          entry.target.textContent = Math.floor(count).toLocaleString();
+        }
+      }, 30);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+stats.forEach(s => observer.observe(s));
+
+// Reveal on Scroll
+const reveals = document.querySelectorAll('.reveal');
+const revObs = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+    }
+  });
+}, { threshold: 0.15 });
+reveals.forEach(r => revObs.observe(r));
+
+// Modal Placeholder
+function openModal(id) {
+  alert('Price list modal would open here for: ' + id);
+}
+</script>
+</body>
+</html>
