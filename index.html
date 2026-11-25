@@ -8,7 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  /* Professional palette — original variable names kept so every style still works */
   --white:#ffffff;
   --bg:#faf8f4;
   --rose-50:#f8f4ec;
@@ -77,8 +76,7 @@ section{padding:100px 4%;position:relative}
 .wrap{max-width:1440px;margin:auto}
 .lead{color:var(--text-light);max-width:60ch;margin-top:16px;font-size:1.1rem;line-height:1.8}
 
-/* ===== LANGUAGE SWITCHING (Shopify-safe, CSS only) =====
-   Armenian = default. display:contents keeps inline/block layout identical. */
+/* ===== LANGUAGE SWITCHING (Shopify-safe, CSS only) ===== */
 .text-en,.text-ru{display:none}
 .text-hy{display:contents}
 html[lang^="en"] .text-hy{display:none}
@@ -105,6 +103,8 @@ html[lang^="hy"] .text-en,html[lang^="hy"] .text-ru{display:none}
 .btn.ghost:hover{background:var(--rose-50);border-color:var(--rose-400)}
 .btn.ghost.on-dark{color:#fff;border-color:rgba(255,255,255,0.45)}
 .btn.ghost.on-dark:hover{background:rgba(255,255,255,0.12);border-color:#fff}
+.btn-lg{padding:18px 44px;font-size:1.05rem;display:inline-flex;align-items:center;gap:10px}
+.btn-lg svg{width:20px;height:20px;flex-shrink:0}
 :focus-visible{outline:2px solid var(--rose-600);outline-offset:2px}
 
 /* Navigation */
@@ -336,35 +336,27 @@ nav ul a:hover{color:var(--rose-600)}
 @media(max-width:900px){.why-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.why{padding:32px 20px;margin-top:0}.why-grid{grid-template-columns:1fr;gap:28px}}
 
-/* Before/After */
-.ba{background:var(--purple-50)}
-.cmp{
-  position:relative;max-width:900px;aspect-ratio:16/10;margin:40px auto 0;
-  border-radius:0;overflow:hidden;cursor:ew-resize;box-shadow:var(--shadow-lg);
-  touch-action:none;
+/* Journey — replaces Before/After */
+.journey{background:var(--purple-50)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:60px}
+.step{
+  background:var(--white);border:1px solid var(--border);border-radius:0;
+  padding:36px 28px;position:relative;overflow:hidden;transition:all 0.4s ease;
 }
-.cmp .l,.cmp .r{position:absolute;inset:0;display:grid;place-items:center}
-.cmp .l{background:url('https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=900&q=80') center/cover}
-.cmp .r{background:url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=900&q=80') center/cover;clip-path:inset(0 0 0 var(--p,50%))}
-.cmp .bar{
-  position:absolute;top:0;bottom:0;left:var(--p,50%);width:4px;
-  background:#fff;transform:translateX(-50%);box-shadow:0 0 20px rgba(0,0,0,0.3);
+.step::before{
+  content:"";position:absolute;top:0;left:0;width:100%;height:3px;
+  background:var(--rose-500);transform:scaleX(0);transform-origin:left;transition:transform 0.4s ease;
 }
-.cmp .bar::after{
-  content:"⇔";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  width:48px;height:48px;border-radius:0;background:#fff;
-  display:grid;place-items:center;font-size:1.2rem;color:var(--rose-700);box-shadow:var(--shadow);
+.step:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:var(--rose-400)}
+.step:hover::before{transform:scaleX(1)}
+.step .num{
+  font:600 2.6rem "Playfair Display",serif;color:var(--rose-400);line-height:1;
+  display:block;padding-bottom:14px;margin-bottom:16px;border-bottom:1px solid var(--border);
 }
-.cmp small{
-  position:absolute;bottom:20px;background:rgba(255,255,255,0.95);color:#221e19;
-  padding:8px 20px;border-radius:0;font-weight:600;font-size:0.85rem;box-shadow:var(--shadow);
-}
-.cmp .a{left:20px}.cmp .b{right:20px}
-@media(max-width:600px){
-  .cmp small{bottom:12px;padding:6px 14px;font-size:0.75rem}
-  .cmp .a{left:12px}.cmp .b{right:12px}
-  .cmp .bar::after{width:40px;height:40px;font-size:1rem}
-}
+.step h3{font-size:1.15rem;margin-bottom:10px}
+.step p{color:var(--text-light);font-size:0.92rem;line-height:1.7}
+@media(max-width:900px){.steps{grid-template-columns:1fr 1fr;gap:20px}}
+@media(max-width:600px){.steps{grid-template-columns:1fr;margin-top:36px}.step{padding:28px 22px}}
 
 /* Team */
 .team{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:60px}
@@ -408,8 +400,20 @@ nav ul a:hover{color:var(--rose-600)}
 .plink::after{content:"→"}
 .plink:hover{gap:10px}
 .pkc.hot .plink{color:#fff}
+/* Highlighted full price list CTA */
+.pl-cta{
+  margin-top:48px;background:var(--white);border:1px solid var(--rose-300);
+  padding:36px 32px;text-align:center;display:flex;flex-direction:column;
+  align-items:center;gap:18px;box-shadow:var(--shadow);
+}
+.pl-cta p{color:var(--text-light);font-size:1.05rem;max-width:60ch}
 @media(max-width:900px){.pk{grid-template-columns:1fr}.pkc.hot{transform:none}.pkc.hot:hover{transform:translateY(-8px)}}
-@media(max-width:600px){.pk{margin-top:36px}.pkc{padding:28px 22px}}
+@media(max-width:600px){
+  .pk{margin-top:36px}
+  .pkc{padding:28px 22px}
+  .pl-cta{padding:28px 20px}
+  .pl-cta .btn-lg{width:100%;justify-content:center;padding:16px 20px;font-size:0.95rem}
+}
 
 /* Reviews */
 .rv{
@@ -636,7 +640,6 @@ footer small{display:block;margin-top:30px;opacity:0.6;font-size:0.85rem}
     <li><a href="#contact"><span class="text-hy">Կապ</span><span class="text-en">Contact</span><span class="text-ru">Контакты</span></a></li>
   </ul>
   <div class="nav-r">
-    <!-- Language switcher — header corner -->
     <div class="lang" id="lang" role="group" aria-label="Language">
       <button type="button" data-lang="hy">HY</button>
       <button type="button" data-lang="en">EN</button>
@@ -646,7 +649,6 @@ footer small{display:block;margin-top:30px;opacity:0.6;font-size:0.85rem}
     <a class="btn" href="#book"><span class="text-hy">Ամրագրել</span><span class="text-en">Book Now</span><span class="text-ru">Записаться</span></a>
     <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
-  <!-- Mobile dropdown menu -->
   <div class="mnav" id="mnav">
     <a class="mlink" href="#about"><span class="text-hy">Մեր մասին</span><span class="text-en">About</span><span class="text-ru">О нас</span></a>
     <a class="mlink" href="#services"><span class="text-hy">Ծառայություններ</span><span class="text-en">Services</span><span class="text-ru">Услуги</span></a>
@@ -722,8 +724,8 @@ footer small{display:block;margin-top:30px;opacity:0.6;font-size:0.85rem}
         <p class="lead"><span class="text-hy">Ամեն բուժում սկսվում է համապարփակ խորհրդատվությամբ, որպեսզի հասկանանք ձեր մտահոգություններն ու նպատակները՝ նախքան անհատական խնամքի ծրագիր կազմելը։</span><span class="text-en">Every treatment begins with a comprehensive consultation, ensuring we understand your unique concerns and goals before creating your personalized care plan.</span><span class="text-ru">Каждая программа начинается с подробной консультации: мы понимаем ваши задачи и цели, прежде чем составить индивидуальный план ухода.</span></p>
       </div>
       <div class="about-imgs">
-        <img class="ai1" src="michelle-maria-beauty-salon-3277314_1920.jpg" alt="Lumière salon interior">
-        <img class="ai2" src="kimia-kazemi-RbIcMsh0NSk-unsplash.jpg" alt="Skincare treatment">
+        <img class="ai1" src="christianebrand-hairdressing-salon-2693077_1920.jpg" alt="Lumière salon interior">
+        <img class="ai2" src="billyjocatbagan-interior-5413351_1920.jpg" alt="Lumière treatment interior">
       </div>
     </div>
   </div>
@@ -766,18 +768,36 @@ footer small{display:block;margin-top:30px;opacity:0.6;font-size:0.85rem}
   </div>
 </section>
 
-<section class="ba" id="results">
+<!-- YOUR JOURNEY — replaces Before/After -->
+<section class="journey" id="journey">
   <div class="wrap">
-    <h2 style="text-align:center"><span class="text-hy">Փոխակերպող արդյունքներ</span><span class="text-en">Transformative Results</span><span class="text-ru">Преображающие результаты</span></h2>
-    <p class="lead" style="text-align:center;margin-left:auto;margin-right:auto"><span class="text-hy">Տեսեք, թե ինչ տարբերություն կարող է ստեղծել պրոֆեսիոնալ խնամքը</span><span class="text-en">See the difference professional care can make</span><span class="text-ru">Посмотрите, что даёт профессиональный уход</span></p>
-    <div class="cmp" id="cmp">
-      <div class="l"></div>
-      <div class="r"></div>
-      <div class="bar"></div>
-      <small class="a"><span class="text-hy">Առաջ</span><span class="text-en">Before</span><span class="text-ru">До</span></small>
-      <small class="b"><span class="text-hy">Հետո</span><span class="text-en">After</span><span class="text-ru">После</span></small>
+    <h2 style="text-align:center"><span class="text-hy">Ձեր ճանապարհը մեզ հետ</span><span class="text-en">Your Journey With Us</span><span class="text-ru">Ваш путь к нам</span></h2>
+    <p class="lead" style="text-align:center;margin-left:auto;margin-right:auto"><span class="text-hy">Պարզ, թափանցիկ գործընթաց՝ առաջին զանգից մինչև փայլող արդյունք</span><span class="text-en">A simple, transparent process — from your first call to glowing results</span><span class="text-ru">Простой и прозрачный процесс — от первого звонка до сияющего результата</span></p>
+    <div class="steps">
+      <div class="step reveal" style="transition-delay:0.05s">
+        <span class="num">01</span>
+        <h3><span class="text-hy">Խորհրդատվություն և մաշկի վերլուծություն</span><span class="text-en">Consultation & Skin Analysis</span><span class="text-ru">Консультация и анализ кожи</span></h3>
+        <p><span class="text-hy">Անվճար զրույց՝ ձեր մաշկը, նպատակներն ու սպասումները հասկանալու համար։</span><span class="text-en">A complimentary conversation to understand your skin, goals and expectations.</span><span class="text-ru">Бесплатная беседа, чтобы понять вашу кожу, цели и ожидания.</span></p>
+      </div>
+      <div class="step reveal" style="transition-delay:0.15s">
+        <span class="num">02</span>
+        <h3><span class="text-hy">Անհատական ծրագիր</span><span class="text-en">Personalized Plan</span><span class="text-ru">Индивидуальный план</span></h3>
+        <p><span class="text-hy">Ձեր մաշկի տիպին և բյուջեին համապատասխան բուժման հստակ ծրագիր՝ թափանցիկ գներով։</span><span class="text-en">A clear treatment plan matched to your skin type and budget, with transparent pricing.</span><span class="text-ru">Чёткий план процедур под ваш тип кожи и бюджет с прозрачными ценами.</span></p>
+      </div>
+      <div class="step reveal" style="transition-delay:0.25s">
+        <span class="num">03</span>
+        <h3><span class="text-hy">Պրոցեդուրա</span><span class="text-en">Your Treatment</span><span class="text-ru">Процедура</span></h3>
+        <p><span class="text-hy">Կատարում են հավաստագրված մասնագետները՝ ստերիլ պայմաններում և ժամանակակից սարքավորումներով։</span><span class="text-en">Performed by certified specialists in sterile conditions with modern equipment.</span><span class="text-ru">Выполняют сертифицированные специалисты в стерильных условиях на современном оборудовании.</span></p>
+      </div>
+      <div class="step reveal" style="transition-delay:0.35s">
+        <span class="num">04</span>
+        <h3><span class="text-hy">Հետբուժական խնամք</span><span class="text-en">Aftercare & Follow-up</span><span class="text-ru">Уход после процедуры</span></h3>
+        <p><span class="text-hy">Տնային խնամքի հանձնարարականներ և վերահսկող այցեր՝ արդյունքը պահպանելու համար։</span><span class="text-en">Home-care guidance and follow-up visits to protect and maintain your results.</span><span class="text-ru">Рекомендации по домашнему уходу и контрольные визиты для сохранения результата.</span></p>
+      </div>
     </div>
-    <p style="text-align:center;color:var(--text-light);font-size:0.85rem;margin-top:16px"><span class="text-hy">Անհատական արդյունքները կարող են տարբերվել։ Լուսանկարները՝ հաճախորդների համաձայնությամբ։</span><span class="text-en">Individual results may vary. Photos used with client consent.</span><span class="text-ru">Индивидуальные результаты могут отличаться. Фото опубликованы с согласия клиентов.</span></p>
+    <div style="text-align:center;margin-top:44px">
+      <a class="btn" href="#book"><span class="text-hy">Ամրագրել խորհրդատվություն</span><span class="text-en">Book Consultation</span><span class="text-ru">Записаться на консультацию</span></a>
+    </div>
   </div>
 </section>
 
@@ -832,8 +852,13 @@ footer small{display:block;margin-top:30px;opacity:0.6;font-size:0.85rem}
         <button class="plink" data-pl><span class="text-hy">Դիտել ամբողջ գնացուցակը</span><span class="text-en">View full price list</span><span class="text-ru">Смотреть полный прайс-лист</span></button>
       </div>
     </div>
-    <div style="text-align:center;margin-top:44px">
-      <button class="btn ghost" data-pl><span class="text-hy">Բոլոր ծառայությունները և գները</span><span class="text-en">All Services &amp; Price List</span><span class="text-ru">Все услуги и прайс-лист</span></button>
+    <!-- Highlighted, highly visible full price list CTA -->
+    <div class="pl-cta reveal">
+      <p><span class="text-hy">Ցանկանո՞ւմ եք տեսնել բոլոր պրոցեդուրաներն ու գները մեկ ցանկում</span><span class="text-en">Want to see every treatment and price in one list?</span><span class="text-ru">Хотите увидеть все процедуры и цены одним списком?</span></p>
+      <button class="btn btn-lg" data-pl>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+        <span class="text-hy">Բոլոր ծառայությունները և գները</span><span class="text-en">All Services &amp; Price List</span><span class="text-ru">Все услуги и прайс-лист</span>
+      </button>
     </div>
   </div>
 </section>
@@ -997,16 +1022,18 @@ const L = o => o[getLang()] || o.hy;
 const T = o => '<span class="text-hy">' + o.hy + '</span><span class="text-en">' + o.en + '</span><span class="text-ru">' + o.ru + '</span>';
 const DUR = m => T({hy: m + " րոպե", en: m + " min", ru: m + " мин"});
 
-/* Restore saved language choice (works standalone AND inside Shopify Custom Liquid) */
+/* Restore saved language choice */
 try {
   const saved = localStorage.getItem("lumiere-lang");
   if (saved && ["hy","en","ru"].indexOf(saved) !== -1) document.documentElement.lang = saved;
 } catch(e) {}
 
+/* ===== SERVICES — img is shared by service cards, modals AND hero slides.
+   Hero slide 1 = Offers, so Service 1 = slide 2, Service 2 = slide 3, etc. ===== */
 const SERVICES = [
   {n:{hy:"Դեմք և մաշկ",en:"Facial & Skin",ru:"Лицо и кожа"},
    d:{hy:"Վերականգնող ֆեյշլներ և առաջադեմ մաշկի թերապիա",en:"Rejuvenating facials and advanced skin therapies",ru:"Омолаживающие уходы и передовые процедуры для кожи"},
-   img:"kimia-kazemi-RbIcMsh0NSk-unsplash.jpg",
+   img:"u_k06i0jyo0w-ai-generated-8270432_1920.png",
    t:[
     {n:{hy:"Ֆիրմային խոնավեցնող ֆեյշլ",en:"Signature Hydrating Facial",ru:"Фирменный увлажняющий уход"},m:60,p:70},
     {n:{hy:"Խորը մաքրում և էքստրակցիա",en:"Deep Cleanse & Extraction",ru:"Глубокая чистка с экстракцией"},m:75,p:85},
@@ -1016,7 +1043,7 @@ const SERVICES = [
    ]},
   {n:{hy:"Լազեր և մազահեռացում",en:"Laser & Hair Removal",ru:"Лазер и эпиляция"},
    d:{hy:"Առաջադեմ լազերային տեխնոլոգիա՝ հարթ մաշկի համար",en:"Advanced laser technology for smooth skin",ru:"Передовые лазерные технологии для гладкой кожи"},
-   img:"https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=1200&q=80",
+   img:"Screenshot%202026-11-25%20235421.png",
    t:[
     {n:{hy:"Ոտքեր ամբողջությամբ",en:"Full Legs",ru:"Ноги полностью"},m:60,p:140},
     {n:{hy:"Անութիկներ",en:"Underarms",ru:"Подмышки"},m:15,p:35},
@@ -1026,7 +1053,7 @@ const SERVICES = [
    ]},
   {n:{hy:"Ինյեկցիաներ և հակատարիքային",en:"Injectables & Anti-Aging",ru:"Инъекции и антиэйдж"},
    d:{hy:"Նուրբ, բնական տեսքով բարելավումներ",en:"Subtle, natural-looking enhancements",ru:"Деликатные, естественные улучшения"},
-   img:"https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&q=80",
+   img:"Screenshot%202026-11-25%20235536.png",
    t:[
     {n:{hy:"Հակակնճիռային ներարկումներ",en:"Anti-Wrinkle Injections",ru:"Инъекции от морщин"},m:30,p:220},
     {n:{hy:"Շրթունքների ֆիլեր",en:"Lip Filler",ru:"Филлеры для губ"},m:40,p:300},
@@ -1036,7 +1063,7 @@ const SERVICES = [
    ]},
   {n:{hy:"Մարմնի մոդելավորում",en:"Body Contouring",ru:"Контурирование тела"},
    d:{hy:"Ոչ ինվազիվ մարմնի ձևավորում և ձգում",en:"Non-invasive body sculpting and tightening",ru:"Неинвазивная скульптура и подтяжка тела"},
-   img:"https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1200&q=80",
+   img:"Screenshot%202026-11-25%20235700.png",
    t:[
     {n:{hy:"Կավիտացիա և RF",en:"Cavitation & RF",ru:"Кавитация и RF"},m:50,p:110},
     {n:{hy:"Լիմֆադրենաժ",en:"Lymphatic Drainage",ru:"Лимфодренаж"},m:60,p:90},
@@ -1045,7 +1072,7 @@ const SERVICES = [
    ]},
   {n:{hy:"Մազեր և գլխամաշկ",en:"Hair & Scalp Care",ru:"Волосы и кожа головы"},
    d:{hy:"Վերականգնեք մազերի առողջությունը և խթանեք աճը",en:"Restore hair health and promote growth",ru:"Восстановление здоровья волос и стимуляция роста"},
-   img:"https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=1200&q=80",
+   img:"Screenshot%202026-11-25%20235739.png",
    t:[
     {n:{hy:"Գլխամաշկի վերլուծություն",en:"Scalp Analysis",ru:"Анализ кожи головы"},m:20,p:30},
     {n:{hy:"Մազերի PRP",en:"Hair PRP",ru:"PRP для волос"},m:60,p:210},
@@ -1091,9 +1118,9 @@ const GALLERY = [
   {src:"https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80",span:""}
 ];
 
-/* ===== HERO SLIDESHOW: offers slide + one slide per service ===== */
+/* ===== HERO SLIDESHOW: slide 1 = offers, slides 2–7 = services ===== */
 const OFFER_SLIDE = {
-  img:"michelle-maria-beauty-salon-3277314_1920.jpg",
+  img:"christianebrand-hairdressing-salon-2693077_1920.png",
   eyebrow:{hy:"Հատուկ առաջարկներ · Սահմանափակ ժամանակ",en:"Special Offers · Limited Time",ru:"Спецпредложения · Ограниченное время"},
   title:{hy:"Մաշկ, որը փայլում է հոգատարությունից",en:"Skin that glows from care",ru:"Кожа, сияющая заботой"},
   sub:{hy:"Բժշկական էսթետիկա և վելնես",en:"Medical aesthetics & wellness",ru:"Медицинская эстетика и велнес"},
@@ -1165,7 +1192,7 @@ $("#hs").addEventListener("click", e => {
 });
 hGo(0); hStart();
 
-/* ===== Render Services ===== */
+/* ===== Render Services (same images as slides 2–7) ===== */
 $("#svc").innerHTML = SERVICES.map((s, i) => `
   <button class="sc reveal" data-i="${i}" style="animation-delay:${i*100}ms">
     <div class="art"><img src="${s.img}" alt="${L(s.n)}"></div>
@@ -1300,22 +1327,6 @@ document.addEventListener("keydown", e => {
   if (e.key === "Escape") closeModal();
 });
 
-/* ===== Before/After Slider ===== */
-const cmp = $("#cmp");
-let dragging = false;
-function updateSlider(e) {
-  if (!dragging) return;
-  const rect = cmp.getBoundingClientRect();
-  const x = Math.max(0, Math.min(100, ((e.clientX || e.touches[0].clientX) - rect.left) / rect.width * 100));
-  cmp.style.setProperty("--p", x + "%");
-}
-cmp.addEventListener("pointerdown", () => dragging = true);
-window.addEventListener("pointerup", () => dragging = false);
-window.addEventListener("pointermove", updateSlider);
-cmp.addEventListener("touchstart", () => dragging = true);
-window.addEventListener("touchend", () => dragging = false);
-window.addEventListener("touchmove", updateSlider);
-
 /* ===== Reviews (trilingual) ===== */
 const reviews = [
   {text:{hy:"Եկել էի մեկ ֆեյշլի համար, և հիմա մաշկս երբևէ այսքան հանգիստ չի եղել։ Թիմը իսկապես լսում է և անհատականացնում ամեն ինչ։",en:"I came for one facial and now my skin has never looked calmer. The team truly listens and customizes everything.",ru:"Я пришла на один уход, и моя кожа ещё никогда не была такой спокойной. Команда действительно слушает и подбирает всё индивидуально."},
@@ -1395,7 +1406,7 @@ function setSvc(i) {
   document.querySelectorAll("#ddl li").forEach((l,k) => l.classList.toggle("on", k === i));
 }
 
-/* Translated placeholders (attributes cannot hold spans, so set by active language) */
+/* Translated placeholders */
 function setPlaceholders(){
   $("#fname").placeholder = L({hy:"Անուն Ազգանուն",en:"Full name",ru:"ФИО"});
   $("#fphone").placeholder = L({hy:"Հեռախոս կամ WhatsApp",en:"Phone or WhatsApp",ru:"Телефон или WhatsApp"});
@@ -1429,7 +1440,6 @@ $("#lang").addEventListener("click", e => {
   try { localStorage.setItem("lumiere-lang", b.dataset.lang); } catch(err) {}
   syncLangUI();
 });
-/* Stay in sync if Shopify or a translation app changes html[lang] */
 new MutationObserver(syncLangUI).observe(document.documentElement, {attributes:true, attributeFilter:["lang"]});
 syncLangUI();
 
