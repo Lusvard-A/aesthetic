@@ -1,169 +1,232 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hy">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Lumière Aesthetic & Care Center</title>
+<title>Lumière — Aesthetic & Care Center</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
+  /* Professional palette — original variable names kept so every style still works */
   --white:#ffffff;
-  --rose-50:#fff1f2;
-  --rose-100:#ffe4e6;
-  --rose-200:#fecdd3;
-  --rose-300:#fda4af;
-  --rose-400:#fb7185;
-  --rose-500:#f43f5e;
-  --rose-600:#e11d48;
-  --rose-700:#be123c;
-  --rose-800:#9f1239;
-  --purple-50:#faf5ff;
-  --purple-100:#f3e8ff;
-  --purple-200:#e9d5ff;
-  --purple-300:#d8b4fe;
-  --purple-400:#c084fc;
-  --purple-500:#a855f7;
-  --purple-600:#9333ea;
-  --purple-700:#7e22ce;
-  --purple-800:#6b21a8;
-  --purple-900:#581c87;
-  --text:#1f2937;
-  --text-light:#6b7280;
-  --border:#f3f4f6;
-  --shadow:0 4px 6px -1px rgba(0,0,0,0.1),0 2px 4px -1px rgba(0,0,0,0.06);
-  --shadow-lg:0 20px 25px -5px rgba(0,0,0,0.1),0 10px 10px -5px rgba(0,0,0,0.04);
+  --bg:#faf8f4;
+  --rose-50:#f8f4ec;
+  --rose-100:#f0e8d8;
+  --rose-200:#e3d3b7;
+  --rose-300:#d2b98c;
+  --rose-400:#c0a066;
+  --rose-500:#ab8a52;
+  --rose-600:#96753f;
+  --rose-700:#7a5e33;
+  --rose-800:#5f4927;
+  --purple-50:#f5f4f1;
+  --purple-100:#eae8e3;
+  --purple-200:#d6d2ca;
+  --purple-300:#b5afa4;
+  --purple-400:#8e877a;
+  --purple-500:#6e675b;
+  --purple-600:#555046;
+  --purple-700:#3e3a32;
+  --purple-800:#2a2620;
+  --purple-900:#181511;
+  --text:#221e19;
+  --text-light:#6e675c;
+  --border:#e7e3da;
+  --shadow:0 4px 6px -1px rgba(24,21,17,0.08),0 2px 4px -1px rgba(24,21,17,0.05);
+  --shadow-lg:0 20px 25px -5px rgba(24,21,17,0.12),0 10px 10px -5px rgba(24,21,17,0.05);
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --white:#111827;
-    --rose-50:#4c0519;
-    --rose-100:#831843;
-    --rose-200:#9f1239;
-    --purple-50:#3b0764;
-    --purple-100:#581c87;
-    --text:#f9fafb;
-    --text-light:#9ca3af;
-    --border:#374151;
+    --white:#171411;
+    --bg:#100e0b;
+    --rose-50:#231c12;
+    --rose-100:#2c2315;
+    --purple-50:#201d18;
+    --purple-100:#2a2620;
+    --text:#f2efe9;
+    --text-light:#a49c8e;
+    --border:#332e27;
   }
 }
 :root[data-theme="dark"]{
-  --white:#111827;
-  --rose-50:#4c0519;
-  --rose-100:#831843;
-  --rose-200:#9f1239;
-  --purple-50:#3b0764;
-  --purple-100:#581c87;
-  --text:#f9fafb;
-  --text-light:#9ca3af;
-  --border:#374151;
+  --white:#171411;
+  --bg:#100e0b;
+  --rose-50:#231c12;
+  --rose-100:#2c2315;
+  --purple-50:#201d18;
+  --purple-100:#2a2620;
+  --text:#f2efe9;
+  --text-light:#a49c8e;
+  --border:#332e27;
 }
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth;scroll-padding-top:100px}
 body{
-  background:var(--white);
+  background:var(--bg);
   color:var(--text);
   font:400 16px/1.6 Inter,system-ui,sans-serif;
   overflow-x:hidden;
 }
 h1,h2,h3,h4{font-family:"Playfair Display",serif;font-weight:400;line-height:1.2}
-h1{font-size:clamp(2.5rem,5vw,4rem)}
+h1{font-size:clamp(2.6rem,5.2vw,4.4rem)}
 h2{font-size:clamp(2rem,4vw,3rem)}
 h3{font-size:1.5rem}
 a{color:inherit;text-decoration:none}
-section{padding:100px 5%;position:relative}
-.wrap{max-width:1200px;margin:auto}
+section{padding:100px 4%;position:relative}
+.wrap{max-width:1440px;margin:auto}
 .lead{color:var(--text-light);max-width:60ch;margin-top:16px;font-size:1.1rem;line-height:1.8}
+
+/* ===== LANGUAGE SWITCHING (Shopify-safe, CSS only) =====
+   Armenian = default. display:contents keeps inline/block layout identical. */
+.text-en,.text-ru{display:none}
+.text-hy{display:contents}
+html[lang^="en"] .text-hy{display:none}
+html[lang^="en"] .text-en{display:contents}
+html[lang^="ru"] .text-hy{display:none}
+html[lang^="ru"] .text-en{display:none}
+html[lang^="ru"] .text-ru{display:contents}
+html[lang^="hy"] .text-en,html[lang^="hy"] .text-ru{display:none}
+
 .btn{
   display:inline-block;
   cursor:pointer;
-  font:500 0.95rem Inter,sans-serif;
+  font:600 0.95rem Inter,sans-serif;
   padding:16px 32px;
-  border-radius:99px;
-  background:linear-gradient(135deg,var(--rose-500),var(--purple-600));
-  color:var(--white);
+  border-radius:0;
+  background:linear-gradient(135deg,var(--rose-600),var(--purple-700));
+  color:#fff;
   border:none;
   transition:all 0.3s ease;
   box-shadow:var(--shadow);
 }
 .btn:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
 .btn.ghost{background:transparent;color:var(--text);border:1px solid var(--border);box-shadow:none}
-.btn.ghost:hover{background:var(--rose-50);border-color:var(--rose-300)}
-:focus-visible{outline:2px solid var(--purple-500);outline-offset:2px}
+.btn.ghost:hover{background:var(--rose-50);border-color:var(--rose-400)}
+.btn.ghost.on-dark{color:#fff;border-color:rgba(255,255,255,0.45)}
+.btn.ghost.on-dark:hover{background:rgba(255,255,255,0.12);border-color:#fff}
+:focus-visible{outline:2px solid var(--rose-600);outline-offset:2px}
 
 /* Navigation */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:50;
   display:flex;justify-content:space-between;align-items:center;
-  padding:20px 5%;
-  background:rgba(255,255,255,0.9);
+  padding:18px 4%;
+  background:var(--white);
   backdrop-filter:blur(20px);
   border-bottom:1px solid var(--border);
 }
 nav b{
-  font:600 1.5rem "Playfair Display",serif;
-  background:linear-gradient(135deg,var(--rose-600),var(--purple-700));
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+  font:700 1.85rem "Playfair Display",serif;
+  color:var(--text);
+  letter-spacing:0.02em;
 }
-nav ul{display:flex;gap:32px;list-style:none;padding:0}
-nav ul a{font-size:0.9rem;font-weight:500;color:var(--text-light);transition:color 0.3s}
+nav ul{display:flex;gap:30px;list-style:none;padding:0}
+nav ul a{font-size:1rem;font-weight:500;color:var(--text);transition:color 0.3s}
 nav ul a:hover{color:var(--rose-600)}
 .nav-r{display:flex;gap:12px;align-items:center}
 .tg{
   background:none;border:1px solid var(--border);color:var(--text);
-  width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:1rem;transition:all 0.3s;
+  width:40px;height:40px;border-radius:0;cursor:pointer;font-size:1rem;transition:all 0.3s;
 }
 .tg:hover{background:var(--rose-50)}
 @media(max-width:900px){nav ul{display:none}}
 
-/* Hero */
-.hero{
-  min-height:100vh;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;
-  padding-top:120px;background:linear-gradient(135deg,var(--rose-50) 0%,var(--purple-50) 100%);
+/* ===== HERO SLIDESHOW — full width ===== */
+.hero{padding:0;min-height:100vh;position:relative;background:var(--purple-900)}
+.slides{position:relative;height:100vh;min-height:640px;overflow:hidden}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 0.9s ease;display:flex;align-items:center;pointer-events:none}
+.slide.on{opacity:1;z-index:1;pointer-events:auto}
+.slide .bgimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.slide::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(16,13,10,0.82) 0%,rgba(16,13,10,0.55) 55%,rgba(16,13,10,0.25) 100%)}
+.slide-in{position:relative;z-index:2;width:100%;max-width:1440px;margin:auto;padding:150px 6% 130px;color:#fff}
+.slide.on .slide-in{animation:heroIn 0.9s ease both}
+@keyframes heroIn{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+.slide .eyebrow{display:inline-block;font-size:0.8rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--rose-300);margin-bottom:20px;border-bottom:1px solid rgba(210,185,140,0.4);padding-bottom:10px}
+.slide h1,.slide .h1{color:#fff;font-size:clamp(2.6rem,5.2vw,4.4rem)}
+.slide h1 em{display:block;color:var(--rose-300);font-style:italic;margin-top:10px}
+.slide .lead{color:rgba(255,255,255,0.85);margin-top:20px}
+.slide .from{margin-top:16px;font-size:0.95rem;font-weight:600;letter-spacing:0.05em;color:var(--rose-300)}
+.slide .row{display:flex;gap:16px;flex-wrap:wrap;margin-top:34px}
+.hs-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);z-index:4;
+  width:52px;height:52px;border-radius:0;cursor:pointer;
+  background:rgba(20,16,12,0.45);border:1px solid rgba(255,255,255,0.35);
+  color:#fff;font-size:1.5rem;line-height:1;display:grid;place-items:center;
+  transition:all 0.3s;backdrop-filter:blur(4px);
 }
-.hero h1 em{display:block;color:var(--rose-600);font-style:italic;margin-top:10px}
-.hero .row{display:flex;gap:16px;flex-wrap:wrap;margin-top:40px}
-.hero-img{position:relative;border-radius:24px;overflow:hidden;box-shadow:var(--shadow-lg)}
-.hero-img img{width:100%;height:600px;object-fit:cover}
-.hero-badge{
-  position:absolute;bottom:30px;left:30px;background:var(--white);
-  padding:20px 24px;border-radius:16px;box-shadow:var(--shadow-lg);
+.hs-arrow:hover{background:var(--rose-600);border-color:var(--rose-600)}
+.hs-prev{left:24px}.hs-next{right:24px}
+.hs-dots{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:4;display:flex;gap:10px}
+.hs-dots button{width:10px;height:10px;border-radius:0;border:1px solid rgba(255,255,255,0.7);background:transparent;cursor:pointer;padding:0;transition:all 0.3s}
+.hs-dots .on{background:#fff;border-color:#fff;width:30px}
+.hs-count{position:absolute;top:118px;right:6%;z-index:4;color:rgba(255,255,255,0.75);font-size:0.8rem;letter-spacing:0.25em}
+.hs-badge{
+  position:absolute;right:6%;bottom:70px;z-index:4;background:var(--white);
+  padding:16px 22px;border-radius:0;box-shadow:var(--shadow-lg);
 }
-.hero-badge b{display:block;font-size:2rem;color:var(--rose-600);font-family:"Playfair Display",serif}
-.hero-badge span{font-size:0.85rem;color:var(--text-light)}
+.hs-badge b{display:block;font-size:1.8rem;color:var(--rose-600);font-family:"Playfair Display",serif}
+.hs-badge span{font-size:0.85rem;color:var(--text-light)}
 @media(max-width:900px){
-  .hero{grid-template-columns:1fr;padding-top:100px}
-  .hero-img{order:-1;height:400px}
-  .hero-img img{height:100%}
+  .slides{min-height:600px}
+  .slide-in{padding:130px 6% 120px}
+  .hs-arrow{width:44px;height:44px}
+  .hs-prev{left:12px}.hs-next{right:12px}
+  .hs-badge{right:16px;bottom:64px;padding:12px 16px}
+  .hs-badge b{font-size:1.4rem}
+  .hs-count{top:104px}
 }
 
 /* Stats */
 .stats{
-  background:var(--white);display:grid;grid-template-columns:repeat(4,1fr);gap:40px;text-align:center;padding:60px 5%;
+  background:var(--white);display:grid;grid-template-columns:repeat(4,1fr);gap:40px;text-align:center;padding:60px 4%;
 }
 .stats b{
   display:block;font:600 clamp(2rem,4vw,3rem) "Playfair Display",serif;
-  background:linear-gradient(135deg,var(--rose-600),var(--purple-600));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background:linear-gradient(135deg,var(--rose-500),var(--rose-700));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
 }
 .stats p{color:var(--text-light);font-size:0.9rem;margin-top:8px}
 @media(max-width:700px){.stats{grid-template-columns:1fr 1fr}}
 
+/* Offers */
+#offers{background:var(--bg)}
+#offers h2,#offers .lead{text-align:center}
+#offers .lead{margin:0 auto 60px}
+.offers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.offer{
+  background:var(--white);border:1px solid var(--border);border-radius:0;
+  padding:36px 32px;position:relative;transition:all 0.4s ease;
+  display:flex;flex-direction:column;gap:14px;
+}
+.offer:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:var(--rose-400)}
+.off-badge{
+  position:absolute;top:0;right:0;background:var(--rose-600);color:#fff;
+  padding:8px 16px;font-weight:600;font-size:0.9rem;letter-spacing:0.05em;
+}
+.offer h3{font-size:1.35rem;padding-right:70px}
+.offer p{color:var(--text-light);font-size:0.95rem;line-height:1.7;flex:1}
+.off-prices{display:flex;align-items:baseline;gap:14px}
+.off-prices .old{text-decoration:line-through;color:var(--text-light);font-size:1.1rem}
+.off-prices .new{font:600 2.1rem "Playfair Display",serif;color:var(--rose-700)}
+.off-note{font-size:0.8rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--rose-600);font-weight:600}
+.offer .btn{width:100%;text-align:center}
+@media(max-width:900px){.offers-grid{grid-template-columns:1fr}}
+
 /* Services */
 #services{background:var(--white)}
-#services h2, #services .lead{text-align:center}
+#services h2,#services .lead{text-align:center}
 #services .lead{margin:0 auto 60px}
 .svc{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
 .sc{
-  background:var(--white);border:1px solid var(--border);border-radius:20px;
-  overflow:hidden;transition:all 0.4s ease;cursor:pointer;
+  background:var(--white);border:1px solid var(--border);border-radius:0;
+  overflow:hidden;transition:all 0.4s ease;cursor:pointer;text-align:left;padding:0;font:inherit;color:inherit;
 }
-.sc:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);border-color:var(--rose-200)}
+.sc:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);border-color:var(--rose-400)}
 .sc .art{height:240px;overflow:hidden;position:relative}
 .sc .art img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease}
 .sc:hover .art img{transform:scale(1.05)}
-.sc .art::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,transparent 0%,rgba(0,0,0,0.4) 100%)}
+.sc .art::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,transparent 0%,rgba(16,13,10,0.4) 100%)}
 .sc .tx{padding:28px}
 .sc h3{font-size:1.35rem;margin-bottom:10px;color:var(--text)}
 .sc p{color:var(--text-light);font-size:0.95rem;line-height:1.6;margin-bottom:16px}
@@ -178,15 +241,16 @@ nav ul a:hover{color:var(--rose-600)}
 
 /* Why Section */
 .why{
-  background:linear-gradient(135deg,var(--purple-50),var(--rose-50));
-  border-radius:32px;padding:60px;margin-top:40px;
+  background:var(--white);border:1px solid var(--border);
+  border-radius:0;padding:60px;margin-top:40px;
 }
 .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px}
 .why-item{text-align:center}
 .why-icon{
-  width:64px;height:64px;background:linear-gradient(135deg,var(--rose-400),var(--purple-500));
-  border-radius:16px;display:grid;place-items:center;margin:0 auto 20px;color:var(--white);font-size:1.5rem;
+  width:64px;height:64px;background:var(--purple-800);
+  border-radius:0;display:grid;place-items:center;margin:0 auto 20px;color:var(--rose-300);
 }
+.why-icon svg{width:28px;height:28px}
 .why-item h3{font-size:1.2rem;margin-bottom:10px}
 .why-item p{color:var(--text-light);font-size:0.9rem;line-height:1.6}
 @media(max-width:900px){.why-grid{grid-template-columns:1fr 1fr}}
@@ -196,31 +260,31 @@ nav ul a:hover{color:var(--rose-600)}
 .ba{background:var(--purple-50)}
 .cmp{
   position:relative;max-width:900px;aspect-ratio:16/10;margin:40px auto 0;
-  border-radius:24px;overflow:hidden;cursor:ew-resize;box-shadow:var(--shadow-lg);
+  border-radius:0;overflow:hidden;cursor:ew-resize;box-shadow:var(--shadow-lg);
 }
 .cmp .l,.cmp .r{position:absolute;inset:0;display:grid;place-items:center}
 .cmp .l{background:url('https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=900&q=80') center/cover}
 .cmp .r{background:url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=900&q=80') center/cover;clip-path:inset(0 0 0 var(--p,50%))}
 .cmp .bar{
   position:absolute;top:0;bottom:0;left:var(--p,50%);width:4px;
-  background:var(--white);transform:translateX(-50%);box-shadow:0 0 20px rgba(0,0,0,0.3);
+  background:#fff;transform:translateX(-50%);box-shadow:0 0 20px rgba(0,0,0,0.3);
 }
 .cmp .bar::after{
-  content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  width:48px;height:48px;border-radius:50%;background:var(--white);
-  display:grid;place-items:center;font-size:1.2rem;color:var(--purple-600);box-shadow:var(--shadow);
+  content:"⇔";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:48px;height:48px;border-radius:0;background:#fff;
+  display:grid;place-items:center;font-size:1.2rem;color:var(--rose-700);box-shadow:var(--shadow);
 }
 .cmp small{
-  position:absolute;bottom:20px;background:rgba(255,255,255,0.95);
-  padding:8px 20px;border-radius:99px;font-weight:600;font-size:0.85rem;box-shadow:var(--shadow);
+  position:absolute;bottom:20px;background:rgba(255,255,255,0.95);color:#221e19;
+  padding:8px 20px;border-radius:0;font-weight:600;font-size:0.85rem;box-shadow:var(--shadow);
 }
 .cmp .a{left:20px}.cmp .b{right:20px}
 
 /* Team */
 .team{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:60px}
 .tm{
-  text-align:center;background:var(--white);border-radius:20px;overflow:hidden;
-  border:1px solid var(--border);transition:all 0.4s ease;cursor:pointer;
+  text-align:center;background:var(--white);border-radius:0;overflow:hidden;
+  border:1px solid var(--border);transition:all 0.4s ease;cursor:pointer;padding:0;font:inherit;color:inherit;
 }
 .tm:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg)}
 .tm .ph{aspect-ratio:3/4;overflow:hidden}
@@ -234,59 +298,69 @@ nav ul a:hover{color:var(--rose-600)}
 /* Packages */
 .pk{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:60px}
 .pkc{
-  background:var(--white);border:1px solid var(--border);border-radius:24px;
+  background:var(--white);border:1px solid var(--border);border-radius:0;
   padding:40px;display:flex;flex-direction:column;gap:16px;transition:all 0.4s;
 }
 .pkc:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg)}
 .pkc.hot{
   background:linear-gradient(135deg,var(--rose-600),var(--purple-700));
-  color:var(--white);transform:scale(1.05);border:none;
+  color:#fff;transform:scale(1.05);border:none;
 }
 .pkc.hot:hover{transform:scale(1.05) translateY(-8px)}
 .pkc .pr{font:600 2.5rem "Playfair Display",serif;margin:10px 0}
-.pkc.hot .pr{color:var(--white)}
+.pkc.hot .pr{color:#fff}
 .pkc ul{padding-left:20px;color:var(--text-light);flex:1;line-height:2}
 .pkc.hot ul{color:var(--rose-100)}
 .pkc .btn{width:100%;text-align:center;margin-top:auto}
-.pkc.hot .btn{background:var(--white);color:var(--rose-600)}
+.pkc.hot .btn{background:#fff;color:var(--rose-700)}
+.plink{
+  background:none;border:none;padding:0;cursor:pointer;
+  color:var(--rose-700);font:600 0.9rem Inter,sans-serif;
+  display:inline-flex;align-items:center;gap:6px;transition:gap 0.3s;
+}
+.plink::after{content:"→"}
+.plink:hover{gap:10px}
+.pkc.hot .plink{color:#fff}
 @media(max-width:900px){.pk{grid-template-columns:1fr}.pkc.hot{transform:none}.pkc.hot:hover{transform:translateY(-8px)}}
 
 /* Reviews */
 .rv{
   max-width:800px;margin:60px auto 0;text-align:center;
-  background:var(--rose-50);padding:60px;border-radius:32px;
+  background:var(--rose-50);padding:60px;border-radius:0;border:1px solid var(--border);
 }
-.rv blockquote{font:italic 400 clamp(1.5rem,3vw,2rem) "Playfair Display",serif;line-height:1.6;color:var(--text);margin-bottom:20px}
+.rv blockquote{font:italic 400 clamp(1.5rem,3vw,2rem) "Playfair Display",serif;line-height:1.6;color:var(--text);margin-bottom:20px;transition:opacity 0.3s}
 .rv cite{font-style:normal;color:var(--text-light);font-weight:600}
 .dots{display:flex;gap:12px;justify-content:center;margin-top:30px}
 .dots button{
-  width:12px;height:12px;border-radius:50%;border:2px solid var(--rose-300);
+  width:12px;height:12px;border-radius:0;border:2px solid var(--rose-400);
   background:transparent;cursor:pointer;padding:0;transition:all 0.3s;
 }
-.dots .on{background:var(--rose-500);border-color:var(--rose-500);width:32px;border-radius:6px}
+.dots .on{background:var(--rose-600);border-color:var(--rose-600);width:32px}
 
 /* Gallery */
 .gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:16px;margin-top:40px}
-.gal button{border:none;padding:0;cursor:pointer;position:relative;overflow:hidden;border-radius:16px}
+.gal button{border:none;padding:0;cursor:pointer;position:relative;overflow:hidden;border-radius:0;background:none}
 .gal button img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s}
 .gal button:hover img{transform:scale(1.1)}
 .gal .w2{grid-column:span 2}.gal .t2{grid-row:span 2}
 @media(max-width:900px){.gal{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.gal{grid-template-columns:1fr}}
 
-/* BOOKING SECTION - RESTORED & STYLED */
+/* BOOKING — compact */
+#book{padding:60px 4%}
 .book{
   background:linear-gradient(135deg,var(--purple-900),var(--rose-800));
-  color:var(--white);border-radius:32px;margin:0 3vw;overflow:hidden;
+  color:#fff;border-radius:0;margin:0 auto;overflow:hidden;max-width:1240px;
 }
-.book .grid{display:grid;grid-template-columns:1fr 1fr;gap:5vw;padding:60px}
-.book h2{color:var(--white);margin-bottom:16px}
-.book .lead{color:var(--rose-200)}
-.book form{display:grid;gap:16px}
+.book .wrap{max-width:1150px}
+.book .grid{display:grid;grid-template-columns:1fr 1.1fr;gap:44px;padding:40px 48px}
+.book h2{color:#fff;margin-bottom:10px;font-size:clamp(1.6rem,3vw,2.2rem)}
+.book .lead{color:var(--rose-200);font-size:1rem;margin-top:6px;line-height:1.7}
+.book form{display:grid;gap:12px}
 .book input,.book select,.book textarea{
-  font:inherit;padding:16px;border-radius:12px;
-  border:1px solid rgba(255,255,255,0.2);
-  background:rgba(255,255,255,0.1);color:var(--white);width:100%;
+  font:inherit;font-size:0.95rem;padding:12px 14px;border-radius:0;
+  border:1px solid rgba(255,255,255,0.25);
+  background:rgba(255,255,255,0.1);color:#fff;width:100%;
   transition:all 0.3s;
 }
 .book input:focus,.book select:focus,.book textarea:focus{
@@ -294,19 +368,19 @@ nav ul a:hover{color:var(--rose-600)}
 }
 .book input::placeholder,.book textarea::placeholder{color:var(--rose-200)}
 .book option{color:var(--text)}
-.book .btn{background:var(--white);color:var(--purple-900);font-weight:600;border:none}
+.book .btn{background:#fff;color:var(--purple-900);font-weight:600;border:none;padding:13px 24px}
 .book .btn:hover{background:var(--rose-100)}
 .ok{
-  display:none;font:italic 1.6rem "Playfair Display",serif;
-  color:var(--rose-200);text-align:center;margin-top:16px;
+  display:none;font:italic 1.4rem "Playfair Display",serif;
+  color:var(--rose-200);text-align:center;margin-top:10px;
 }
 
 /* Dropdown styling for booking */
 .dd{position:relative}
 .dd>button{
-  width:100%;text-align:left;font:inherit;padding:16px;
-  border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.1);
-  color:var(--white);border-radius:12px;cursor:pointer;transition:all 0.3s;
+  width:100%;text-align:left;font:inherit;font-size:0.95rem;padding:12px 14px;
+  border:1px solid rgba(255,255,255,0.25);background:rgba(255,255,255,0.1);
+  color:#fff;border-radius:0;cursor:pointer;transition:all 0.3s;
 }
 .dd>button:hover{background:rgba(255,255,255,0.15)}
 .dd>button::after{content:"▼";float:right;font-size:0.7em;margin-top:4px}
@@ -314,70 +388,111 @@ nav ul a:hover{color:var(--rose-600)}
   position:absolute;left:0;right:0;top:100%;z-index:5;
   list-style:none;padding:0;background:var(--white);
   color:var(--text);max-height:240px;overflow:auto;
-  border-radius:12px;box-shadow:var(--shadow-lg);margin-top:8px;
+  border-radius:0;box-shadow:var(--shadow-lg);margin-top:8px;
 }
-.dd li{padding:14px 16px;cursor:pointer;transition:background 0.2s;font-size:0.95rem}
+.dd li{padding:12px 14px;cursor:pointer;transition:background 0.2s;font-size:0.95rem}
 .dd li:hover,.dd li.on{background:var(--rose-50);color:var(--rose-700)}
+@media(max-width:800px){.book .grid{grid-template-columns:1fr;padding:32px 24px;gap:28px}}
 
-@media(max-width:800px){.book .grid{grid-template-columns:1fr;padding:40px 24px}}
+/* Contact — map + info */
+.visit{display:grid;grid-template-columns:1.25fr 1fr;gap:36px;align-items:stretch}
+.map{position:relative;min-height:440px;border:1px solid var(--border);background:var(--purple-50)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.maplink{
+  position:absolute;left:16px;bottom:16px;z-index:2;background:var(--white);
+  padding:10px 16px;font-size:0.85rem;font-weight:600;color:var(--rose-700);
+  box-shadow:var(--shadow);display:inline-flex;align-items:center;gap:8px;transition:all 0.3s;
+}
+.maplink:hover{background:var(--rose-50)}
+.vinfo{display:flex;flex-direction:column;gap:20px}
+.vcard{
+  background:var(--white);border:1px solid var(--border);border-radius:0;
+  padding:26px 28px;display:flex;gap:20px;align-items:flex-start;flex:1;transition:all 0.3s;
+}
+.vcard:hover{border-color:var(--rose-400);box-shadow:var(--shadow)}
+.vicon{
+  width:46px;height:46px;flex-shrink:0;background:var(--purple-800);color:var(--rose-300);
+  display:grid;place-items:center;border-radius:0;
+}
+.vicon svg{width:22px;height:22px}
+.vcard h3{font-size:1.15rem;margin-bottom:6px}
+.vcard p{color:var(--text-light);font-size:0.95rem;line-height:1.8}
+.vcard a{color:inherit;transition:color 0.3s}
+.vcard a:hover{color:var(--rose-600)}
+@media(max-width:900px){.visit{grid-template-columns:1fr}.map{min-height:340px}}
 
 /* Footer */
-footer{background:var(--purple-900);color:var(--purple-200);padding:60px 5% 40px;text-align:center}
-footer b{display:block;font:600 2.5rem "Playfair Display",serif;color:var(--white);margin-bottom:10px}
-footer span{display:block;margin-bottom:20px;letter-spacing:0.2em;text-transform:uppercase;font-size:0.75rem;color:var(--rose-300)}
+footer{background:var(--purple-900);color:var(--purple-200);padding:60px 4% 40px;text-align:center}
+footer b{display:block;font:600 2.5rem "Playfair Display",serif;color:#fff;margin-bottom:10px}
+footer>span{display:block;margin-bottom:24px;letter-spacing:0.2em;text-transform:uppercase;font-size:0.75rem;color:var(--rose-300)}
+.soc{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:20px 0 28px}
+.soc a{
+  display:inline-flex;align-items:center;gap:9px;padding:11px 18px;
+  border:1px solid rgba(255,255,255,0.25);color:#fff;font-weight:500;font-size:0.9rem;
+  transition:all 0.3s;border-radius:0;
+}
+.soc a svg{width:18px;height:18px;flex-shrink:0}
+.soc a:hover{border-color:var(--rose-400);background:rgba(171,138,82,0.15);color:var(--rose-300)}
 .fl{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin:20px 0}
-footer a{color:var(--white);font-weight:500;transition:color 0.3s}
-footer a:hover{color:var(--rose-300)}
+footer .fl a{color:#fff;font-weight:500;transition:color 0.3s;font-size:0.9rem}
+footer .fl a:hover{color:var(--rose-300)}
 footer small{display:block;margin-top:30px;opacity:0.6;font-size:0.85rem}
 
 /* Modal */
 .modal{
   position:fixed;inset:0;z-index:100;display:none;place-items:center;
-  padding:20px;background:rgba(0,0,0,0.8);backdrop-filter:blur(8px);
+  padding:20px;background:rgba(12,10,8,0.8);backdrop-filter:blur(8px);
 }
 .modal.on{display:grid;animation:fadeIn 0.3s}
 @keyframes fadeIn{from{opacity:0}}
 .pane{
-  background:var(--white);color:var(--text);width:min(900px,100%);
-  max-height:90vh;overflow:auto;border-radius:24px;
+  background:var(--white);color:var(--text);width:min(960px,100%);
+  max-height:90vh;overflow:auto;border-radius:0;
   display:grid;grid-template-columns:1fr 1.2fr;
   animation:pop 0.5s cubic-bezier(0.2,1.2,0.3,1);
 }
 @keyframes pop{from{transform:scale(0.9) translateY(20px);opacity:0}}
 .pane .side{
-  background:linear-gradient(135deg,var(--rose-100),var(--purple-100));
+  background:var(--purple-800);
   padding:40px;display:flex;flex-direction:column;justify-content:flex-end;
   min-height:300px;position:relative;overflow:hidden;
 }
-.pane .side img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.3}
-.pane .side .cap{position:relative;z-index:1}
+.pane .side img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35}
+.pane .side .cap{position:relative;z-index:1;color:#fff}
+.pane .side .cap p{color:rgba(255,255,255,0.8)}
 .pane .body{padding:40px}
 .x{
   position:absolute;top:20px;right:20px;width:40px;height:40px;
-  border-radius:50%;border:1px solid var(--border);background:var(--white);
+  border-radius:0;border:1px solid rgba(255,255,255,0.4);background:rgba(20,16,12,0.5);color:#fff;
   cursor:pointer;font-size:1.2rem;display:grid;place-items:center;
   transition:all 0.3s;z-index:10;
 }
-.x:hover{background:var(--rose-50)}
+.x:hover{background:var(--rose-600);border-color:var(--rose-600)}
 .item{
   display:flex;justify-content:space-between;gap:20px;align-items:center;
-  padding:20px 0;border-bottom:1px solid var(--border);
+  padding:18px 0;border-bottom:1px solid var(--border);
   animation:slide 0.5s forwards;opacity:0;
 }
 @keyframes slide{from{transform:translateX(20px);opacity:0}to{transform:translateX(0);opacity:1}}
 .item b{display:block;font-weight:600}
 .item small{color:var(--text-light);font-size:0.9rem}
-.item .pr{font:600 1.3rem "Playfair Display",serif;color:var(--rose-600);white-space:nowrap}
+.item .pr{font:600 1.3rem "Playfair Display",serif;color:var(--rose-700);white-space:nowrap}
+.pl-h{
+  font:600 1rem Inter,sans-serif;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--rose-700);margin:26px 0 4px;padding-bottom:8px;border-bottom:2px solid var(--rose-300);
+}
+.pl-h:first-child{margin-top:0}
 @media(max-width:700px){.pane{grid-template-columns:1fr}}
 
 /* WhatsApp Float */
 .wa{
   position:fixed;right:24px;bottom:24px;z-index:60;
-  width:60px;height:60px;border-radius:50%;background:#25d366;
-  color:var(--white);display:grid;place-items:center;font-size:1.8rem;
+  width:58px;height:58px;border-radius:0;background:#25d366;
+  color:#fff;display:grid;place-items:center;
   box-shadow:var(--shadow-lg);transition:transform 0.3s;
 }
-.wa:hover{transform:scale(1.1)}
+.wa svg{width:30px;height:30px}
+.wa:hover{transform:scale(1.08)}
 
 /* Reveal Animation */
 .reveal{opacity:0;transform:translateY(30px);transition:all 0.8s ease}
@@ -385,71 +500,90 @@ footer small{display:block;margin-top:30px;opacity:0.6;font-size:0.85rem}
 </style>
 </head>
 <body>
+<div id="lumiere-app">
 
 <nav>
   <b>Lumière</b>
   <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#team">Team</a></li>
-    <li><a href="#packages">Packages</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about"><span class="text-hy">Մեր մասին</span><span class="text-en">About</span><span class="text-ru">О нас</span></a></li>
+    <li><a href="#services"><span class="text-hy">Ծառայություններ</span><span class="text-en">Services</span><span class="text-ru">Услуги</span></a></li>
+    <li><a href="#offers"><span class="text-hy">Առաջարկներ</span><span class="text-en">Offers</span><span class="text-ru">Акции</span></a></li>
+    <li><a href="#gallery"><span class="text-hy">Պատկերասրահ</span><span class="text-en">Gallery</span><span class="text-ru">Галерея</span></a></li>
+    <li><a href="#team"><span class="text-hy">Թիմը</span><span class="text-en">Team</span><span class="text-ru">Команда</span></a></li>
+    <li><a href="#packages"><span class="text-hy">Փաթեթներ</span><span class="text-en">Packages</span><span class="text-ru">Пакеты</span></a></li>
+    <li><a href="#contact"><span class="text-hy">Կապ</span><span class="text-en">Contact</span><span class="text-ru">Контакты</span></a></li>
   </ul>
   <div class="nav-r">
-    <button class="tg" id="theme" aria-label="Toggle theme"></button>
-    <a class="btn" href="#book">Book Now</a>
+    <button class="tg" id="theme" aria-label="Toggle theme">◐</button>
+    <a class="btn" href="#book"><span class="text-hy">Ամրագրել</span><span class="text-en">Book Now</span><span class="text-ru">Записаться</span></a>
   </div>
 </nav>
 
-<section class="hero">
-  <div>
-    <h1>Skin that glows from care<em>Medical aesthetics & wellness</em></h1>
-    <p class="lead">Experience personalized aesthetic care in a serene environment. Our certified specialists combine medical expertise with artistic vision to enhance your natural beauty.</p>
-    <div class="row">
-      <a class="btn" href="#book">Book Consultation</a>
-      <a class="btn ghost" href="#services">Explore Services</a>
-    </div>
-  </div>
-  <div class="hero-img">
-    <img src="https://images.unsplash.com/photo-1560750588-432d11f8e59e?w=800&q=80" alt="Luxury spa treatment">
-    <div class="hero-badge">
-      <b>4.9★</b>
-      <span>Based on 8,400+ reviews</span>
-    </div>
+<!-- HERO SLIDESHOW (slides injected by JS: offers slide + one per service) -->
+<section class="hero" id="hero">
+  <div class="slides" id="hs"></div>
+  <button class="hs-arrow hs-prev" id="hsp" aria-label="Previous slide">‹</button>
+  <button class="hs-arrow hs-next" id="hsn" aria-label="Next slide">›</button>
+  <div class="hs-dots" id="hsd"></div>
+  <div class="hs-count" id="hsc"></div>
+  <div class="hs-badge">
+    <b>4.9★</b>
+    <span><span class="text-hy">8,400+ կարծիքների հիման վրա</span><span class="text-en">Based on 8,400+ reviews</span><span class="text-ru">На основе 8 400+ отзывов</span></span>
   </div>
 </section>
 
 <div class="stats">
-  <div><b data-n="12">0</b><p>Years Experience</p></div>
-  <div><b data-n="8400">0</b><p>Happy Clients</p></div>
-  <div><b data-n="18">0</b><p>Specialists</p></div>
-  <div><b data-n="49">0</b><p>5-Star Rating</p></div>
+  <div><b data-n="12">0</b><p><span class="text-hy">Տարիների փորձ</span><span class="text-en">Years Experience</span><span class="text-ru">Лет опыта</span></p></div>
+  <div><b data-n="8400">0</b><p><span class="text-hy">Գոհ հաճախորդներ</span><span class="text-en">Happy Clients</span><span class="text-ru">Довольных клиентов</span></p></div>
+  <div><b data-n="18">0</b><p><span class="text-hy">Մասնագետներ</span><span class="text-en">Specialists</span><span class="text-ru">Специалистов</span></p></div>
+  <div><b data-n="49">0</b><p><span class="text-hy">5-աստղանի վարկանիշ</span><span class="text-en">5-Star Rating</span><span class="text-ru">Рейтинг 5 звёзд</span></p></div>
 </div>
 
-<section id="about">
+<!-- CURRENT OFFERS -->
+<section id="offers">
+  <div class="wrap">
+    <h2><span class="text-hy">Ընթացիկ առաջարկներ</span><span class="text-en">Current Offers</span><span class="text-ru">Текущие акции</span></h2>
+    <p class="lead"><span class="text-hy">Սահմանափակ ժամանակով զեղչեր մեր ամենասիրված պրոցեդուրաների վրա</span><span class="text-en">Limited-time savings on our most-loved treatments</span><span class="text-ru">Ограниченные по времени скидки на самые популярные процедуры</span></p>
+    <div class="offers-grid">
+      <div class="offer reveal">
+        <div class="off-badge">−20%</div>
+        <h3><span class="text-hy">HydraFacial՝ 20% զեղչ</span><span class="text-en">HydraFacial — 20% Off</span><span class="text-ru">HydraFacial — скидка 20%</span></h3>
+        <p><span class="text-hy">Մեր ամենասիրված խոնավեցնող ֆեյշլը՝ հատուկ գնով այս ամիս։</span><span class="text-en">Our most-loved hydrating facial at a special price this month.</span><span class="text-ru">Наш самый популярный увлажняющий уход по специальной цене в этом месяце.</span></p>
+        <div class="off-prices"><span class="old">$130</span><span class="new">$104</span></div>
+        <div class="off-note"><span class="text-hy">Միայն այս ամիս</span><span class="text-en">This month only</span><span class="text-ru">Только в этом месяце</span></div>
+        <a class="btn" href="#book"><span class="text-hy">Ամրագրել առաջարկը</span><span class="text-en">Book This Offer</span><span class="text-ru">Записаться по акции</span></a>
+      </div>
+      <div class="offer reveal">
+        <div class="off-badge">−25%</div>
+        <h3><span class="text-hy">Լազեր՝ ոտքեր ամբողջությամբ ×3</span><span class="text-en">Full Legs Laser ×3</span><span class="text-ru">Лазер: ноги полностью ×3</span></h3>
+        <p><span class="text-hy">Երեք սեանսի փաթեթ՝ երկարատև հարթության համար։</span><span class="text-en">Three-session package for lasting smoothness.</span><span class="text-ru">Пакет из трёх сеансов для стойкой гладкости.</span></p>
+        <div class="off-prices"><span class="old">$420</span><span class="new">$315</span></div>
+        <div class="off-note"><span class="text-hy">Փաթեթային առաջարկ</span><span class="text-en">Package deal</span><span class="text-ru">Пакетное предложение</span></div>
+        <a class="btn" href="#book"><span class="text-hy">Ամրագրել առաջարկը</span><span class="text-en">Book This Offer</span><span class="text-ru">Записаться по акции</span></a>
+      </div>
+      <div class="offer reveal">
+        <div class="off-badge">−10%</div>
+        <h3><span class="text-hy">Հարսնացուի փայլ՝ վաղ ամրագրում</span><span class="text-en">Bridal Glow — Early Booking</span><span class="text-ru">Сияние невесты — раннее бронирование</span></h3>
+        <p><span class="text-hy">Ամրագրեք 3+ ամիս շուտ և խնայեք 10% ամբողջ ծրագրից։</span><span class="text-en">Book 3+ months ahead and save 10% on the full program.</span><span class="text-ru">Бронируйте за 3+ месяца и сэкономьте 10% на всей программе.</span></p>
+        <div class="off-prices"><span class="old">$720</span><span class="new">$648</span></div>
+        <div class="off-note"><span class="text-hy">Ամրագրեք նախապես</span><span class="text-en">Book in advance</span><span class="text-ru">Бронируйте заранее</span></div>
+        <a class="btn" href="#book"><span class="text-hy">Ամրագրել առաջարկը</span><span class="text-en">Book This Offer</span><span class="text-ru">Записаться по акции</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" style="background:var(--white)">
   <div class="wrap">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
       <div>
-        <h2>A sanctuary for your skin</h2>
-        <p class="lead">Lumière was founded on a simple principle: aesthetic care should be both scientifically advanced and deeply personal. We combine medical expertise with a holistic approach to help you look and feel your best.</p>
-        <p class="lead">Every treatment begins with a comprehensive consultation, ensuring we understand your unique concerns and goals before creating your personalized care plan.</p>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px">
-          <div style="padding:24px;background:var(--rose-50);border-radius:16px">
-            <div style="width:48px;height:48px;background:var(--rose-500);border-radius:12px;display:grid;place-items:center;color:white;margin-bottom:16px;font-size:1.5rem">✦</div>
-            <h4 style="margin-bottom:8px">Expert Care</h4>
-            <p style="font-size:0.9rem;color:var(--text-light)">Board-certified specialists with years of advanced training</p>
-          </div>
-          <div style="padding:24px;background:var(--purple-50);border-radius:16px">
-            <div style="width:48px;height:48px;background:var(--purple-600);border-radius:12px;display:grid;place-items:center;color:white;margin-bottom:16px;font-size:1.5rem">✦</div>
-            <h4 style="margin-bottom:8px">Premium Technology</h4>
-            <p style="font-size:0.9rem;color:var(--text-light)">FDA-approved devices and medical-grade products</p>
-          </div>
-        </div>
+        <h2><span class="text-hy">Հանգրվան ձեր մաշկի համար</span><span class="text-en">A sanctuary for your skin</span><span class="text-ru">Оазис для вашей кожи</span></h2>
+        <p class="lead"><span class="text-hy">Lumière-ը հիմնադրվել է պարզ սկզբունքով՝ էսթետիկ խնամքը պետք է լինի և՛ գիտականորեն առաջադեմ, և՛ խորապես անհատական։ Մենք համադրում ենք բժշկական փորձը հոլիստիկ մոտեցման հետ՝ օգնելու ձեզ լավագույն տեսքն ունենալ։</span><span class="text-en">Lumière was founded on a simple principle: aesthetic care should be both scientifically advanced and deeply personal. We combine medical expertise with a holistic approach to help you look and feel your best.</span><span class="text-ru">Lumière основан на простом принципе: эстетический уход должен быть научно передовым и глубоко личным. Мы сочетаем медицинскую экспертизу с целостным подходом, чтобы вы выглядели и чувствовали себя лучше всего.</span></p>
+        <p class="lead"><span class="text-hy">Ամեն բուժում սկսվում է համապարփակ խորհրդատվությամբ, որպեսզի հասկանանք ձեր մտահոգություններն ու նպատակները՝ նախքան անհատական խնամքի ծրագիր կազմելը։</span><span class="text-en">Every treatment begins with a comprehensive consultation, ensuring we understand your unique concerns and goals before creating your personalized care plan.</span><span class="text-ru">Каждая программа начинается с подробной консультации: мы понимаем ваши задачи и цели, прежде чем составить индивидуальный план ухода.</span></p>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
-        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400&q=80" style="border-radius:20px;height:280px;object-fit:cover" alt="Treatment room">
-        <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=400&q=80" style="border-radius:20px;height:280px;object-fit:cover;margin-top:40px" alt="Skincare products">
+        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400&q=80" style="border-radius:0;height:280px;object-fit:cover;width:100%" alt="Treatment room">
+        <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=400&q=80" style="border-radius:0;height:280px;object-fit:cover;margin-top:40px;width:100%" alt="Skincare products">
       </div>
     </div>
   </div>
@@ -457,35 +591,35 @@ footer small{display:block;margin-top:30px;opacity:0.6;font-size:0.85rem}
 
 <section id="services">
   <div class="wrap">
-    <h2>Our Services</h2>
-    <p class="lead">Comprehensive aesthetic treatments tailored to your individual needs</p>
+    <h2><span class="text-hy">Մեր ծառայությունները</span><span class="text-en">Our Services</span><span class="text-ru">Наши услуги</span></h2>
+    <p class="lead"><span class="text-hy">Համապարփակ էսթետիկ պրոցեդուրաներ՝ հարմարեցված ձեր կարիքներին</span><span class="text-en">Comprehensive aesthetic treatments tailored to your individual needs</span><span class="text-ru">Комплексные эстетические процедуры под ваши потребности</span></p>
     <div class="svc" id="svc"></div>
   </div>
 </section>
 
-<section>
+<section style="background:var(--white)">
   <div class="wrap">
     <div class="why reveal">
       <div class="why-grid">
         <div class="why-item">
-          <div class="why-icon"></div>
-          <h3>Personalized Plans</h3>
-          <p>Every treatment begins with a thorough consultation to understand your unique goals</p>
+          <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div>
+          <h3><span class="text-hy">Անհատական ծրագրեր</span><span class="text-en">Personalized Plans</span><span class="text-ru">Индивидуальные программы</span></h3>
+          <p><span class="text-hy">Ամեն պրոցեդուրա սկսվում է մանրակրկիտ խորհրդատվությամբ՝ ձեր նպատակները հասկանալու համար</span><span class="text-en">Every treatment begins with a thorough consultation to understand your unique goals</span><span class="text-ru">Каждая процедура начинается с подробной консультации, чтобы понять ваши цели</span></p>
         </div>
         <div class="why-item">
-          <div class="why-icon">🔬</div>
-          <h3>Medical Grade</h3>
-          <p>FDA-approved technology and pharmaceutical-grade products only</p>
+          <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3h6M10 3v5l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/><path d="M8 15h8"/></svg></div>
+          <h3><span class="text-hy">Բժշկական մակարդակ</span><span class="text-en">Medical Grade</span><span class="text-ru">Медицинский уровень</span></h3>
+          <p><span class="text-hy">Միայն FDA-հաստատված տեխնոլոգիա և դեղագործական մակարդակի միջոցներ</span><span class="text-en">FDA-approved technology and pharmaceutical-grade products only</span><span class="text-ru">Только FDA-одобренные технологии и препараты фармацевтического класса</span></p>
         </div>
         <div class="why-item">
-          <div class="why-icon">🛡️</div>
-          <h3>Safety First</h3>
-          <p>Sterile environment with single-use tools and strict hygiene protocols</p>
+          <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v5c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3><span class="text-hy">Անվտանգությունը՝ առաջնային</span><span class="text-en">Safety First</span><span class="text-ru">Безопасность прежде всего</span></h3>
+          <p><span class="text-hy">Ստերիլ միջավայր՝ միանգամյա գործիքներով և խիստ հիգիենայի կանոններով</span><span class="text-en">Sterile environment with single-use tools and strict hygiene protocols</span><span class="text-ru">Стерильная среда, одноразовые инструменты и строгие протоколы гигиены</span></p>
         </div>
         <div class="why-item">
-          <div class="why-icon">✨</div>
-          <h3>Natural Results</h3>
-          <p>Enhance your features while maintaining your authentic appearance</p>
+          <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 21c8 0 14-6 14-14V5h-2C9 5 3 11 3 19v2h2z"/><path d="M3 21C7 15 11 11 17 7"/></svg></div>
+          <h3><span class="text-hy">Բնական արդյունքներ</span><span class="text-en">Natural Results</span><span class="text-ru">Естественные результаты</span></h3>
+          <p><span class="text-hy">Ընդգծեք ձեր գծերը՝ պահպանելով բնական տեսքը</span><span class="text-en">Enhance your features while maintaining your authentic appearance</span><span class="text-ru">Подчеркните черты, сохраняя естественный вид</span></p>
         </div>
       </div>
     </div>
@@ -494,76 +628,82 @@ footer small{display:block;margin-top:30px;opacity:0.6;font-size:0.85rem}
 
 <section class="ba" id="results">
   <div class="wrap">
-    <h2 style="text-align:center">Transformative Results</h2>
-    <p class="lead" style="text-align:center">See the difference professional care can make</p>
+    <h2 style="text-align:center"><span class="text-hy">Փոխակերպող արդյունքներ</span><span class="text-en">Transformative Results</span><span class="text-ru">Преображающие результаты</span></h2>
+    <p class="lead" style="text-align:center;margin-left:auto;margin-right:auto"><span class="text-hy">Տեսեք, թե ինչ տարբերություն կարող է ստեղծել պրոֆեսիոնալ խնամքը</span><span class="text-en">See the difference professional care can make</span><span class="text-ru">Посмотрите, что даёт профессиональный уход</span></p>
     <div class="cmp" id="cmp">
       <div class="l"></div>
       <div class="r"></div>
       <div class="bar"></div>
-      <small class="a">Before</small>
-      <small class="b">After</small>
+      <small class="a"><span class="text-hy">Առաջ</span><span class="text-en">Before</span><span class="text-ru">До</span></small>
+      <small class="b"><span class="text-hy">Հետո</span><span class="text-en">After</span><span class="text-ru">После</span></small>
     </div>
-    <p style="text-align:center;color:var(--text-light);font-size:0.85rem;margin-top:16px">Individual results may vary. Photos used with client consent.</p>
+    <p style="text-align:center;color:var(--text-light);font-size:0.85rem;margin-top:16px"><span class="text-hy">Անհատական արդյունքները կարող են տարբերվել։ Լուսանկարները՝ հաճախորդների համաձայնությամբ։</span><span class="text-en">Individual results may vary. Photos used with client consent.</span><span class="text-ru">Индивидуальные результаты могут отличаться. Фото опубликованы с согласия клиентов.</span></p>
   </div>
 </section>
 
-<section id="team">
+<section id="team" style="background:var(--white)">
   <div class="wrap">
-    <h2 style="text-align:center">Meet Our Specialists</h2>
-    <p class="lead" style="text-align:center">Expert care from certified medical professionals</p>
+    <h2 style="text-align:center"><span class="text-hy">Մեր մասնագետները</span><span class="text-en">Meet Our Specialists</span><span class="text-ru">Наши специалисты</span></h2>
+    <p class="lead" style="text-align:center;margin-left:auto;margin-right:auto"><span class="text-hy">Փորձառու խնամք հավաստագրված բժշկական մասնագետներից</span><span class="text-en">Expert care from certified medical professionals</span><span class="text-ru">Экспертный уход от сертифицированных медиков</span></p>
     <div class="team" id="tm"></div>
   </div>
 </section>
 
 <section id="packages" style="background:var(--purple-50)">
   <div class="wrap">
-    <h2 style="text-align:center">Treatment Packages</h2>
-    <p class="lead" style="text-align:center">Curated programs for comprehensive care</p>
+    <h2 style="text-align:center"><span class="text-hy">Բուժման փաթեթներ</span><span class="text-en">Treatment Packages</span><span class="text-ru">Пакеты процедур</span></h2>
+    <p class="lead" style="text-align:center;margin-left:auto;margin-right:auto"><span class="text-hy">Ընտրված ծրագրեր համապարփակ խնամքի համար</span><span class="text-en">Curated programs for comprehensive care</span><span class="text-ru">Продуманные программы комплексного ухода</span></p>
     <div class="pk">
       <div class="pkc">
-        <h3>Radiance</h3>
+        <h3><span class="text-hy">Փայլ</span><span class="text-en">Radiance</span><span class="text-ru">Сияние</span></h3>
         <div class="pr">$180</div>
         <ul>
-          <li>Deep cleansing facial</li>
-          <li>Hydration therapy</li>
-          <li>Skin analysis</li>
-          <li>Home care recommendations</li>
+          <li><span class="text-hy">Խորը մաքրող ֆեյշլ</span><span class="text-en">Deep cleansing facial</span><span class="text-ru">Глубоко очищающий уход</span></li>
+          <li><span class="text-hy">Խոնավեցնող թերապիա</span><span class="text-en">Hydration therapy</span><span class="text-ru">Увлажняющая терапия</span></li>
+          <li><span class="text-hy">Մաշկի վերլուծություն</span><span class="text-en">Skin analysis</span><span class="text-ru">Анализ кожи</span></li>
+          <li><span class="text-hy">Տնային խնամքի հանձնարարականներ</span><span class="text-en">Home care recommendations</span><span class="text-ru">Рекомендации по домашнему уходу</span></li>
         </ul>
-        <a class="btn ghost" href="#book">Select Package</a>
+        <a class="btn ghost" href="#book"><span class="text-hy">Ընտրել փաթեթը</span><span class="text-en">Select Package</span><span class="text-ru">Выбрать пакет</span></a>
+        <button class="plink" data-pl><span class="text-hy">Դիտել ամբողջ գնացուցակը</span><span class="text-en">View full price list</span><span class="text-ru">Смотреть полный прайс-лист</span></button>
       </div>
       <div class="pkc hot">
-        <h3>Bridal Glow</h3>
+        <h3><span class="text-hy">Հարսնացուի փայլ</span><span class="text-en">Bridal Glow</span><span class="text-ru">Сияние невесты</span></h3>
         <div class="pr">$720</div>
         <ul>
-          <li>3-month skin preparation</li>
-          <li>Laser treatments series</li>
-          <li>Hydrating facials (4 sessions)</li>
-          <li>Wedding day touch-up</li>
-          <li>Priority booking</li>
+          <li><span class="text-hy">3-ամսյա մաշկի պատրաստում</span><span class="text-en">3-month skin preparation</span><span class="text-ru">3 месяца подготовки кожи</span></li>
+          <li><span class="text-hy">Լազերային պրոցեդուրաների շարք</span><span class="text-en">Laser treatments series</span><span class="text-ru">Курс лазерных процедур</span></li>
+          <li><span class="text-hy">Խոնավեցնող ֆեյշլներ (4 սեանս)</span><span class="text-en">Hydrating facials (4 sessions)</span><span class="text-ru">Увлажняющие уходы (4 сеанса)</span></li>
+          <li><span class="text-hy">Հարսանիքի օրվա շտկում</span><span class="text-en">Wedding day touch-up</span><span class="text-ru">Коррекция в день свадьбы</span></li>
+          <li><span class="text-hy">Առաջնահերթ ամրագրում</span><span class="text-en">Priority booking</span><span class="text-ru">Приоритетная запись</span></li>
         </ul>
-        <a class="btn" href="#book">Select Package</a>
+        <a class="btn" href="#book"><span class="text-hy">Ընտրել փաթեթը</span><span class="text-en">Select Package</span><span class="text-ru">Выбрать пакет</span></a>
+        <button class="plink" data-pl><span class="text-hy">Դիտել ամբողջ գնացուցակը</span><span class="text-en">View full price list</span><span class="text-ru">Смотреть полный прайс-лист</span></button>
       </div>
       <div class="pkc">
-        <h3>Monthly Care</h3>
-        <div class="pr">$95<span style="font-size:1rem;font-weight:400">/mo</span></div>
+        <h3><span class="text-hy">Ամսական խնամք</span><span class="text-en">Monthly Care</span><span class="text-ru">Ежемесячный уход</span></h3>
+        <div class="pr">$95<span style="font-size:1rem;font-weight:400">/<span class="text-hy">ամիս</span><span class="text-en">mo</span><span class="text-ru">мес</span></span></div>
         <ul>
-          <li>One facial per month</li>
-          <li>15% off all treatments</li>
-          <li>Priority scheduling</li>
-          <li>Complimentary consultations</li>
+          <li><span class="text-hy">Ամսական մեկ ֆեյշլ</span><span class="text-en">One facial per month</span><span class="text-ru">Один уход в месяц</span></li>
+          <li><span class="text-hy">15% զեղչ բոլոր պրոցեդուրաներից</span><span class="text-en">15% off all treatments</span><span class="text-ru">Скидка 15% на все процедуры</span></li>
+          <li><span class="text-hy">Առաջնահերթ գրանցում</span><span class="text-en">Priority scheduling</span><span class="text-ru">Приоритетное расписание</span></li>
+          <li><span class="text-hy">Անվճար խորհրդատվություններ</span><span class="text-en">Complimentary consultations</span><span class="text-ru">Бесплатные консультации</span></li>
         </ul>
-        <a class="btn ghost" href="#book">Join Now</a>
+        <a class="btn ghost" href="#book"><span class="text-hy">Միանալ</span><span class="text-en">Join Now</span><span class="text-ru">Присоединиться</span></a>
+        <button class="plink" data-pl><span class="text-hy">Դիտել ամբողջ գնացուցակը</span><span class="text-en">View full price list</span><span class="text-ru">Смотреть полный прайс-лист</span></button>
       </div>
+    </div>
+    <div style="text-align:center;margin-top:44px">
+      <button class="btn ghost" data-pl><span class="text-hy">Բոլոր ծառայությունները և գները</span><span class="text-en">All Services &amp; Price List</span><span class="text-ru">Все услуги и прайс-лист</span></button>
     </div>
   </div>
 </section>
 
-<section>
+<section style="background:var(--white)">
   <div class="wrap">
-    <h2 style="text-align:center">Client Stories</h2>
+    <h2 style="text-align:center"><span class="text-hy">Հաճախորդների պատմություններ</span><span class="text-en">Client Stories</span><span class="text-ru">Истории клиентов</span></h2>
     <div class="rv reveal">
-      <blockquote id="q">"I came for one facial and now my skin has never looked calmer. The team truly listens and customizes everything."</blockquote>
-      <cite id="qa">— Nare, Monthly Member</cite>
+      <blockquote id="q"></blockquote>
+      <cite id="qa"></cite>
       <div class="dots" id="dots"></div>
     </div>
   </div>
@@ -571,81 +711,99 @@ footer small{display:block;margin-top:30px;opacity:0.6;font-size:0.85rem}
 
 <section id="gallery">
   <div class="wrap">
-    <h2 style="text-align:center">Gallery</h2>
-    <p class="lead" style="text-align:center">A glimpse into our center</p>
+    <h2 style="text-align:center"><span class="text-hy">Պատկերասրահ</span><span class="text-en">Gallery</span><span class="text-ru">Галерея</span></h2>
+    <p class="lead" style="text-align:center;margin-left:auto;margin-right:auto"><span class="text-hy">Մի հայացք մեր կենտրոն</span><span class="text-en">A glimpse into our center</span><span class="text-ru">Взгляд на наш центр</span></p>
     <div class="gal" id="gal"></div>
   </div>
 </section>
 
-<section id="faq">
+<section id="faq" style="background:var(--white)">
   <div class="wrap" style="max-width:800px">
-    <h2 style="text-align:center;margin-bottom:40px">Common Questions</h2>
-    <div style="background:var(--white);border-radius:20px;padding:40px;border:1px solid var(--border)">
+    <h2 style="text-align:center;margin-bottom:40px"><span class="text-hy">Հաճախ տրվող հարցեր</span><span class="text-en">Common Questions</span><span class="text-ru">Частые вопросы</span></h2>
+    <div style="background:var(--white);border-radius:0;padding:40px;border:1px solid var(--border)">
       <details style="padding:20px 0;border-bottom:1px solid var(--border)">
         <summary style="cursor:pointer;font-weight:600;font-size:1.1rem;display:flex;justify-content:space-between;align-items:center">
-          Do treatments hurt?
-          <span style="color:var(--rose-500)">+</span>
+          <span><span class="text-hy">Ցավո՞տ են պրոցեդուրաները</span><span class="text-en">Do treatments hurt?</span><span class="text-ru">Болезненны ли процедуры?</span></span>
+          <span style="color:var(--rose-600)">+</span>
         </summary>
-        <p style="margin-top:12px;color:var(--text-light);line-height:1.8">Most treatments are comfortable. We use topical numbing cream and cooling technology where needed. You can request to stop at any time.</p>
+        <p style="margin-top:12px;color:var(--text-light);line-height:1.8"><span class="text-hy">Պրոցեդուրաների մեծ մասը հարմարավետ են։ Անհրաժեշտության դեպքում օգտագործում ենք անզգայացնող քսուկ և սառեցնող տեխնոլոգիա։ Կարող եք խնդրել կանգ առնել ցանկացած պահի։</span><span class="text-en">Most treatments are comfortable. We use topical numbing cream and cooling technology where needed. You can request to stop at any time.</span><span class="text-ru">Большинство процедур комфортны. При необходимости мы используем обезболивающий крем и охлаждающие технологии. Вы можете попросить остановиться в любой момент.</span></p>
       </details>
       <details style="padding:20px 0;border-bottom:1px solid var(--border)">
         <summary style="cursor:pointer;font-weight:600;font-size:1.1rem;display:flex;justify-content:space-between;align-items:center">
-          How long until I see results?
-          <span style="color:var(--rose-500)">+</span>
+          <span><span class="text-hy">Ե՞րբ կտեսնեմ արդյունքները</span><span class="text-en">How long until I see results?</span><span class="text-ru">Когда будут видны результаты?</span></span>
+          <span style="color:var(--rose-600)">+</span>
         </summary>
-        <p style="margin-top:12px;color:var(--text-light);line-height:1.8">Facials show immediate glow. Laser treatments, injectables, and body contouring build results over 2-8 weeks as your body responds.</p>
+        <p style="margin-top:12px;color:var(--text-light);line-height:1.8"><span class="text-hy">Ֆեյշլները տալիս են ակնթարթային փայլ։ Լազերային պրոցեդուրաները, ինյեկցիաները և մարմնի մոդելավորումը արդյունքները կառուցում են 2–8 շաբաթվա ընթացքում։</span><span class="text-en">Facials show immediate glow. Laser treatments, injectables, and body contouring build results over 2-8 weeks as your body responds.</span><span class="text-ru">Уходы дают мгновенное сияние. Лазер, инъекции и контурирование тела дают результат в течение 2–8 недель.</span></p>
       </details>
       <details style="padding:20px 0">
         <summary style="cursor:pointer;font-weight:600;font-size:1.1rem;display:flex;justify-content:space-between;align-items:center">
-          Is there downtime?
-          <span style="color:var(--rose-500)">+</span>
+          <span><span class="text-hy">Վերականգնման շրջա՞ն կա</span><span class="text-en">Is there downtime?</span><span class="text-ru">Есть ли период восстановления?</span></span>
+          <span style="color:var(--rose-600)">+</span>
         </summary>
-        <p style="margin-top:12px;color:var(--text-light);line-height:1.8">Most clients return to work the same day. Each treatment menu lists specific downtime. We'll discuss this during your consultation.</p>
+        <p style="margin-top:12px;color:var(--text-light);line-height:1.8"><span class="text-hy">Հաճախորդների մեծ մասը վերադառնում է աշխատանքի նույն օրը։ Ամեն պրոցեդուրայի մենյուում նշված է վերականգնման ժամանակը։ Այդ մասին կխոսենք խորհրդատվության ընթացքում։</span><span class="text-en">Most clients return to work the same day. Each treatment menu lists specific downtime. We'll discuss this during your consultation.</span><span class="text-ru">Большинство клиентов возвращаются к работе в тот же день. Для каждой процедуры указан период восстановления — обсудим это на консультации.</span></p>
       </details>
     </div>
   </div>
 </section>
 
-<!-- RESTORED BOOKING SECTION -->
-<section class="book" id="book">
-  <div class="wrap grid">
-    <div>
-      <h2>Start your journey</h2>
-      <p class="lead">Tell us what you’d like and we’ll confirm your visit within a few hours.</p>
-    </div>
-    <form id="bf">
-      <input required placeholder="Full name" aria-label="Full name">
-      <input required type="tel" placeholder="Phone or WhatsApp" aria-label="Phone">
-      <div class="dd" id="bs">
-        <button type="button" id="ddb">Choose a service</button>
-        <ul id="ddl" hidden></ul>
+<!-- BOOKING — compact -->
+<section id="book">
+  <div class="book">
+    <div class="wrap grid">
+      <div>
+        <h2><span class="text-hy">Սկսեք ձեր ճանապարհը</span><span class="text-en">Start your journey</span><span class="text-ru">Начните свой путь</span></h2>
+        <p class="lead"><span class="text-hy">Պատմեք, թե ինչ եք ցանկանում, և մենք կհաստատենք ձեր այցը մի քանի ժամվա ընթացքում։</span><span class="text-en">Tell us what you’d like and we’ll confirm your visit within a few hours.</span><span class="text-ru">Расскажите, что вы хотите, и мы подтвердим визит в течение нескольких часов.</span></p>
       </div>
-      <input type="date" aria-label="Preferred date">
-      <textarea rows="3" placeholder="Anything we should know?" aria-label="Notes"></textarea>
-      <button class="btn" type="submit">Request appointment</button>
-      <div class="ok" id="ok">Thank you. We’ll be in touch shortly.</div>
-    </form>
+      <form id="bf">
+        <input required id="fname" placeholder="Անուն Ազգանուն" aria-label="Full name">
+        <input required type="tel" id="fphone" placeholder="Հեռախոս կամ WhatsApp" aria-label="Phone">
+        <div class="dd" id="bs">
+          <button type="button" id="ddb"></button>
+          <ul id="ddl" hidden></ul>
+        </div>
+        <input type="date" aria-label="Preferred date">
+        <textarea rows="2" id="fnotes" placeholder="Ի՞նչ պետք է իմանանք" aria-label="Notes"></textarea>
+        <button class="btn" type="submit"><span class="text-hy">Ուղարկել հայտը</span><span class="text-en">Request appointment</span><span class="text-ru">Отправить заявку</span></button>
+        <div class="ok" id="ok"><span class="text-hy">Շնորհակալություն։ Շուտով կկապնվենք ձեզ հետ։</span><span class="text-en">Thank you. We’ll be in touch shortly.</span><span class="text-ru">Спасибо! Мы свяжемся с вами в ближайшее время.</span></div>
+      </form>
+    </div>
   </div>
 </section>
 
-<section id="contact">
+<!-- CONTACT — Google Map + info -->
+<section id="contact" style="background:var(--white)">
   <div class="wrap">
-    <h2 style="text-align:center;margin-bottom:40px">Visit Us</h2>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px;text-align:center">
-      <div style="padding:40px;background:var(--rose-50);border-radius:20px">
-        <div style="font-size:2.5rem;margin-bottom:16px">📍</div>
-        <h3 style="margin-bottom:12px">Address</h3>
-        <p style="color:var(--text-light)">12 Rose Garden Street<br>Armavir, Armenia</p>
+    <h2 style="text-align:center;margin-bottom:40px"><span class="text-hy">Այցելեք մեզ</span><span class="text-en">Visit Us</span><span class="text-ru">Приходите к нам</span></h2>
+    <div class="visit">
+      <div class="map">
+        <iframe src="https://maps.google.com/maps?q=Armavir%2C%20Armenia&z=14&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="Lumière — Armavir, Armenia"></iframe>
+        <a class="maplink" href="https://maps.google.com/?q=Armavir,+Armenia" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <span class="text-hy">Բացել Google Maps-ում</span><span class="text-en">Open in Google Maps</span><span class="text-ru">Открыть в Google Maps</span>
+        </a>
       </div>
-      <div style="padding:40px;background:var(--purple-50);border-radius:20px">
-        <div style="font-size:2.5rem;margin-bottom:16px">🕐</div>
-        <h3 style="margin-bottom:12px">Hours</h3>
-        <p style="color:var(--text-light)">Mon–Sat: 9:00–20:00<br>Sunday: 11:00–17:00</p>
-      </div>
-      <div style="padding:40px;background:linear-gradient(135deg,var(--rose-100),var(--purple-100));border-radius:20px">
-        <div style="font-size:2.5rem;margin-bottom:16px">📞</div>
-        <h3 style="margin-bottom:12px">Contact</h3>
-        <p style="color:var(--text-light)">+374 10 123456<br>hello@lumiere.am</p>
+      <div class="vinfo">
+        <div class="vcard">
+          <div class="vicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+          <div>
+            <h3><span class="text-hy">Հասցե</span><span class="text-en">Address</span><span class="text-ru">Адрес</span></h3>
+            <p><span class="text-hy">Վարդերի այգու փողոց 12<br>Արմավիր, Հայաստան</span><span class="text-en">12 Rose Garden Street<br>Armavir, Armenia</span><span class="text-ru">ул. Розовый сад, 12<br>Армавир, Армения</span></p>
+          </div>
+        </div>
+        <div class="vcard">
+          <div class="vicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+          <div>
+            <h3><span class="text-hy">Ժամեր</span><span class="text-en">Hours</span><span class="text-ru">Часы работы</span></h3>
+            <p><span class="text-hy">Երկ–Շաբ՝ 9:00–20:00<br>Կիրակի՝ 11:00–17:00</span><span class="text-en">Mon–Sat: 9:00–20:00<br>Sunday: 11:00–17:00</span><span class="text-ru">Пн–Сб: 9:00–20:00<br>Воскресенье: 11:00–17:00</span></p>
+          </div>
+        </div>
+        <div class="vcard">
+          <div class="vicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg></div>
+          <div>
+            <h3><span class="text-hy">Կապ</span><span class="text-en">Contact</span><span class="text-ru">Контакты</span></h3>
+            <p><a href="tel:+37410123456">+374 10 123456</a><br><a href="mailto:hello@lumiere.am">hello@lumiere.am</a></p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -653,44 +811,129 @@ footer small{display:block;margin-top:30px;opacity:0.6;font-size:0.85rem}
 
 <footer>
   <b>Lumière</b>
-  <span>Aesthetic & Care Center</span>
-  <div class="fl">
-    <a href="#" target="_blank" rel="noopener">Instagram</a>
-    <a href="#" target="_blank" rel="noopener">Facebook</a>
-    <a href="#" target="_blank" rel="noopener">TikTok</a>
-    <a href="#" target="_blank" rel="noopener">YouTube</a>
+  <span><span class="text-hy">Էսթետիկայի և խնամքի կենտրոն</span><span class="text-en">Aesthetic &amp; Care Center</span><span class="text-ru">Центр эстетики и ухода</span></span>
+  <div class="soc">
+    <a href="#" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.3" cy="6.7" r="1.3" fill="currentColor" stroke="none"/></svg>
+      Instagram
+    </a>
+    <a href="#" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.5 1.6-1.5h1.3V4.9c-.3 0-1.1-.1-2-.1-2 0-3.4 1.2-3.4 3.5V11H8.5v3H11v7h2.5z"/></svg>
+      Facebook
+    </a>
+    <a href="#" target="_blank" rel="noopener" aria-label="TikTok">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 3c.4 2 1.8 3.6 3.9 3.9v3c-1.5 0-2.9-.5-3.9-1.3v6.2c0 3.4-2.6 5.7-5.8 5.7-3 0-5.3-2.2-5.3-5.1 0-3 2.5-5.2 5.6-5v3.1c-1.4-.2-2.6.7-2.6 2 0 1.2 1 2.1 2.3 2.1 1.5 0 2.7-1.1 2.7-2.9V3h3.1z"/></svg>
+      TikTok
+    </a>
+    <a href="#" target="_blank" rel="noopener" aria-label="YouTube">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 7.2c-.2-1-.9-1.7-1.9-1.9C18 5 12 5 12 5s-6 0-7.7.3c-1 .2-1.7.9-1.9 1.9C2 8.9 2 12 2 12s0 3.1.4 4.8c.2 1 .9 1.7 1.9 1.9C6 19 12 19 12 19s6 0 7.7-.3c1-.2 1.7-.9 1.9-1.9.4-1.7.4-4.8.4-4.8s0-3.1-.4-4.8zM10 15V9l5.2 3L10 15z"/></svg>
+      YouTube
+    </a>
   </div>
   <div class="fl">
-    <a href="#" data-pol="Privacy">Privacy Policy</a>
-    <a href="#" data-pol="Terms">Terms of Service</a>
-    <a href="#" data-pol="Consent">Medical Consent</a>
+    <a href="#" data-pol="Privacy"><span class="text-hy">Գաղտնիության քաղաքականություն</span><span class="text-en">Privacy Policy</span><span class="text-ru">Политика конфиденциальности</span></a>
+    <a href="#" data-pol="Terms"><span class="text-hy">Օգտագործման պայմաններ</span><span class="text-en">Terms of Service</span><span class="text-ru">Условия использования</span></a>
+    <a href="#" data-pol="Consent"><span class="text-hy">Բժշկական համաձայնություն</span><span class="text-en">Medical Consent</span><span class="text-ru">Медицинское согласие</span></a>
   </div>
-  <small>Results vary. All treatments performed by licensed medical professionals after consultation.</small>
+  <small><span class="text-hy">Արդյունքները տարբերվում են։ Բոլոր պրոցեդուրաները կատարվում են լիցենզավորված բժշկական մասնագետների կողմից՝ խորհրդատվությունից հետո։</span><span class="text-en">Results vary. All treatments performed by licensed medical professionals after consultation.</span><span class="text-ru">Результаты индивидуальны. Все процедуры выполняют лицензированные медицинские специалисты после консультации.</span></small>
 </footer>
 
-<a class="wa" href="https://wa.me/1234567890" aria-label="Chat on WhatsApp" target="_blank">💬</a>
+<a class="wa" href="https://wa.me/1234567890" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.27-.1-.46-.15-.65.15-.2.3-.75.94-.92 1.13-.17.2-.34.22-.63.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.45.13-.6.13-.13.3-.34.44-.5.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5h-.56c-.2 0-.5.07-.77.37-.26.3-1 1-1 2.42s1.03 2.8 1.17 3c.15.2 2.03 3.1 4.92 4.35.69.3 1.22.47 1.64.6.69.22 1.32.19 1.81.12.55-.08 1.7-.7 1.94-1.37.24-.67.24-1.25.17-1.37-.07-.12-.26-.2-.55-.34m-5.4 7.4h-.01a9.9 9.9 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88a9.83 9.83 0 0 1 9.88 9.9c0 5.45-4.44 9.88-9.89 9.88m8.41-18.3A11.8 11.8 0 0 0 12.1 0C5.5 0 .13 5.37.13 11.97c0 2.1.55 4.16 1.6 5.97L0 24l6.2-1.63a11.9 11.9 0 0 0 5.7 1.45h.01c6.6 0 11.97-5.37 11.97-11.97a11.9 11.9 0 0 0-3.47-8.45"/></svg>
+</a>
 
 <div class="modal" id="m1" role="dialog" aria-modal="true">
   <div class="pane" id="pane"></div>
 </div>
 
+</div>
+
 <script>
 const $ = s => document.querySelector(s);
 
+/* ===== Language helpers: Armenian default, English & Russian via html[lang] ===== */
+const LANG = (document.documentElement.lang || "hy").toLowerCase().slice(0,2);
+const L = o => o[LANG] || o.hy;
+const T = o => '<span class="text-hy">' + o.hy + '</span><span class="text-en">' + o.en + '</span><span class="text-ru">' + o.ru + '</span>';
+const DUR = m => T({hy: m + " րոպե", en: m + " min", ru: m + " мин"});
+
 const SERVICES = [
-  {n:"Facial & Skin",d:"Rejuvenating facials and advanced skin therapies",t:[["Signature Hydrating Facial","60 min",70],["Deep Cleanse & Extraction","75 min",85],["Chemical Peel","45 min",110],["Microneedling","60 min",190],["HydraFacial","50 min",130]]},
-  {n:"Laser & Hair Removal",d:"Advanced laser technology for smooth skin",t:[["Full Legs","60 min",140],["Underarms","15 min",35],["Bikini Line","25 min",60],["Face & Neck","20 min",50],["Pigmentation Correction","40 min",160]]},
-  {n:"Injectables & Anti-Aging",d:"Subtle, natural-looking enhancements",t:[["Anti-Wrinkle Injections","30 min",220],["Lip Filler","40 min",300],["Cheek & Jawline Filler","50 min",420],["Skin Boosters","45 min",250],["PRP Therapy","60 min",230]]},
-  {n:"Body Contouring",d:"Non-invasive body sculpting and tightening",t:[["Cavitation & RF","50 min",110],["Lymphatic Drainage","60 min",90],["Cellulite Therapy","45 min",100],["Skin Tightening","50 min",150]]},
-  {n:"Hair & Scalp Care",d:"Restore hair health and promote growth",t:[["Scalp Analysis","20 min",30],["Hair PRP","60 min",210],["Mesotherapy","45 min",180],["Keratin Treatment","90 min",120]]},
-  {n:"Wellness & Relaxation",d:"Holistic treatments for mind and body",t:[["Aromatherapy Massage","60 min",80],["Hot Stone Ritual","75 min",105],["Body Scrub & Wrap","60 min",95],["Vitamin Drip Therapy","40 min",140]]}
+  {n:{hy:"Դեմք և մաշկ",en:"Facial & Skin",ru:"Лицо и кожа"},
+   d:{hy:"Վերականգնող ֆեյշլներ և առաջադեմ մաշկի թերապիա",en:"Rejuvenating facials and advanced skin therapies",ru:"Омолаживающие уходы и передовые процедуры для кожи"},
+   img:"https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1200&q=80",
+   t:[
+    {n:{hy:"Ֆիրմային խոնավեցնող ֆեյշլ",en:"Signature Hydrating Facial",ru:"Фирменный увлажняющий уход"},m:60,p:70},
+    {n:{hy:"Խորը մաքրում և էքստրակցիա",en:"Deep Cleanse & Extraction",ru:"Глубокая чистка с экстракцией"},m:75,p:85},
+    {n:{hy:"Քիմիական պիլինգ",en:"Chemical Peel",ru:"Химический пилинг"},m:45,p:110},
+    {n:{hy:"Միկրոնիդլինգ",en:"Microneedling",ru:"Микронидлинг"},m:60,p:190},
+    {n:{hy:"HydraFacial",en:"HydraFacial",ru:"HydraFacial"},m:50,p:130}
+   ]},
+  {n:{hy:"Լազեր և մազահեռացում",en:"Laser & Hair Removal",ru:"Лазер и эпиляция"},
+   d:{hy:"Առաջադեմ լազերային տեխնոլոգիա՝ հարթ մաշկի համար",en:"Advanced laser technology for smooth skin",ru:"Передовые лазерные технологии для гладкой кожи"},
+   img:"https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=1200&q=80",
+   t:[
+    {n:{hy:"Ոտքեր ամբողջությամբ",en:"Full Legs",ru:"Ноги полностью"},m:60,p:140},
+    {n:{hy:"Անութիկներ",en:"Underarms",ru:"Подмышки"},m:15,p:35},
+    {n:{hy:"Բիկինի գիծ",en:"Bikini Line",ru:"Линия бикини"},m:25,p:60},
+    {n:{hy:"Դեմք և պարանոց",en:"Face & Neck",ru:"Лицо и шея"},m:20,p:50},
+    {n:{hy:"Պիգմենտացիայի շտկում",en:"Pigmentation Correction",ru:"Коррекция пигментации"},m:40,p:160}
+   ]},
+  {n:{hy:"Ինյեկցիաներ և հակատարիքային",en:"Injectables & Anti-Aging",ru:"Инъекции и антиэйдж"},
+   d:{hy:"Նուրբ, բնական տեսքով բարելավումներ",en:"Subtle, natural-looking enhancements",ru:"Деликатные, естественные улучшения"},
+   img:"https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&q=80",
+   t:[
+    {n:{hy:"Հակակնճիռային ներարկումներ",en:"Anti-Wrinkle Injections",ru:"Инъекции от морщин"},m:30,p:220},
+    {n:{hy:"Շրթունքների ֆիլեր",en:"Lip Filler",ru:"Филлеры для губ"},m:40,p:300},
+    {n:{hy:"Այտերի և ծնոտի գծի ֆիլեր",en:"Cheek & Jawline Filler",ru:"Филлеры скул и линии челюсти"},m:50,p:420},
+    {n:{hy:"Սկին բուստերներ",en:"Skin Boosters",ru:"Скин-бустеры"},m:45,p:250},
+    {n:{hy:"PRP թերապիա",en:"PRP Therapy",ru:"PRP-терапия"},m:60,p:230}
+   ]},
+  {n:{hy:"Մարմնի մոդելավորում",en:"Body Contouring",ru:"Контурирование тела"},
+   d:{hy:"Ոչ ինվազիվ մարմնի ձևավորում և ձգում",en:"Non-invasive body sculpting and tightening",ru:"Неинвазивная скульптура и подтяжка тела"},
+   img:"https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1200&q=80",
+   t:[
+    {n:{hy:"Կավիտացիա և RF",en:"Cavitation & RF",ru:"Кавитация и RF"},m:50,p:110},
+    {n:{hy:"Լիմֆադրենաժ",en:"Lymphatic Drainage",ru:"Лимфодренаж"},m:60,p:90},
+    {n:{hy:"Ցելյուլիտի թերապիա",en:"Cellulite Therapy",ru:"Антицеллюлитная терапия"},m:45,p:100},
+    {n:{hy:"Մաշկի ձգում",en:"Skin Tightening",ru:"Подтяжка кожи"},m:50,p:150}
+   ]},
+  {n:{hy:"Մազեր և գլխամաշկ",en:"Hair & Scalp Care",ru:"Волосы и кожа головы"},
+   d:{hy:"Վերականգնեք մազերի առողջությունը և խթանեք աճը",en:"Restore hair health and promote growth",ru:"Восстановление здоровья волос и стимуляция роста"},
+   img:"https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=1200&q=80",
+   t:[
+    {n:{hy:"Գլխամաշկի վերլուծություն",en:"Scalp Analysis",ru:"Анализ кожи головы"},m:20,p:30},
+    {n:{hy:"Մազերի PRP",en:"Hair PRP",ru:"PRP для волос"},m:60,p:210},
+    {n:{hy:"Մեզոթերապիա",en:"Mesotherapy",ru:"Мезотерапия"},m:45,p:180},
+    {n:{hy:"Կերատինային բուժում",en:"Keratin Treatment",ru:"Кератиновое восстановление"},m:90,p:120}
+   ]},
+  {n:{hy:"Վելնես և ռելաքս",en:"Wellness & Relaxation",ru:"Велнес и релакс"},
+   d:{hy:"Համապարփակ պրոցեդուրաներ՝ մարմնի և հոգու համար",en:"Holistic treatments for mind and body",ru:"Целостные процедуры для тела и души"},
+   img:"https://images.unsplash.com/photo-1519824145371-296894a0daa9?w=1200&q=80",
+   t:[
+    {n:{hy:"Արոմաթերապիայի մերսում",en:"Aromatherapy Massage",ru:"Аромамассаж"},m:60,p:80},
+    {n:{hy:"Տաք քարերով ծես",en:"Hot Stone Ritual",ru:"Ритуал горячих камней"},m:75,p:105},
+    {n:{hy:"Մարմնի սքրաբ և փաթաթում",en:"Body Scrub & Wrap",ru:"Скраб и обертывание тела"},m:60,p:95},
+    {n:{hy:"Վիտամինային կաթիլային թերապիա",en:"Vitamin Drip Therapy",ru:"Витаминные капельницы"},m:40,p:140}
+   ]}
 ];
 
 const TEAM = [
-  {name:"Dr. Anna Petrosyan",role:"Lead Dermatologist",img:"https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80",exp:"14 years",spec:"Medical dermatology, laser treatments, injectables"},
-  {name:"Mariam Sargsyan",role:"Laser Specialist",img:"https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&q=80",exp:"9 years",spec:"Hair removal, pigmentation, skin resurfacing"},
-  {name:"Dr. Levon Hakobyan",role:"Aesthetic Physician",img:"https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&q=80",exp:"11 years",spec:"Injectables, facial rejuvenation, PRP therapy"},
-  {name:"Elen Grigoryan",role:"Senior Therapist",img:"https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&q=80",exp:"8 years",spec:"Body treatments, lymphatic drainage, wellness"}
+  {name:{hy:"Դոկտ. Աննա Պետրոսյան",en:"Dr. Anna Petrosyan",ru:"Д-р Анна Петросян"},
+   role:{hy:"Առաջատար մաշկաբան",en:"Lead Dermatologist",ru:"Ведущий дерматолог"},
+   img:"https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80",y:14,
+   spec:{hy:"Բժշկական մաշկաբանություն, լազերային պրոցեդուրաներ, ինյեկցիաներ",en:"Medical dermatology, laser treatments, injectables",ru:"Медицинская дерматология, лазерные процедуры, инъекции"}},
+  {name:{hy:"Մարիամ Սարգսյան",en:"Mariam Sargsyan",ru:"Мариам Саргсян"},
+   role:{hy:"Լազերային մասնագետ",en:"Laser Specialist",ru:"Специалист по лазеру"},
+   img:"https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&q=80",y:9,
+   spec:{hy:"Մազահեռացում, պիգմենտացիա, մաշկի ռեսուրֆեյսինգ",en:"Hair removal, pigmentation, skin resurfacing",ru:"Эпиляция, пигментация, шлифовка кожи"}},
+  {name:{hy:"Դոկտ. Լևոն Հակոբյան",en:"Dr. Levon Hakobyan",ru:"Д-р Левон Акопян"},
+   role:{hy:"Էսթետիկ բժիշկ",en:"Aesthetic Physician",ru:"Врач-эстетист"},
+   img:"https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&q=80",y:11,
+   spec:{hy:"Ինյեկցիաներ, դեմքի երիտասարդացում, PRP թերապիա",en:"Injectables, facial rejuvenation, PRP therapy",ru:"Инъекции, омоложение лица, PRP-терапия"}},
+  {name:{hy:"Էլեն Գրիգորյան",en:"Elen Grigoryan",ru:"Элен Григорян"},
+   role:{hy:"Ավագ թերապևտ",en:"Senior Therapist",ru:"Старший терапевт"},
+   img:"https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&q=80",y:8,
+   spec:{hy:"Մարմնի պրոցեդուրաներ, լիմֆադրենաժ, վելնես",en:"Body treatments, lymphatic drainage, wellness",ru:"Процедуры для тела, лимфодренаж, велнес"}}
 ];
 
 const GALLERY = [
@@ -702,93 +945,200 @@ const GALLERY = [
   {src:"https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80",span:""}
 ];
 
-// Render Services
+/* ===== HERO SLIDESHOW: offers slide + one slide per service ===== */
+const OFFER_SLIDE = {
+  img:"https://images.unsplash.com/photo-1600334089648-b0d9d620498b?w=1600&q=80",
+  eyebrow:{hy:"Հատուկ առաջարկներ · Սահմանափակ ժամանակ",en:"Special Offers · Limited Time",ru:"Спецпредложения · Ограниченное время"},
+  title:{hy:"Մաշկ, որը փայլում է հոգատարությունից",en:"Skin that glows from care",ru:"Кожа, сияющая заботой"},
+  sub:{hy:"Բժշկական էսթետիկա և վելնես",en:"Medical aesthetics & wellness",ru:"Медицинская эстетика и велнес"},
+  lead:{hy:"Այժմ՝ մինչև 25% զեղչ ընտրված պրոցեդուրաների վրա՝ HydraFacial, լազերային փաթեթներ և հարսնացուի ծրագրեր։",en:"Now: up to 25% off selected treatments — HydraFacial, laser packages and bridal programs.",ru:"Сейчас: скидка до 25% на избранные процедуры — HydraFacial, лазерные пакеты и свадебные программы."},
+  cta:{hy:"Դիտել առաջարկները",en:"View Current Offers",ru:"Смотреть акции"}
+};
+const SVC_EYEBROW = {hy:"Մեր ծառայությունները",en:"Our Services",ru:"Наши услуги"};
+const SVC_CTA = {hy:"Պրոցեդուրաներ և գներ",en:"View Treatments & Prices",ru:"Процедуры и цены"};
+const BOOK_CONS = {hy:"Ամրագրել խորհրդատվություն",en:"Book Consultation",ru:"Записаться на консультацию"};
+
+let slidesHTML = '<div class="slide on">' +
+  '<img class="bgimg" src="' + OFFER_SLIDE.img + '" alt="">' +
+  '<div class="slide-in">' +
+    '<span class="eyebrow">' + T(OFFER_SLIDE.eyebrow) + '</span>' +
+    '<h1>' + T(OFFER_SLIDE.title) + '<em>' + T(OFFER_SLIDE.sub) + '</em></h1>' +
+    '<p class="lead">' + T(OFFER_SLIDE.lead) + '</p>' +
+    '<div class="row"><a class="btn" href="#offers">' + T(OFFER_SLIDE.cta) + '</a>' +
+    '<a class="btn ghost on-dark" href="#book">' + T(BOOK_CONS) + '</a></div>' +
+  '</div></div>';
+
+slidesHTML += SERVICES.map((s,i) => {
+  const min = Math.min.apply(null, s.t.map(t => t.p));
+  return '<div class="slide">' +
+    '<img class="bgimg" src="' + s.img + '" alt="' + L(s.n) + '">' +
+    '<div class="slide-in">' +
+      '<span class="eyebrow">' + T(SVC_EYEBROW) + ' · 0' + (i+1) + '</span>' +
+      '<div class="h1">' + T(s.n) + '</div>' +
+      '<p class="lead">' + T(s.d) + '</p>' +
+      '<div class="from">' + T({hy:"Սկսած $" + min,en:"From $" + min,ru:"От $" + min}) + '</div>' +
+      '<div class="row"><button class="btn" data-svc="' + i + '">' + T(SVC_CTA) + '</button>' +
+      '<a class="btn ghost on-dark" href="#book">' + T(BOOK_CONS) + '</a></div>' +
+    '</div></div>';
+}).join("");
+
+$("#hs").innerHTML = slidesHTML;
+const slides = Array.prototype.slice.call($("#hs").children);
+const slideCount = slides.length;
+let hIdx = 0, hTimer = null;
+
+$("#hsd").innerHTML = slides.map((_,i) => '<button aria-label="Slide ' + (i+1) + '"' + (i===0?' class="on"':'') + '></button>').join("");
+const hDots = document.querySelectorAll("#hsd button");
+
+function hGo(n){
+  slides[hIdx].classList.remove("on");
+  hDots[hIdx].classList.remove("on");
+  hIdx = (n + slideCount) % slideCount;
+  slides[hIdx].classList.add("on");
+  hDots[hIdx].classList.add("on");
+  $("#hsc").textContent = String(hIdx+1).padStart(2,"0") + " / " + String(slideCount).padStart(2,"0");
+}
+function hStart(){ hStop(); hTimer = setInterval(() => hGo(hIdx+1), 6500); }
+function hStop(){ if(hTimer){ clearInterval(hTimer); hTimer = null; } }
+hDots.forEach((d,i) => d.addEventListener("click", () => { hGo(i); hStart(); }));
+$("#hsp").addEventListener("click", () => { hGo(hIdx-1); hStart(); });
+$("#hsn").addEventListener("click", () => { hGo(hIdx+1); hStart(); });
+$("#hero").addEventListener("mouseenter", hStop);
+$("#hero").addEventListener("mouseleave", hStart);
+let swipeX = null;
+$("#hero").addEventListener("pointerdown", e => { swipeX = e.clientX; });
+$("#hero").addEventListener("pointerup", e => {
+  if (swipeX === null) return;
+  const dx = e.clientX - swipeX;
+  if (Math.abs(dx) > 45) { hGo(hIdx + (dx < 0 ? 1 : -1)); hStart(); }
+  swipeX = null;
+});
+$("#hs").addEventListener("click", e => {
+  const b = e.target.closest("[data-svc]");
+  if (b) openService(+b.dataset.svc);
+});
+hGo(0); hStart();
+
+/* ===== Render Services ===== */
 $("#svc").innerHTML = SERVICES.map((s, i) => `
   <button class="sc reveal" data-i="${i}" style="animation-delay:${i*100}ms">
-    <div class="art"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80" alt="${s.n}"></div>
+    <div class="art"><img src="${s.img}" alt="${L(s.n)}"></div>
     <div class="tx">
-      <h3>${s.n}</h3>
-      <p>${s.d}</p>
-      <u>View ${s.t.length} treatments</u>
+      <h3>${T(s.n)}</h3>
+      <p>${T(s.d)}</p>
+      <u>${T({hy:"Դիտել " + s.t.length + " պրոցեդուրա",en:"View " + s.t.length + " treatments",ru:"Подробнее · " + s.t.length + " процедур"})}</u>
     </div>
   </button>
 `).join("");
 
-// Render Team
+/* ===== Render Team ===== */
 $("#tm").innerHTML = TEAM.map((t, i) => `
   <button class="tm reveal" data-i="${i}" style="animation-delay:${i*100}ms">
-    <div class="ph"><img src="${t.img}" alt="${t.name}"></div>
-    <h3>${t.name}</h3>
-    <p>${t.role}<br>${t.exp} experience</p>
+    <div class="ph"><img src="${t.img}" alt="${L(t.name)}"></div>
+    <h3>${T(t.name)}</h3>
+    <p>${T(t.role)}<br>${T({hy:t.y + " տարվա փորձ",en:t.y + " years experience",ru:t.y + " лет опыта"})}</p>
   </button>
 `).join("");
 
-// Render Gallery
+/* ===== Render Gallery ===== */
 $("#gal").innerHTML = GALLERY.map((g, i) => `
   <button class="${g.span} reveal" style="animation-delay:${i*100}ms">
     <img src="${g.src}" alt="Gallery image ${i+1}">
   </button>
 `).join("");
 
-// Service Modal
-$("#svc").addEventListener("click", e => {
-  const btn = e.target.closest(".sc");
-  if (!btn) return;
-  const s = SERVICES[btn.dataset.i];
+/* ===== Service Modal (price list popup) ===== */
+function openService(i){
+  const s = SERVICES[i];
   $("#pane").innerHTML = `
     <div class="side">
-      <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80" alt="">
+      <img src="${s.img}" alt="">
       <button class="x" data-close>✕</button>
       <div class="cap">
-        <h2 style="font-size:2rem;margin-bottom:10px">${s.n}</h2>
-        <p style="color:var(--text-light)">${s.d}</p>
+        <h2 style="font-size:2rem;margin-bottom:10px">${T(s.n)}</h2>
+        <p>${T(s.d)}</p>
       </div>
     </div>
     <div class="body">
-      <h3 style="margin-bottom:20px">Treatment Menu</h3>
+      <h3 style="margin-bottom:20px">${T({hy:"Պրոցեդուրաների ցանկ",en:"Treatment Menu",ru:"Меню процедур"})}</h3>
       ${s.t.map((t, k) => `
         <div class="item" style="animation-delay:${k*70}ms">
-          <div><b>${t[0]}</b><small>${t[1]}</small></div>
-          <div class="pr">$${t[2]}</div>
+          <div><b>${T(t.n)}</b><small>${DUR(t.m)}</small></div>
+          <div class="pr">$${t.p}</div>
         </div>
       `).join("")}
-      <p style="margin:24px 0;color:var(--text-light);font-size:0.9rem">Final pricing confirmed after consultation.</p>
-      <a class="btn" href="#book" data-close style="width:100%;text-align:center">Book This Category</a>
+      <p style="margin:24px 0;color:var(--text-light);font-size:0.9rem">${T({hy:"Վերջնական գինը հաստատվում է խորհրդատվությունից հետո։",en:"Final pricing confirmed after consultation.",ru:"Окончательная цена подтверждается после консультации."})}</p>
+      <a class="btn" href="#book" data-close style="width:100%;text-align:center">${T({hy:"Ամրագրել այս բաժինը",en:"Book This Category",ru:"Записаться на эту категорию"})}</a>
     </div>
   `;
   openModal();
+}
+$("#svc").addEventListener("click", e => {
+  const btn = e.target.closest(".sc");
+  if (btn) openService(+btn.dataset.i);
 });
 
-// Team Modal
+/* ===== Full price list popup (all services, all prices) ===== */
+function openPriceList(){
+  $("#pane").innerHTML = `
+    <div class="side">
+      <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=800&q=80" alt="">
+      <button class="x" data-close>✕</button>
+      <div class="cap">
+        <h2 style="font-size:2rem;margin-bottom:10px">${T({hy:"Ամբողջական գնացուցակ",en:"Full Price List",ru:"Полный прайс-лист"})}</h2>
+        <p>${T({hy:"Բոլոր ծառայությունները և գները մեկ տեղում",en:"Every service and price in one place",ru:"Все услуги и цены в одном месте"})}</p>
+      </div>
+    </div>
+    <div class="body">
+      ${SERVICES.map(s => `
+        <h3 class="pl-h">${T(s.n)}</h3>
+        ${s.t.map((t,k) => `
+          <div class="item" style="animation-delay:${k*50}ms">
+            <div><b>${T(t.n)}</b><small>${DUR(t.m)}</small></div>
+            <div class="pr">$${t.p}</div>
+          </div>
+        `).join("")}
+      `).join("")}
+      <p style="margin:24px 0;color:var(--text-light);font-size:0.9rem">${T({hy:"Վերջնական գինը հաստատվում է խորհրդատվությունից հետո։",en:"Final pricing confirmed after consultation.",ru:"Окончательная цена подтверждается после консультации."})}</p>
+      <a class="btn" href="#book" data-close style="width:100%;text-align:center">${T(BOOK_CONS)}</a>
+    </div>
+  `;
+  openModal();
+}
+document.addEventListener("click", e => {
+  if (e.target.closest("[data-pl]")) openPriceList();
+});
+
+/* ===== Team Modal ===== */
 $("#tm").addEventListener("click", e => {
   const btn = e.target.closest(".tm");
   if (!btn) return;
-  const t = TEAM[btn.dataset.i];
+  const t = TEAM[+btn.dataset.i];
   $("#pane").innerHTML = `
     <div class="side">
       <img src="${t.img}" alt="">
       <button class="x" data-close>✕</button>
       <div class="cap">
-        <h2 style="font-size:2rem;margin-bottom:8px">${t.name}</h2>
-        <p style="color:var(--text-light)">${t.role}</p>
+        <h2 style="font-size:2rem;margin-bottom:8px">${T(t.name)}</h2>
+        <p>${T(t.role)}</p>
       </div>
     </div>
     <div class="body">
       <div style="margin-bottom:24px">
-        <h3 style="margin-bottom:8px">Experience</h3>
-        <p style="color:var(--text-light)">${t.exp} of specialized practice</p>
+        <h3 style="margin-bottom:8px">${T({hy:"Փորձ",en:"Experience",ru:"Опыт"})}</h3>
+        <p style="color:var(--text-light)">${T({hy:t.y + " տարվա մասնագիտացված պրակտիկա",en:t.y + " years of specialized practice",ru:t.y + " лет специализированной практики"})}</p>
       </div>
       <div style="margin-bottom:24px">
-        <h3 style="margin-bottom:8px">Specialties</h3>
-        <p style="color:var(--text-light)">${t.spec}</p>
+        <h3 style="margin-bottom:8px">${T({hy:"Մասնագիտացում",en:"Specialties",ru:"Специализация"})}</h3>
+        <p style="color:var(--text-light)">${T(t.spec)}</p>
       </div>
-      <a class="btn" href="#book" data-close style="width:100%;text-align:center">Book Consultation</a>
+      <a class="btn" href="#book" data-close style="width:100%;text-align:center">${T(BOOK_CONS)}</a>
     </div>
   `;
   openModal();
 });
 
-// Modal Functions
+/* ===== Modal Functions ===== */
 function openModal() {
   $("#m1").classList.add("on");
   document.body.style.overflow = "hidden";
@@ -804,7 +1154,7 @@ document.addEventListener("keydown", e => {
   if (e.key === "Escape") closeModal();
 });
 
-// Before/After Slider
+/* ===== Before/After Slider ===== */
 const cmp = $("#cmp");
 let dragging = false;
 function updateSlider(e) {
@@ -820,11 +1170,14 @@ cmp.addEventListener("touchstart", () => dragging = true);
 window.addEventListener("touchend", () => dragging = false);
 window.addEventListener("touchmove", updateSlider);
 
-// Reviews
+/* ===== Reviews (trilingual) ===== */
 const reviews = [
-  {text:"I came for one facial and now my skin has never looked calmer. The team truly listens and customizes everything.",author:"Nare, Monthly Member"},
-  {text:"They explained every step and never pushed unnecessary treatments. I felt safe and cared for throughout.",author:"Tigran, Laser Client"},
-  {text:"My bridal plan took all the stress away. I glowed on my wedding day and received so many compliments.",author:"Lilit, Bride"}
+  {text:{hy:"Եկել էի մեկ ֆեյշլի համար, և հիմա մաշկս երբևէ այսքան հանգիստ չի եղել։ Թիմը իսկապես լսում է և անհատականացնում ամեն ինչ։",en:"I came for one facial and now my skin has never looked calmer. The team truly listens and customizes everything.",ru:"Я пришла на один уход, и моя кожа ещё никогда не была такой спокойной. Команда действительно слушает и подбирает всё индивидуально."},
+   author:{hy:"Նարե, ամսական անդամ",en:"Nare, Monthly Member",ru:"Наре, участница ежемесячной программы"}},
+  {text:{hy:"Բացատրեցին ամեն քայլ և երբեք չպարտադրեցին ավելորդ պրոցեդուրաներ։ Ինձ ապահով և հոգատար զգացի ողջ ընթացքում։",en:"They explained every step and never pushed unnecessary treatments. I felt safe and cared for throughout.",ru:"Мне объясняли каждый шаг и никогда не навязывали лишних процедур. Я чувствовала себя в безопасности и заботе."},
+   author:{hy:"Տիգրան, լազերային հաճախորդ",en:"Tigran, Laser Client",ru:"Тигран, клиент лазерных процедур"}},
+  {text:{hy:"Հարսնացուի իմ ծրագիրը վերացրեց ողջ սթրեսը։ Հարսանիքի օրը փայլում էի և ստացա բազում հիացմունքներ։",en:"My bridal plan took all the stress away. I glowed on my wedding day and received so many compliments.",ru:"Моя свадебная программа сняла весь стресс. В день свадьбы я сияла и получила море комплиментов."},
+   author:{hy:"Լիլիթ, հարսնացու",en:"Lilit, Bride",ru:"Лилит, невеста"}}
 ];
 let currentReview = 0;
 $("#dots").innerHTML = reviews.map((_, i) => `<button aria-label="Review ${i+1}" ${i===0?'class="on"':''}></button>`).join("");
@@ -836,15 +1189,17 @@ function showReview(i) {
   const q = $("#q");
   q.style.opacity = 0;
   setTimeout(() => {
-    q.textContent = `"${reviews[i].text}"`;
-    $("#qa").textContent = `— ${reviews[i].author}`;
+    q.innerHTML = "“" + T(reviews[i].text) + "”";
+    $("#qa").innerHTML = "— " + T(reviews[i].author);
     q.style.opacity = 1;
   }, 300);
   document.querySelectorAll("#dots button").forEach((d, k) => d.classList.toggle("on", k === i));
 }
+$("#q").innerHTML = "“" + T(reviews[0].text) + "”";
+$("#qa").innerHTML = "— " + T(reviews[0].author);
 setInterval(() => showReview((currentReview + 1) % reviews.length), 6000);
 
-// Counter Animation
+/* ===== Counter Animation ===== */
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -867,7 +1222,7 @@ const observer = new IntersectionObserver(entries => {
 }, {threshold: 0.5});
 document.querySelectorAll(".stats b[data-n]").forEach(el => observer.observe(el));
 
-// Reveal Animation
+/* ===== Reveal Animation ===== */
 const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -878,17 +1233,26 @@ const revealObserver = new IntersectionObserver(entries => {
 }, {threshold: 0.1});
 document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
 
-// BOOKING DROPDOWN & FORM LOGIC (RESTORED)
-$("#ddl").innerHTML = SERVICES.map(s => `<li>${s.n}</li>`).join("");
+/* ===== BOOKING DROPDOWN & FORM (trilingual) ===== */
+const DSVC = {hy:"Ընտրեք ծառայություն",en:"Choose a service",ru:"Выберите услугу"};
+const DEFAULT_DD = T(DSVC);
+$("#ddb").innerHTML = DEFAULT_DD;
+$("#ddl").innerHTML = SERVICES.map((s,i) => `<li data-i="${i}">${T(s.n)}</li>`).join("");
 $("#ddb").onclick = () => { $("#ddl").hidden = !$("#ddl").hidden };
 $("#ddl").onclick = e => {
-  if (e.target.tagName === "LI") setSvc(e.target.textContent);
+  const li = e.target.closest("li");
+  if (li) setSvc(+li.dataset.i);
 };
-function setSvc(n) {
-  $("#ddb").textContent = n;
+function setSvc(i) {
+  $("#ddb").innerHTML = T(SERVICES[i].n);
   $("#ddl").hidden = true;
-  document.querySelectorAll("#ddl li").forEach(l => l.classList.toggle("on", l.textContent === n));
+  document.querySelectorAll("#ddl li").forEach((l,k) => l.classList.toggle("on", k === i));
 }
+
+/* Translated placeholders (attributes cannot hold spans, so set by active language) */
+$("#fname").placeholder = L({hy:"Անուն Ազգանուն",en:"Full name",ru:"ФИО"});
+$("#fphone").placeholder = L({hy:"Հեռախոս կամ WhatsApp",en:"Phone or WhatsApp",ru:"Телефон или WhatsApp"});
+$("#fnotes").placeholder = L({hy:"Ի՞նչ պետք է իմանանք",en:"Anything we should know?",ru:"Что нам следует знать?"});
 
 $("#bf").onsubmit = e => {
   e.preventDefault();
@@ -898,23 +1262,27 @@ $("#bf").onsubmit = e => {
     $("#ok").style.display = "none";
     e.target.querySelector("button[type=submit]").style.display = "inline-block";
     e.target.reset();
-    $("#ddb").textContent = "Choose a service";
+    $("#ddb").innerHTML = DEFAULT_DD;
     document.querySelectorAll("#ddl li").forEach(l => l.classList.remove("on"));
   }, 5000);
 };
 
-// Theme Toggle
+/* ===== Theme Toggle ===== */
 $("#theme").onclick = () => {
   const html = document.documentElement;
   html.dataset.theme = html.dataset.theme === "dark" ? "light" : "dark";
 };
 
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+/* ===== Smooth scroll (scoped so it never hijacks the Shopify theme) ===== */
+document.querySelectorAll('#lumiere-app a[href^="#"]').forEach(anchor => {
   anchor.addEventListener("click", function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute("href"));
-    if (target) target.scrollIntoView({behavior: "smooth", block: "start"});
+    const href = this.getAttribute("href");
+    if (href.length < 2) return;
+    const target = document.querySelector(href);
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({behavior: "smooth", block: "start"});
+    }
   });
 });
 </script>
