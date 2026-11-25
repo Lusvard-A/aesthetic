@@ -60,8 +60,8 @@
   --text-light:#a49c8e;
   --border:#332e27;
 }
-*{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth;scroll-padding-top:100px}
+*{box-sizing:border-box;margin:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
 body{
   background:var(--bg);
   color:var(--text);
@@ -111,7 +111,7 @@ html[lang^="hy"] .text-en,html[lang^="hy"] .text-ru{display:none}
 nav{
   position:fixed;top:0;left:0;right:0;z-index:50;
   display:flex;justify-content:space-between;align-items:center;
-  padding:18px 4%;
+  padding:16px 4%;
   background:var(--white);
   backdrop-filter:blur(20px);
   border-bottom:1px solid var(--border);
@@ -121,20 +121,72 @@ nav b{
   color:var(--text);
   letter-spacing:0.02em;
 }
-nav ul{display:flex;gap:30px;list-style:none;padding:0}
+nav ul{display:flex;gap:28px;list-style:none;padding:0}
 nav ul a{font-size:1rem;font-weight:500;color:var(--text);transition:color 0.3s}
 nav ul a:hover{color:var(--rose-600)}
-.nav-r{display:flex;gap:12px;align-items:center}
+.nav-r{display:flex;gap:10px;align-items:center}
 .tg{
   background:none;border:1px solid var(--border);color:var(--text);
   width:40px;height:40px;border-radius:0;cursor:pointer;font-size:1rem;transition:all 0.3s;
+  flex-shrink:0;
 }
 .tg:hover{background:var(--rose-50)}
-@media(max-width:900px){nav ul{display:none}}
+
+/* Language switcher — header corner */
+.lang{display:flex;border:1px solid var(--border);flex-shrink:0}
+.lang button{
+  background:none;border:none;border-right:1px solid var(--border);
+  padding:9px 11px;font:600 0.75rem Inter,sans-serif;letter-spacing:0.06em;
+  color:var(--text-light);cursor:pointer;transition:all 0.3s;
+}
+.lang button:last-child{border-right:none}
+.lang button:hover{color:var(--rose-600)}
+.lang button.on{background:var(--purple-800);color:var(--rose-300)}
+.lang button.on:hover{color:var(--rose-300)}
+
+/* Mobile menu */
+.burger{
+  display:none;width:40px;height:40px;border:1px solid var(--border);
+  background:none;cursor:pointer;padding:0;flex-shrink:0;
+  flex-direction:column;justify-content:center;align-items:center;gap:4px;
+}
+.burger span{display:block;width:18px;height:2px;background:var(--text);transition:all 0.3s}
+.burger.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.mnav{
+  display:none;position:absolute;top:100%;left:0;right:0;
+  background:var(--white);border-bottom:1px solid var(--border);
+  box-shadow:var(--shadow-lg);max-height:calc(100vh - 70px);overflow:auto;
+}
+.mnav.open{display:block}
+.mnav a.mlink{display:block;padding:15px 5%;border-top:1px solid var(--border);font-weight:500;color:var(--text);transition:all 0.2s}
+.mnav a.mlink:hover{background:var(--rose-50);color:var(--rose-700)}
+.mnav .mbook{display:none;margin:14px 5%;text-align:center}
+@media(max-width:1100px){nav ul{gap:18px}nav ul a{font-size:0.9rem}}
+@media(max-width:900px){
+  nav ul{display:none}
+  .burger{display:flex}
+  nav b{font-size:1.5rem}
+}
+@media(min-width:901px){.mnav{display:none!important}}
+@media(max-width:600px){
+  nav{padding:12px 4%}
+  .nav-r{gap:8px}
+  .lang button{padding:8px 8px;font-size:0.68rem}
+  .tg{width:36px;height:36px}
+  .burger{width:36px;height:36px}
+  .nav-r>.btn{padding:11px 14px;font-size:0.8rem}
+}
+@media(max-width:480px){
+  nav b{font-size:1.35rem}
+  .nav-r>.btn{display:none}
+  .mnav .mbook{display:block}
+}
 
 /* ===== HERO SLIDESHOW — full width ===== */
 .hero{padding:0;min-height:100vh;position:relative;background:var(--purple-900)}
-.slides{position:relative;height:100vh;min-height:640px;overflow:hidden}
+.slides{position:relative;height:100vh;height:100svh;min-height:640px;overflow:hidden;touch-action:pan-y;user-select:none;-webkit-user-select:none}
 .slide{position:absolute;inset:0;opacity:0;transition:opacity 0.9s ease;display:flex;align-items:center;pointer-events:none}
 .slide.on{opacity:1;z-index:1;pointer-events:auto}
 .slide .bgimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -143,7 +195,7 @@ nav ul a:hover{color:var(--rose-600)}
 .slide.on .slide-in{animation:heroIn 0.9s ease both}
 @keyframes heroIn{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
 .slide .eyebrow{display:inline-block;font-size:0.8rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--rose-300);margin-bottom:20px;border-bottom:1px solid rgba(210,185,140,0.4);padding-bottom:10px}
-.slide h1,.slide .h1{color:#fff;font-size:clamp(2.6rem,5.2vw,4.4rem)}
+.slide h1,.slide .h1{color:#fff;font-size:clamp(2.6rem,5.2vw,4.4rem);font-family:"Playfair Display",serif;font-weight:400;line-height:1.2}
 .slide h1 em{display:block;color:var(--rose-300);font-style:italic;margin-top:10px}
 .slide .lead{color:rgba(255,255,255,0.85);margin-top:20px}
 .slide .from{margin-top:16px;font-size:0.95rem;font-weight:600;letter-spacing:0.05em;color:var(--rose-300)}
@@ -158,8 +210,8 @@ nav ul a:hover{color:var(--rose-600)}
 .hs-arrow:hover{background:var(--rose-600);border-color:var(--rose-600)}
 .hs-prev{left:24px}.hs-next{right:24px}
 .hs-dots{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:4;display:flex;gap:10px}
-.hs-dots button{width:10px;height:10px;border-radius:0;border:1px solid rgba(255,255,255,0.7);background:transparent;cursor:pointer;padding:0;transition:all 0.3s}
-.hs-dots .on{background:#fff;border-color:#fff;width:30px}
+.hs-dots button{width:12px;height:12px;border-radius:0;border:1px solid rgba(255,255,255,0.7);background:transparent;cursor:pointer;padding:0;transition:all 0.3s}
+.hs-dots .on{background:#fff;border-color:#fff;width:32px}
 .hs-count{position:absolute;top:118px;right:6%;z-index:4;color:rgba(255,255,255,0.75);font-size:0.8rem;letter-spacing:0.25em}
 .hs-badge{
   position:absolute;right:6%;bottom:70px;z-index:4;background:var(--white);
@@ -176,6 +228,22 @@ nav ul a:hover{color:var(--rose-600)}
   .hs-badge b{font-size:1.4rem}
   .hs-count{top:104px}
 }
+@media(max-width:600px){
+  .slides{min-height:560px}
+  .slide-in{padding:110px 20px 116px}
+  .slide .eyebrow{font-size:0.68rem;letter-spacing:0.16em;margin-bottom:14px}
+  .slide .lead{font-size:1rem;margin-top:14px}
+  .slide .row{margin-top:24px;gap:10px}
+  .slide .row .btn{flex:1 1 auto;text-align:center;padding:14px 16px;font-size:0.88rem}
+  .hs-arrow{width:40px;height:40px;font-size:1.2rem}
+  .hs-prev{left:10px}.hs-next{right:10px}
+  .hs-badge,.hs-count{display:none}
+  .hs-dots{bottom:18px}
+}
+@media(max-width:480px){
+  .slide h1,.slide .h1{font-size:2.15rem}
+  h2{font-size:1.75rem}
+}
 
 /* Stats */
 .stats{
@@ -187,7 +255,7 @@ nav ul a:hover{color:var(--rose-600)}
   -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
 }
 .stats p{color:var(--text-light);font-size:0.9rem;margin-top:8px}
-@media(max-width:700px){.stats{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.stats{grid-template-columns:1fr 1fr;gap:28px;padding:44px 5%}}
 
 /* Offers */
 #offers{background:var(--bg)}
@@ -212,6 +280,18 @@ nav ul a:hover{color:var(--rose-600)}
 .off-note{font-size:0.8rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--rose-600);font-weight:600}
 .offer .btn{width:100%;text-align:center}
 @media(max-width:900px){.offers-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.offer{padding:28px 22px}}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-imgs{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.about-imgs img{border-radius:0;height:280px;object-fit:cover;width:100%}
+.about-imgs .ai2{margin-top:40px}
+@media(max-width:900px){
+  .about-grid{grid-template-columns:1fr;gap:36px}
+  .about-imgs .ai2{margin-top:0}
+}
+@media(max-width:600px){.about-imgs img{height:200px}}
 
 /* Services */
 #services{background:var(--white)}
@@ -237,7 +317,7 @@ nav ul a:hover{color:var(--rose-600)}
 .sc u::after{content:"→";transition:transform 0.3s}
 .sc:hover u::after{transform:translateX(4px)}
 @media(max-width:900px){.svc{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){.svc{grid-template-columns:1fr}}
+@media(max-width:600px){.svc{grid-template-columns:1fr}.sc .tx{padding:22px}}
 
 /* Why Section */
 .why{
@@ -254,13 +334,14 @@ nav ul a:hover{color:var(--rose-600)}
 .why-item h3{font-size:1.2rem;margin-bottom:10px}
 .why-item p{color:var(--text-light);font-size:0.9rem;line-height:1.6}
 @media(max-width:900px){.why-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){.why{padding:40px 24px}}
+@media(max-width:600px){.why{padding:32px 20px;margin-top:0}.why-grid{grid-template-columns:1fr;gap:28px}}
 
 /* Before/After */
 .ba{background:var(--purple-50)}
 .cmp{
   position:relative;max-width:900px;aspect-ratio:16/10;margin:40px auto 0;
   border-radius:0;overflow:hidden;cursor:ew-resize;box-shadow:var(--shadow-lg);
+  touch-action:none;
 }
 .cmp .l,.cmp .r{position:absolute;inset:0;display:grid;place-items:center}
 .cmp .l{background:url('https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=900&q=80') center/cover}
@@ -279,6 +360,11 @@ nav ul a:hover{color:var(--rose-600)}
   padding:8px 20px;border-radius:0;font-weight:600;font-size:0.85rem;box-shadow:var(--shadow);
 }
 .cmp .a{left:20px}.cmp .b{right:20px}
+@media(max-width:600px){
+  .cmp small{bottom:12px;padding:6px 14px;font-size:0.75rem}
+  .cmp .a{left:12px}.cmp .b{right:12px}
+  .cmp .bar::after{width:40px;height:40px;font-size:1rem}
+}
 
 /* Team */
 .team{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:60px}
@@ -292,8 +378,9 @@ nav ul a:hover{color:var(--rose-600)}
 .tm:hover .ph img{transform:scale(1.05)}
 .tm h3{font-size:1.2rem;margin:20px 0 8px}
 .tm p{color:var(--text-light);font-size:0.9rem;padding:0 20px 20px}
-@media(max-width:900px){.team{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){.team{grid-template-columns:1fr}}
+@media(max-width:900px){.team{grid-template-columns:1fr 1fr;gap:20px}}
+@media(max-width:600px){.team{grid-template-columns:1fr 1fr;gap:14px;margin-top:36px}.tm h3{font-size:1rem;margin:14px 0 6px}.tm p{font-size:0.8rem;padding:0 12px 14px}}
+@media(max-width:400px){.team{grid-template-columns:1fr}}
 
 /* Packages */
 .pk{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:60px}
@@ -322,6 +409,7 @@ nav ul a:hover{color:var(--rose-600)}
 .plink:hover{gap:10px}
 .pkc.hot .plink{color:#fff}
 @media(max-width:900px){.pk{grid-template-columns:1fr}.pkc.hot{transform:none}.pkc.hot:hover{transform:translateY(-8px)}}
+@media(max-width:600px){.pk{margin-top:36px}.pkc{padding:28px 22px}}
 
 /* Reviews */
 .rv{
@@ -336,6 +424,7 @@ nav ul a:hover{color:var(--rose-600)}
   background:transparent;cursor:pointer;padding:0;transition:all 0.3s;
 }
 .dots .on{background:var(--rose-600);border-color:var(--rose-600);width:32px}
+@media(max-width:600px){.rv{padding:32px 22px;margin-top:36px}.rv blockquote{font-size:1.25rem}}
 
 /* Gallery */
 .gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:16px;margin-top:40px}
@@ -344,7 +433,11 @@ nav ul a:hover{color:var(--rose-600)}
 .gal button:hover img{transform:scale(1.1)}
 .gal .w2{grid-column:span 2}.gal .t2{grid-row:span 2}
 @media(max-width:900px){.gal{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){.gal{grid-template-columns:1fr}}
+@media(max-width:600px){
+  .gal{grid-template-columns:1fr 1fr;grid-auto-rows:170px;gap:10px}
+  .gal .w2{grid-column:span 2}
+  .gal .t2{grid-row:auto}
+}
 
 /* BOOKING — compact */
 #book{padding:60px 4%}
@@ -358,7 +451,7 @@ nav ul a:hover{color:var(--rose-600)}
 .book .lead{color:var(--rose-200);font-size:1rem;margin-top:6px;line-height:1.7}
 .book form{display:grid;gap:12px}
 .book input,.book select,.book textarea{
-  font:inherit;font-size:0.95rem;padding:12px 14px;border-radius:0;
+  font:inherit;font-size:16px;padding:12px 14px;border-radius:0;
   border:1px solid rgba(255,255,255,0.25);
   background:rgba(255,255,255,0.1);color:#fff;width:100%;
   transition:all 0.3s;
@@ -378,7 +471,7 @@ nav ul a:hover{color:var(--rose-600)}
 /* Dropdown styling for booking */
 .dd{position:relative}
 .dd>button{
-  width:100%;text-align:left;font:inherit;font-size:0.95rem;padding:12px 14px;
+  width:100%;text-align:left;font:inherit;font-size:16px;padding:12px 14px;
   border:1px solid rgba(255,255,255,0.25);background:rgba(255,255,255,0.1);
   color:#fff;border-radius:0;cursor:pointer;transition:all 0.3s;
 }
@@ -390,9 +483,10 @@ nav ul a:hover{color:var(--rose-600)}
   color:var(--text);max-height:240px;overflow:auto;
   border-radius:0;box-shadow:var(--shadow-lg);margin-top:8px;
 }
-.dd li{padding:12px 14px;cursor:pointer;transition:background 0.2s;font-size:0.95rem}
+.dd li{padding:13px 14px;cursor:pointer;transition:background 0.2s;font-size:0.95rem}
 .dd li:hover,.dd li.on{background:var(--rose-50);color:var(--rose-700)}
 @media(max-width:800px){.book .grid{grid-template-columns:1fr;padding:32px 24px;gap:28px}}
+@media(max-width:480px){#book{padding:40px 4%}.book .grid{padding:28px 18px}}
 
 /* Contact — map + info */
 .visit{display:grid;grid-template-columns:1.25fr 1fr;gap:36px;align-items:stretch}
@@ -419,7 +513,8 @@ nav ul a:hover{color:var(--rose-600)}
 .vcard p{color:var(--text-light);font-size:0.95rem;line-height:1.8}
 .vcard a{color:inherit;transition:color 0.3s}
 .vcard a:hover{color:var(--rose-600)}
-@media(max-width:900px){.visit{grid-template-columns:1fr}.map{min-height:340px}}
+@media(max-width:900px){.visit{grid-template-columns:1fr}.map{min-height:320px}}
+@media(max-width:600px){.vcard{padding:20px;gap:14px}.vinfo{gap:14px}}
 
 /* Footer */
 footer{background:var(--purple-900);color:var(--purple-200);padding:60px 4% 40px;text-align:center}
@@ -437,6 +532,12 @@ footer>span{display:block;margin-bottom:24px;letter-spacing:0.2em;text-transform
 footer .fl a{color:#fff;font-weight:500;transition:color 0.3s;font-size:0.9rem}
 footer .fl a:hover{color:var(--rose-300)}
 footer small{display:block;margin-top:30px;opacity:0.6;font-size:0.85rem}
+@media(max-width:600px){
+  footer b{font-size:2rem}
+  .soc{gap:10px}
+  .soc a{padding:10px 14px;font-size:0.82rem}
+  .fl{gap:14px}
+}
 
 /* Modal */
 .modal{
@@ -482,7 +583,15 @@ footer small{display:block;margin-top:30px;opacity:0.6;font-size:0.85rem}
   color:var(--rose-700);margin:26px 0 4px;padding-bottom:8px;border-bottom:2px solid var(--rose-300);
 }
 .pl-h:first-child{margin-top:0}
-@media(max-width:700px){.pane{grid-template-columns:1fr}}
+@media(max-width:700px){
+  .modal{padding:12px}
+  .pane{grid-template-columns:1fr;max-height:92vh}
+  .pane .side{min-height:200px;padding:26px 22px}
+  .pane .body{padding:26px 20px}
+  .item{padding:14px 0;gap:12px}
+  .item .pr{font-size:1.1rem}
+  .item b{font-size:0.95rem}
+}
 
 /* WhatsApp Float */
 .wa{
@@ -493,10 +602,23 @@ footer small{display:block;margin-top:30px;opacity:0.6;font-size:0.85rem}
 }
 .wa svg{width:30px;height:30px}
 .wa:hover{transform:scale(1.08)}
+@media(max-width:600px){
+  .wa{right:14px;bottom:calc(14px + env(safe-area-inset-bottom));width:52px;height:52px}
+  .wa svg{width:26px;height:26px}
+}
 
 /* Reveal Animation */
 .reveal{opacity:0;transform:translateY(30px);transition:all 0.8s ease}
 .reveal.active{opacity:1;transform:translateY(0)}
+
+/* Global mobile spacing */
+@media(max-width:900px){section{padding:70px 5%}}
+@media(max-width:600px){
+  section{padding:56px 5%}
+  .lead{font-size:1rem}
+  .faq-box{padding:24px 20px!important}
+  .faq-box summary{font-size:1rem!important}
+}
 </style>
 </head>
 <body>
@@ -514,12 +636,30 @@ footer small{display:block;margin-top:30px;opacity:0.6;font-size:0.85rem}
     <li><a href="#contact"><span class="text-hy">Կապ</span><span class="text-en">Contact</span><span class="text-ru">Контакты</span></a></li>
   </ul>
   <div class="nav-r">
+    <!-- Language switcher — header corner -->
+    <div class="lang" id="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="hy">HY</button>
+      <button type="button" data-lang="en">EN</button>
+      <button type="button" data-lang="ru">RU</button>
+    </div>
     <button class="tg" id="theme" aria-label="Toggle theme">◐</button>
     <a class="btn" href="#book"><span class="text-hy">Ամրագրել</span><span class="text-en">Book Now</span><span class="text-ru">Записаться</span></a>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <!-- Mobile dropdown menu -->
+  <div class="mnav" id="mnav">
+    <a class="mlink" href="#about"><span class="text-hy">Մեր մասին</span><span class="text-en">About</span><span class="text-ru">О нас</span></a>
+    <a class="mlink" href="#services"><span class="text-hy">Ծառայություններ</span><span class="text-en">Services</span><span class="text-ru">Услуги</span></a>
+    <a class="mlink" href="#offers"><span class="text-hy">Առաջարկներ</span><span class="text-en">Offers</span><span class="text-ru">Акции</span></a>
+    <a class="mlink" href="#gallery"><span class="text-hy">Պատկերասրահ</span><span class="text-en">Gallery</span><span class="text-ru">Галерея</span></a>
+    <a class="mlink" href="#team"><span class="text-hy">Թիմը</span><span class="text-en">Team</span><span class="text-ru">Команда</span></a>
+    <a class="mlink" href="#packages"><span class="text-hy">Փաթեթներ</span><span class="text-en">Packages</span><span class="text-ru">Пакеты</span></a>
+    <a class="mlink" href="#contact"><span class="text-hy">Կապ</span><span class="text-en">Contact</span><span class="text-ru">Контакты</span></a>
+    <a class="btn mbook" href="#book"><span class="text-hy">Ամրագրել</span><span class="text-en">Book Now</span><span class="text-ru">Записаться</span></a>
   </div>
 </nav>
 
-<!-- HERO SLIDESHOW (slides injected by JS: offers slide + one per service) -->
+<!-- HERO SLIDESHOW (offers slide + one per service) -->
 <section class="hero" id="hero">
   <div class="slides" id="hs"></div>
   <button class="hs-arrow hs-prev" id="hsp" aria-label="Previous slide">‹</button>
@@ -575,15 +715,15 @@ footer small{display:block;margin-top:30px;opacity:0.6;font-size:0.85rem}
 
 <section id="about" style="background:var(--white)">
   <div class="wrap">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
+    <div class="about-grid">
       <div>
         <h2><span class="text-hy">Հանգրվան ձեր մաշկի համար</span><span class="text-en">A sanctuary for your skin</span><span class="text-ru">Оазис для вашей кожи</span></h2>
         <p class="lead"><span class="text-hy">Lumière-ը հիմնադրվել է պարզ սկզբունքով՝ էսթետիկ խնամքը պետք է լինի և՛ գիտականորեն առաջադեմ, և՛ խորապես անհատական։ Մենք համադրում ենք բժշկական փորձը հոլիստիկ մոտեցման հետ՝ օգնելու ձեզ լավագույն տեսքն ունենալ։</span><span class="text-en">Lumière was founded on a simple principle: aesthetic care should be both scientifically advanced and deeply personal. We combine medical expertise with a holistic approach to help you look and feel your best.</span><span class="text-ru">Lumière основан на простом принципе: эстетический уход должен быть научно передовым и глубоко личным. Мы сочетаем медицинскую экспертизу с целостным подходом, чтобы вы выглядели и чувствовали себя лучше всего.</span></p>
         <p class="lead"><span class="text-hy">Ամեն բուժում սկսվում է համապարփակ խորհրդատվությամբ, որպեսզի հասկանանք ձեր մտահոգություններն ու նպատակները՝ նախքան անհատական խնամքի ծրագիր կազմելը։</span><span class="text-en">Every treatment begins with a comprehensive consultation, ensuring we understand your unique concerns and goals before creating your personalized care plan.</span><span class="text-ru">Каждая программа начинается с подробной консультации: мы понимаем ваши задачи и цели, прежде чем составить индивидуальный план ухода.</span></p>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
-        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400&q=80" style="border-radius:0;height:280px;object-fit:cover;width:100%" alt="Treatment room">
-        <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=400&q=80" style="border-radius:0;height:280px;object-fit:cover;margin-top:40px;width:100%" alt="Skincare products">
+      <div class="about-imgs">
+        <img class="ai1" src="michelle-maria-beauty-salon-3277314_1920.jpg" alt="Lumière salon interior">
+        <img class="ai2" src="kimia-kazemi-RbIcMsh0NSk-unsplash.jpg" alt="Skincare treatment">
       </div>
     </div>
   </div>
@@ -720,23 +860,23 @@ footer small{display:block;margin-top:30px;opacity:0.6;font-size:0.85rem}
 <section id="faq" style="background:var(--white)">
   <div class="wrap" style="max-width:800px">
     <h2 style="text-align:center;margin-bottom:40px"><span class="text-hy">Հաճախ տրվող հարցեր</span><span class="text-en">Common Questions</span><span class="text-ru">Частые вопросы</span></h2>
-    <div style="background:var(--white);border-radius:0;padding:40px;border:1px solid var(--border)">
+    <div class="faq-box" style="background:var(--white);border-radius:0;padding:40px;border:1px solid var(--border)">
       <details style="padding:20px 0;border-bottom:1px solid var(--border)">
-        <summary style="cursor:pointer;font-weight:600;font-size:1.1rem;display:flex;justify-content:space-between;align-items:center">
+        <summary style="cursor:pointer;font-weight:600;font-size:1.1rem;display:flex;justify-content:space-between;align-items:center;gap:12px">
           <span><span class="text-hy">Ցավո՞տ են պրոցեդուրաները</span><span class="text-en">Do treatments hurt?</span><span class="text-ru">Болезненны ли процедуры?</span></span>
           <span style="color:var(--rose-600)">+</span>
         </summary>
         <p style="margin-top:12px;color:var(--text-light);line-height:1.8"><span class="text-hy">Պրոցեդուրաների մեծ մասը հարմարավետ են։ Անհրաժեշտության դեպքում օգտագործում ենք անզգայացնող քսուկ և սառեցնող տեխնոլոգիա։ Կարող եք խնդրել կանգ առնել ցանկացած պահի։</span><span class="text-en">Most treatments are comfortable. We use topical numbing cream and cooling technology where needed. You can request to stop at any time.</span><span class="text-ru">Большинство процедур комфортны. При необходимости мы используем обезболивающий крем и охлаждающие технологии. Вы можете попросить остановиться в любой момент.</span></p>
       </details>
       <details style="padding:20px 0;border-bottom:1px solid var(--border)">
-        <summary style="cursor:pointer;font-weight:600;font-size:1.1rem;display:flex;justify-content:space-between;align-items:center">
+        <summary style="cursor:pointer;font-weight:600;font-size:1.1rem;display:flex;justify-content:space-between;align-items:center;gap:12px">
           <span><span class="text-hy">Ե՞րբ կտեսնեմ արդյունքները</span><span class="text-en">How long until I see results?</span><span class="text-ru">Когда будут видны результаты?</span></span>
           <span style="color:var(--rose-600)">+</span>
         </summary>
         <p style="margin-top:12px;color:var(--text-light);line-height:1.8"><span class="text-hy">Ֆեյշլները տալիս են ակնթարթային փայլ։ Լազերային պրոցեդուրաները, ինյեկցիաները և մարմնի մոդելավորումը արդյունքները կառուցում են 2–8 շաբաթվա ընթացքում։</span><span class="text-en">Facials show immediate glow. Laser treatments, injectables, and body contouring build results over 2-8 weeks as your body responds.</span><span class="text-ru">Уходы дают мгновенное сияние. Лазер, инъекции и контурирование тела дают результат в течение 2–8 недель.</span></p>
       </details>
       <details style="padding:20px 0">
-        <summary style="cursor:pointer;font-weight:600;font-size:1.1rem;display:flex;justify-content:space-between;align-items:center">
+        <summary style="cursor:pointer;font-weight:600;font-size:1.1rem;display:flex;justify-content:space-between;align-items:center;gap:12px">
           <span><span class="text-hy">Վերականգնման շրջա՞ն կա</span><span class="text-en">Is there downtime?</span><span class="text-ru">Есть ли период восстановления?</span></span>
           <span style="color:var(--rose-600)">+</span>
         </summary>
@@ -851,16 +991,22 @@ footer small{display:block;margin-top:30px;opacity:0.6;font-size:0.85rem}
 <script>
 const $ = s => document.querySelector(s);
 
-/* ===== Language helpers: Armenian default, English & Russian via html[lang] ===== */
-const LANG = (document.documentElement.lang || "hy").toLowerCase().slice(0,2);
-const L = o => o[LANG] || o.hy;
+/* ===== Language helpers: Armenian default, EN & RU via html[lang] ===== */
+function getLang(){ return (document.documentElement.lang || "hy").toLowerCase().slice(0,2); }
+const L = o => o[getLang()] || o.hy;
 const T = o => '<span class="text-hy">' + o.hy + '</span><span class="text-en">' + o.en + '</span><span class="text-ru">' + o.ru + '</span>';
 const DUR = m => T({hy: m + " րոպե", en: m + " min", ru: m + " мин"});
+
+/* Restore saved language choice (works standalone AND inside Shopify Custom Liquid) */
+try {
+  const saved = localStorage.getItem("lumiere-lang");
+  if (saved && ["hy","en","ru"].indexOf(saved) !== -1) document.documentElement.lang = saved;
+} catch(e) {}
 
 const SERVICES = [
   {n:{hy:"Դեմք և մաշկ",en:"Facial & Skin",ru:"Лицо и кожа"},
    d:{hy:"Վերականգնող ֆեյշլներ և առաջադեմ մաշկի թերապիա",en:"Rejuvenating facials and advanced skin therapies",ru:"Омолаживающие уходы и передовые процедуры для кожи"},
-   img:"https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1200&q=80",
+   img:"kimia-kazemi-RbIcMsh0NSk-unsplash.jpg",
    t:[
     {n:{hy:"Ֆիրմային խոնավեցնող ֆեյշլ",en:"Signature Hydrating Facial",ru:"Фирменный увлажняющий уход"},m:60,p:70},
     {n:{hy:"Խորը մաքրում և էքստրակցիա",en:"Deep Cleanse & Extraction",ru:"Глубокая чистка с экстракцией"},m:75,p:85},
@@ -937,9 +1083,9 @@ const TEAM = [
 ];
 
 const GALLERY = [
-  {src:"https://images.unsplash.com/photo-1560750588-432d11f8e59e?w=600&q=80",span:"t2"},
+  {src:"michelle-maria-beauty-salon-3277314_1920.jpg",span:"t2"},
   {src:"https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&q=80",span:"w2"},
-  {src:"https://images.unsplash.com/photo-1600334089648-b0d9d620498b?w=600&q=80",span:""},
+  {src:"kimia-kazemi-RbIcMsh0NSk-unsplash.jpg",span:""},
   {src:"https://images.unsplash.com/photo-1519824145371-296894a0daa9?w=600&q=80",span:""},
   {src:"https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80",span:"w2"},
   {src:"https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80",span:""}
@@ -947,7 +1093,7 @@ const GALLERY = [
 
 /* ===== HERO SLIDESHOW: offers slide + one slide per service ===== */
 const OFFER_SLIDE = {
-  img:"https://images.unsplash.com/photo-1600334089648-b0d9d620498b?w=1600&q=80",
+  img:"michelle-maria-beauty-salon-3277314_1920.jpg",
   eyebrow:{hy:"Հատուկ առաջարկներ · Սահմանափակ ժամանակ",en:"Special Offers · Limited Time",ru:"Спецпредложения · Ограниченное время"},
   title:{hy:"Մաշկ, որը փայլում է հոգատարությունից",en:"Skin that glows from care",ru:"Кожа, сияющая заботой"},
   sub:{hy:"Բժշկական էսթետիկա և վելնես",en:"Medical aesthetics & wellness",ru:"Медицинская эстетика и велнес"},
@@ -1082,7 +1228,7 @@ $("#svc").addEventListener("click", e => {
 function openPriceList(){
   $("#pane").innerHTML = `
     <div class="side">
-      <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=800&q=80" alt="">
+      <img src="kimia-kazemi-RbIcMsh0NSk-unsplash.jpg" alt="">
       <button class="x" data-close>✕</button>
       <div class="cap">
         <h2 style="font-size:2rem;margin-bottom:10px">${T({hy:"Ամբողջական գնացուցակ",en:"Full Price List",ru:"Полный прайс-лист"})}</h2>
@@ -1250,9 +1396,12 @@ function setSvc(i) {
 }
 
 /* Translated placeholders (attributes cannot hold spans, so set by active language) */
-$("#fname").placeholder = L({hy:"Անուն Ազգանուն",en:"Full name",ru:"ФИО"});
-$("#fphone").placeholder = L({hy:"Հեռախոս կամ WhatsApp",en:"Phone or WhatsApp",ru:"Телефон или WhatsApp"});
-$("#fnotes").placeholder = L({hy:"Ի՞նչ պետք է իմանանք",en:"Anything we should know?",ru:"Что нам следует знать?"});
+function setPlaceholders(){
+  $("#fname").placeholder = L({hy:"Անուն Ազգանուն",en:"Full name",ru:"ФИО"});
+  $("#fphone").placeholder = L({hy:"Հեռախոս կամ WhatsApp",en:"Phone or WhatsApp",ru:"Телефон или WhatsApp"});
+  $("#fnotes").placeholder = L({hy:"Ի՞նչ պետք է իմանանք",en:"Anything we should know?",ru:"Что нам следует знать?"});
+}
+setPlaceholders();
 
 $("#bf").onsubmit = e => {
   e.preventDefault();
@@ -1266,6 +1415,38 @@ $("#bf").onsubmit = e => {
     document.querySelectorAll("#ddl li").forEach(l => l.classList.remove("on"));
   }, 5000);
 };
+
+/* ===== LANGUAGE SWITCHER (header corner) ===== */
+function syncLangUI(){
+  const c = getLang();
+  document.querySelectorAll("#lang button").forEach(b => b.classList.toggle("on", b.dataset.lang === c));
+  setPlaceholders();
+}
+$("#lang").addEventListener("click", e => {
+  const b = e.target.closest("button[data-lang]");
+  if (!b) return;
+  document.documentElement.lang = b.dataset.lang;
+  try { localStorage.setItem("lumiere-lang", b.dataset.lang); } catch(err) {}
+  syncLangUI();
+});
+/* Stay in sync if Shopify or a translation app changes html[lang] */
+new MutationObserver(syncLangUI).observe(document.documentElement, {attributes:true, attributeFilter:["lang"]});
+syncLangUI();
+
+/* ===== MOBILE MENU ===== */
+const burger = $("#burger"), mnav = $("#mnav");
+function closeMenu(){
+  mnav.classList.remove("open");
+  burger.classList.remove("open");
+  burger.setAttribute("aria-expanded","false");
+}
+burger.onclick = () => {
+  const open = mnav.classList.toggle("open");
+  burger.classList.toggle("open", open);
+  burger.setAttribute("aria-expanded", open ? "true" : "false");
+};
+mnav.addEventListener("click", e => { if (e.target.closest("a")) closeMenu(); });
+window.addEventListener("resize", () => { if (window.innerWidth > 900) closeMenu(); });
 
 /* ===== Theme Toggle ===== */
 $("#theme").onclick = () => {
